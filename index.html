@@ -249,7 +249,9 @@
   </main>
 
   <footer class="text-center text-sm text-gray-600 py-8 border-t border-white/5">
-    <p>&copy; 2024 Malaysian Ham Radio Frequencies. Curated by <span class="text-blue-400">9M2PJU</span>.</p>
+    <p>&copy; 2024 Malaysian Ham Radio Frequencies. Made for <span class="text-white font-bold">MY</span> by <a
+        href="https://hamradio.my" class="text-blue-400 hover:text-blue-300 transition-colors">9M2PJU (hamradio.my)</a>.
+    </p>
   </footer>
 
   <script>
@@ -371,21 +373,25 @@
       if (userLat && userLon && r.Latitude && r.Longitude) {
         const dist = calculateDistance(userLat, userLon, parseFloat(r.Latitude), parseFloat(r.Longitude));
         if (dist !== null && !isNaN(dist)) {
-          distHtml = `<div class="absolute top-4 right-14 text-xs font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
-                    ${dist.toFixed(1)} km
+          distHtml = `<div class="text-xs font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 whitespace-nowrap">
+                    <i class="fa-solid fa-location-arrow mr-1"></i>${dist.toFixed(1)} km
                 </div>`;
         }
       }
 
       return `
         <div class="glass-panel p-4 rounded-xl hover:bg-white/10 transition-all border border-transparent hover:border-blue-500/30 group relative">
-            ${distHtml}
-            <div class="flex justify-between items-start mb-2 pr-12">
-                <div>
-                   <h3 class="font-bold text-lg text-white group-hover:text-blue-400 transition-colors truncate max-w-[180px]">${r.Name}</h3>
-                   <div class="text-xs text-gray-400 mt-0.5"><i class="fa-solid fa-location-dot mr-1"></i> ${r.Comment || 'No location info'}</div>
+            <div class="flex justify-between items-start mb-2 gap-2">
+                <div class="min-w-0 flex-1">
+                   <div class="flex items-center gap-2 flex-wrap mb-1">
+                      <h3 class="font-bold text-lg text-white group-hover:text-blue-400 transition-colors truncate">${r.Name}</h3>
+                      ${distHtml}
+                   </div>
+                   <div class="text-xs text-gray-400 truncate"><i class="fa-solid fa-location-dot mr-1"></i> ${r.Comment || 'No location info'}</div>
                 </div>
-                ${bandBadge(parseFloat(r.Frequency))}
+                <div class="shrink-0">
+                    ${bandBadge(parseFloat(r.Frequency))}
+                </div>
             </div>
             
             <div class="flex items-center gap-3 my-3">
