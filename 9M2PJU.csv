@@ -1,12 +1,12 @@
-Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE
+Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE,Latitude,Longitude
 1,APRS,144.39,,,,,,,NN,23,Tone->Tone,FM,5,,50W,,,,,
 2,KL,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,
-3,9M2RKL,439.6,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RKL near BUKIT LANJAN, None OPEN",,,,
+3,9M2RKL,439.6,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RKL near BUKIT LANJAN, None OPEN",,,,,3.166,101.614
 4,9M2RKL-L1,439.85,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RKL-L1 near BUKIT LANJAN, None OPEN",,,,
 5,9M2RKL-DMR,439.15,-,5,,88.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M2RKL-DMR near BUKIT LANJAN, None OPEN Connected to Brandmiester Network for now.",,,,
 6,9M4RZS,147.65,-,0.6,Tone,233.6,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RZS near BUKIT PERMAI, None OPEN",,,,
 7,9M2RKK,147.98,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RKK near BUKIT LANJAN, None OPEN",,,,
-8,9M2RUK,146.9875,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M2RUK near GUNUNG ULU KALI, None OPEN",,,,
+8,9M2RUK,146.9875,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M2RUK near GUNUNG ULU KALI, None OPEN",,,,,3.424,101.787
 9,9M4RLG,147.9,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLG near GUNUNG ULU KALI, None OPEN MARTS Linking",,,,
 10,9M4RBC,147.75,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBC near GUNUNG ULU KALI, None OPEN ASTRA Local",,,,
 11,9M4RES,147.775,-,0.6,Tone,123,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RES near GUNUNG ULU KALI, None OPEN",,,,
@@ -31,7 +31,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 30,PENANG,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,
 31,9M4RXC,439.475,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXC near Bandar Baharu, None OPEN",,,,
 32,9M4RXC-DMR,439.475,-,5,,88.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RXC near Bandar Baharu, None OPEN",,,,
-33,9M2RBB,147.95,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RBB near BUKIT BENDERA, None OPEN",,,,
+33,9M2RBB,147.95,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RBB near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
 34,9M2RBB-DMR,147.95,-,0.6,,203.5,203.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M2RBB near BUKIT BENDERA, None OPEN",,,,
 35,9M4RBB,145.7375,-,0.65,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBB near BUKIT BENDERA, None OPEN",,,,
 36,9M4RPH,147.825,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPH near BUKIT BENDERA, None OPEN",,,,
@@ -50,7 +50,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 49,9M4RPL,146.65,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPL near GUNUNG PULAI, None OPEN",,,,
 50,9M4RJM,146.9,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJM near GUNUNG TIONG, None OPEN",,,,
 51,9M4RLD,147.7,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLD near GUNUNG LEDANG, None OPEN",,,,
-52,9M4RJB,145.775,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJB near JOHOR BAHRU, None OPEN",,,,
+52,9M4RJB,145.775,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJB near JOHOR BAHRU, None OPEN",,,,,1.4927,103.7414
 53,9M2RGP,147.825,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RGP near GUNUNG PULAI, None OPEN",,,,
 54,9M4RJN,145.7,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJN near GUNUNG BANANG, None OPEN",,,,
 55,9M4RAM,147.8625,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RAM near BUKIT SELANTAI, None OPEN ASTRA Transnasional",,,,
