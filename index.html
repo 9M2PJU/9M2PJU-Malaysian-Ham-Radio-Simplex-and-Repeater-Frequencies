@@ -1,178 +1,437 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Malaysian Ham Radio Frequencies: A curated and categorized collection of simplex, repeater, and PMR frequencies. CHIRP-compatible and updated for Malaysian operators."/>
-  <meta name="keywords" content="frekuensi, walkie talkie, pengulang, radio amatur, Malaysia, radio ham, radio amateur, Malaysia ham radio, repeater frequency, simplex, PMR446, CHIRP, amateur radio, VHF, UHF, 9M2PJU"/>
-  <meta name="author" content="9M2PJU"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Malaysian Ham Radio Frequencies: A curated and categorized collection of simplex, repeater, and PMR frequencies. CHIRP-compatible and updated for Malaysian operators." />
+  <meta name="keywords"
+    content="frekuensi, walkie talkie, pengulang, radio amatur, Malaysia, radio ham, radio amateur, Malaysia ham radio, repeater frequency, simplex, PMR446, CHIRP, amateur radio, VHF, UHF, 9M2PJU" />
+  <meta name="author" content="9M2PJU" />
   <title>🇲🇾 Malaysian Ham Radio Frequencies</title>
-  <link rel="icon" href="https://pass.hamradio.my/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="https://pass.hamradio.my/favicon.ico" type="image/x-icon" />
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @media print {
-      header, footer, input, button { display: none !important; }
-      table { page-break-after: always; }
-      body { background: white !important; color: black !important; }
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            glass: {
+              100: 'rgba(255, 255, 255, 0.1)',
+              200: 'rgba(255, 255, 255, 0.2)',
+              300: 'rgba(255, 255, 255, 0.3)',
+              dark: 'rgba(15, 23, 42, 0.6)',
+              border: 'rgba(255, 255, 255, 0.1)',
+            }
+          }
+        }
+      }
     }
-    #photo { display: none; margin: 0 auto; margin-top: 1rem; }
+  </script>
+  <style>
+    :root {
+      --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+      background-image:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+      background-color: #0f172a;
+      background-attachment: fixed;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: var(--glass-border);
+      box-shadow: var(--glass-shadow);
+    }
+
+    .dark .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(156, 163, 175, 0.5);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(156, 163, 175, 0.8);
+    }
+
+    @media print {
+
+      header,
+      footer,
+      input,
+      button {
+        display: none !important;
+      }
+
+      table {
+        page-break-after: always;
+      }
+
+      body {
+        background: white !important;
+        color: black !important;
+        background-image: none !important;
+      }
+
+      .glass-panel {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+
+    #photo {
+      display: none;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
   </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
-  <header class="bg-gray-100 dark:bg-gray-800 p-4 shadow print:hidden">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-2xl font-bold text-center">🇲🇾 Malaysian Ham Radio Frequencies</h1>
-      <div class="mt-2 flex flex-wrap justify-center gap-3 items-center">
-        <p class="text-sm text-gray-600">
-          A comprehensive frequency database for Malaysian amateur radio operators and PMR users
-        </p>
+<body class="font-sans antialiased text-gray-100 min-h-screen selection:bg-blue-500 selection:text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-glass-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+            <i class="fa-solid fa-tower-broadcast"></i>
+          </div>
+          <span class="text-xl font-bold tracking-tight">MY<span class="text-blue-400">Ham</span>Freq</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/9M2PJU/Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies" target="_blank"
+            class="text-gray-300 hover:text-white transition-colors">
+            <i class="fa-brands fa-github text-xl"></i>
+          </a>
+          <button onclick="togglePhoto()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-blue-500/30">
+            Support
+          </button>
+        </div>
       </div>
-      <div class="mt-3 flex justify-center">
-        <a href="9M2PJU.csv" download class="bg-blue-600 text-white px-3 py-1 text-sm rounded hover:bg-blue-700">
-          📥 Download CSV
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 pt-24 pb-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1
+        class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+        Malaysian Ham Radio Frequencies
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        The most comprehensive, curated collection of simplex, repeater, and PMR frequencies for Malaysian operators.
+      </p>
+    </div>
+
+    <!-- Stats Dashboard -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div
+        class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center group hover:bg-white/5 transition-all">
+        <span class="text-3xl font-bold text-white mb-1" id="stat-total">-</span>
+        <span class="text-xs text-gray-400 uppercase tracking-wider">Total Frequencies</span>
+      </div>
+      <div
+        class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center group hover:bg-white/5 transition-all">
+        <span class="text-3xl font-bold text-green-400 mb-1" id="stat-simplex">-</span>
+        <span class="text-xs text-gray-400 uppercase tracking-wider">Simplex</span>
+      </div>
+      <div
+        class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center group hover:bg-white/5 transition-all">
+        <span class="text-3xl font-bold text-blue-400 mb-1" id="stat-repeater">-</span>
+        <span class="text-xs text-gray-400 uppercase tracking-wider">Repeaters</span>
+      </div>
+      <div
+        class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center group hover:bg-white/5 transition-all">
+        <span class="text-3xl font-bold text-purple-400 mb-1" id="stat-pmr">-</span>
+        <span class="text-xs text-gray-400 uppercase tracking-wider">PMR / LPD</span>
+      </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="glass-panel p-4 rounded-2xl mb-8 sticky top-20 z-40 shadow-xl backdrop-blur-xl">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Search -->
+        <div class="relative w-full md:w-96">
+          <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input id="search" type="text" placeholder="Search callsign, frequency, or location..."
+            class="w-full pl-10 pr-4 py-2.5 bg-black/20 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 text-white placeholder-gray-500 transition-all">
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center justify-center gap-2" id="filters">
+          <button
+            class="filter-chip active px-4 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 bg-blue-500/20 text-blue-300 hover:bg-blue-500/30 transition-all"
+            data-filter="all">All</button>
+          <button
+            class="filter-chip px-4 py-1.5 rounded-full text-xs font-medium border border-white/10 hover:bg-white/10 text-gray-400 transition-all"
+            data-filter="VHF">VHF</button>
+          <button
+            class="filter-chip px-4 py-1.5 rounded-full text-xs font-medium border border-white/10 hover:bg-white/10 text-gray-400 transition-all"
+            data-filter="UHF">UHF</button>
+          <button
+            class="filter-chip px-4 py-1.5 rounded-full text-xs font-medium border border-white/10 hover:bg-white/10 text-gray-400 transition-all"
+            data-filter="Simplex">Simplex</button>
+          <button
+            class="filter-chip px-4 py-1.5 rounded-full text-xs font-medium border border-white/10 hover:bg-white/10 text-gray-400 transition-all"
+            data-filter="Repeaters">Repeaters</button>
+        </div>
+
+        <!-- Download Action -->
+        <a href="9M2PJU.csv" download
+          class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors">
+          <i class="fa-solid fa-cloud-arrow-down"></i> CSV
         </a>
       </div>
-      <div class="mt-4 text-sm">
-        <p>Welcome to the most comprehensive collection of Malaysian amateur radio frequencies! This repository contains meticulously curated CSV files with simplex frequencies, repeater configurations, and PMR channels specifically designed for radio operators in Malaysia.</p>
-        <ul class="list-disc ml-6 mt-2">
-          <li>🔄 CHIRP Ready - Direct import compatibility</li>
-          <li>📊 Comprehensive Coverage - Amateur radio + PMR frequencies</li>
-          <li>🇲🇾 Malaysia Focused - Locally relevant frequency allocations</li>
-          <li>🎨 Easy Integration - One-click radio programming</li>
-          <li>🔧 Regularly Updated - Community-driven maintenance</li>
-        </ul>
-        <p class="mt-2">GitHub: 
-          <a href="https://github.com/9M2PJU/Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies" class="text-blue-500 underline" target="_blank">
-            View Repository
-          </a>
-        </p>
+    </div>
+
+    <div id="output" class="space-y-8">
+      <div class="flex flex-col items-center justify-center py-20">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <p class="mt-4 text-gray-500">Loading frequency database...</p>
       </div>
     </div>
-  </header>
 
-  <main class="max-w-4xl mx-auto p-4">
-    <div class="mb-4 flex flex-wrap justify-center items-center gap-2 text-center">
-      <a href="https://github.com/9M2PJU/Malaysian-Ham-Radio-Frequencies" target="_blank">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=9M2PJU.Malaysian-Ham-Radio-Frequencies" alt="Visitor Badge"/>
-      </a>
-      <img src="https://img.shields.io/badge/CHIRP-Compatible-brightgreen" alt="CHIRP Compatible"/>
-      <img src="https://img.shields.io/badge/Format-CSV-orange" alt="CSV Format"/>
-      <img src="https://img.shields.io/badge/Made%20in-Malaysia-red" alt="Made in Malaysia"/>
-      <img src="https://img.shields.io/badge/Callsign-9M2PJU-blue" alt="9M2PJU Badge"/>
-    </div>
-    <div class="mb-4">
-      <input id="search" type="text" placeholder="🔍 Search frequencies..." class="w-full px-4 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
-    </div>
-    <div id="output">
-      <p class="text-center text-gray-500 dark:text-gray-400">Loading data...</p>
+    <!-- Hidden Support Image -->
+    <div id="photo" class="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm"
+      onclick="togglePhoto()">
+      <div class="max-w-md w-full glass-panel p-2 rounded-2xl animate-in fade-in zoom-in duration-200">
+        <img src="https://drive.google.com/thumbnail?id=1lf1zgIN1Kx5cduZM79n3boGDJQ68uSJ_&sz=w1000" alt="Support"
+          class="w-full rounded-xl">
+        <p class="text-center text-gray-400 text-xs mt-2">Click anywhere to close</p>
+      </div>
     </div>
   </main>
 
-  <footer class="text-center text-sm text-gray-600 dark:text-gray-400 mt-8 mb-4 print:hidden">
-    <p>Made for 🇲🇾 by <a href="https://hamradio.my" class="underline">9M2PJU</a></p>
-    <p>If you want to support this community project, click 
-      <span class="underline text-blue-600 cursor-pointer" onclick="togglePhoto()">here</span>
-    </p>
-    <img id="photo" src="https://drive.google.com/thumbnail?id=1lf1zgIN1Kx5cduZM79n3boGDJQ68uSJ_&sz=w1000" alt="Support Image" />
+  <footer class="text-center text-sm text-gray-600 py-8 border-t border-white/5">
+    <p>&copy; 2024 Malaysian Ham Radio Frequencies. Curated by <span class="text-blue-400">9M2PJU</span>.</p>
   </footer>
 
   <script>
     const output = document.getElementById('output');
     const searchInput = document.getElementById('search');
     let allRows = [];
+    let currentFilter = 'all';
 
     function togglePhoto() {
       const photo = document.getElementById('photo');
-      const isHidden = getComputedStyle(photo).display === 'none';
-      photo.style.display = isHidden ? 'block' : 'none';
+      const isHidden = photo.classList.contains('hidden');
       if (isHidden) {
-        setTimeout(() => {
-          photo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        photo.classList.remove('hidden');
+        photo.classList.add('flex');
+      } else {
+        photo.classList.add('hidden');
+        photo.classList.remove('flex');
       }
     }
+    // Init hidden state for photo
+    document.getElementById('photo').classList.add('hidden');
 
-    function bandBadge(freq){
-      if(freq>=446 && freq<=446.2)
-        return `<span class="px-2 py-0.5 text-xs bg-green-200 text-green-800 rounded">PMR</span>`;
-      if(freq<300)
-        return `<span class="px-2 py-0.5 text-xs bg-blue-200 text-blue-800 rounded">VHF</span>`;
-      return `<span class="px-2 py-0.5 text-xs bg-purple-200 text-purple-800 rounded">UHF</span>`;
+    function bandBadge(freq) {
+      if (freq >= 446 && freq <= 446.2)
+        return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/30">PMR</span>`;
+      if (freq < 300)
+        return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-300 border border-green-500/30">VHF</span>`;
+      return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30">UHF</span>`;
     }
 
-    function toggle(btn, panel){
-      btn.onclick = () => {
-        panel.classList.toggle('hidden');
-        btn.textContent = panel.classList.contains('hidden') ? '+' : '–';
-      };
+    function updateStats(rows) {
+      document.getElementById('stat-total').textContent = rows.length;
+      document.getElementById('stat-simplex').textContent = rows.filter(r => {
+        const f = parseFloat(r.Frequency) || 0;
+        const o = parseFloat(r.Offset) || 0;
+        return o === 0 && !(f >= 446 && f <= 446.2);
+      }).length;
+      document.getElementById('stat-repeater').textContent = rows.filter(r => {
+        const f = parseFloat(r.Frequency) || 0;
+        const o = parseFloat(r.Offset) || 0;
+        return o !== 0; // Simplified logic for repeater
+      }).length;
+      document.getElementById('stat-pmr').textContent = rows.filter(r => {
+        const f = parseFloat(r.Frequency) || 0;
+        return f >= 446 && f <= 446.2;
+      }).length;
     }
 
-    function createSection(title, rows){
-      const sec = document.createElement('section');
-      sec.className = "bg-gray-50 dark:bg-gray-800 rounded-md mb-6 p-4 shadow";
-      const header = document.createElement('div');
-      header.className = "flex justify-between items-center cursor-pointer";
-      const h = document.createElement('h3');
-      h.className = "text-lg font-semibold";
-      h.textContent = title;
-      const btn = document.createElement('button');
-      btn.textContent = '–'; btn.className='px-2';
-      header.append(h, btn);
-      const table = document.createElement('table');
-      table.className = "w-full text-sm mt-2";
-      table.innerHTML = `
-        <thead class="border-b">
-          <tr class="text-left">
-            <th>Name</th><th>Freq</th><th>Band</th><th>Offset</th><th>Tone</th><th>Mode</th><th class="hidden sm:table-cell">Comment</th>
-          </tr>
-        </thead>
-        <tbody>${rows.map(r=>`
-          <tr class="border-t hover:bg-gray-100 dark:hover:bg-gray-700">
-            <td>${r.Name}</td>
-            <td>${r.Frequency}</td>
-            <td>${bandBadge(parseFloat(r.Frequency)||0)}</td>
-            <td>${r.Offset}</td>
-            <td>${r.Tone}</td>
-            <td>${r.Mode}</td>
-            <td class="hidden sm:table-cell">${r.Comment}</td>
-          </tr>`).join('')}</tbody>`;
-      sec.append(header, table);
-      toggle(btn, table);
-      return sec;
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalIcon = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-green-400"></i>';
+        setTimeout(() => {
+          btn.innerHTML = originalIcon;
+        }, 2000);
+      });
     }
 
-    function render(rows){
+    function createCard(r) {
+      const freq = parseFloat(r.Frequency).toFixed(3); // Standardize display
+      return `
+        <div class="glass-panel p-4 rounded-xl hover:bg-white/10 transition-all border border-transparent hover:border-blue-500/30 group">
+            <div class="flex justify-between items-start mb-2">
+                <div>
+                   <h3 class="font-bold text-lg text-white group-hover:text-blue-400 transition-colors">${r.Name}</h3>
+                   <div class="text-xs text-gray-400 mt-0.5"><i class="fa-solid fa-location-dot mr-1"></i> ${r.Comment || 'No location info'}</div>
+                </div>
+                ${bandBadge(parseFloat(r.Frequency))}
+            </div>
+            
+            <div class="flex items-center gap-3 my-3">
+                <div class="text-2xl font-mono font-bold text-gray-200 tracking-wider">${freq} <span class="text-xs text-gray-500 font-sans">MHz</span></div>
+                <button onclick="copyToClipboard('${freq}', this)" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all" title="Copy Frequency">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-y-2 text-sm text-gray-400 mt-4 pt-3 border-t border-white/5">
+                <div class="flex items-center gap-2">
+                    <span class="w-16 text-xs uppercase tracking-wider text-gray-600">Tone</span>
+                    <span class="${r.Tone ? 'text-gray-300' : 'text-gray-600'}">${r.Tone || '-'}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-16 text-xs uppercase tracking-wider text-gray-600">Offset</span>
+                     <span class="${parseFloat(r.Offset) !== 0 ? 'text-blue-300' : 'text-gray-600'}">${parseFloat(r.Offset) !== 0 ? r.Offset : 'Simplex'}</span>
+                </div>
+                 <div class="flex items-center gap-2">
+                    <span class="w-16 text-xs uppercase tracking-wider text-gray-600">Mode</span>
+                    <span>${r.Mode}</span>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+
+    function createSection(title, rows) {
+      if (rows.length === 0) return '';
+      const grid = rows.map(r => createCard(r)).join('');
+      return `
+            <section class="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div class="flex items-center gap-3 mb-6">
+                    <h2 class="text-2xl font-bold text-white">${title}</h2>
+                    <span class="px-2 py-0.5 rounded-full bg-white/10 text-xs text-gray-400 font-mono">${rows.length}</span>
+                    <div class="h-px bg-white/10 flex-grow ml-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    ${grid}
+                </div>
+            </section>
+        `;
+    }
+
+    function render(rows) {
       output.innerHTML = '';
+
+      // Filter logic
+      let filtered = rows;
+      if (currentFilter !== 'all') {
+        filtered = rows.filter(r => {
+          const f = parseFloat(r.Frequency) || 0;
+          const o = parseFloat(r.Offset) || 0;
+          if (currentFilter === 'VHF') return f < 300;
+          if (currentFilter === 'UHF') return f >= 300;
+          if (currentFilter === 'Simplex') return o === 0 && !(f >= 446 && f <= 446.2);
+          if (currentFilter === 'Repeaters') return o !== 0;
+          return true;
+        });
+      }
+
       const groups = { Simplex: [], Repeaters: [], PMR: [] };
-      rows.forEach(r=>{
-        const f=parseFloat(r.Frequency)||0, o=parseFloat(r.Offset)||0;
-        let cat = o===0 && !(f>=446&&f<=446.2) ? 'Simplex' : (f>=446&&f<=446.2 ? 'PMR':'Repeaters');
+
+      filtered.forEach(r => {
+        const f = parseFloat(r.Frequency) || 0;
+        const o = parseFloat(r.Offset) || 0;
+        // Categorization logic
+        let cat = 'Repeaters';
+        if (f >= 446 && f <= 446.2) cat = 'PMR';
+        else if (o === 0) cat = 'Simplex';
+
         groups[cat].push(r);
       });
-      ['Simplex','Repeaters','PMR'].forEach(cat=>{
-        if(groups[cat].length){
-          const header = document.createElement('h2');
-          header.className = "text-xl font-bold mt-8 mb-3 border-b pb-1";
-          header.textContent = cat + (cat==='PMR'?' (446 MHz)':'');
-          output.appendChild(header);
-          output.appendChild(createSection(cat, groups[cat]));
-        }
+
+      let html = '';
+      ['PMR', 'Repeaters', 'Simplex'].forEach(cat => { // Changed order for better UX
+        html += createSection(cat === 'PMR' ? 'PMR / LPD (446 MHz)' : cat, groups[cat]);
       });
-      if(rows.length===0) output.innerHTML='<p class="text-center">No entries found.</p>';
+
+      if (filtered.length === 0 && rows.length > 0) {
+        html = `<div class="text-center py-20 text-gray-500">No results found for your filter/search.</div>`;
+      }
+
+      output.innerHTML = html;
+      updateStats(rows); // Always show stats for TOTAL dataset
     }
 
-    searchInput.oninput = ()=>{
+    // Filter Chips Logic
+    document.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.onclick = () => {
+        // Remove active class from all
+        document.querySelectorAll('.filter-chip').forEach(b => {
+          b.classList.remove('bg-blue-500/20', 'text-blue-300', 'border-blue-500/30', 'active');
+          b.classList.add('text-gray-400', 'border-white/10');
+        });
+        // Add to clicked
+        btn.classList.remove('text-gray-400', 'border-white/10');
+        btn.classList.add('bg-blue-500/20', 'text-blue-300', 'border-blue-500/30', 'active');
+
+        currentFilter = btn.dataset.filter;
+        const q = searchInput.value.toLowerCase();
+        const searchFiltered = allRows.filter(r => Object.values(r).join(' ').toLowerCase().includes(q));
+        render(searchFiltered);
+      };
+    });
+
+    searchInput.oninput = () => {
       const q = searchInput.value.toLowerCase();
-      render(allRows.filter(r=>Object.values(r).join(' ').toLowerCase().includes(q)));
+      render(allRows.filter(r => Object.values(r).join(' ').toLowerCase().includes(q)));
     };
 
-    Papa.parse('9M2PJU.csv',{download:true,header:true,complete:r=>{
-      allRows = r.data.filter(x=>x.Name||x.Frequency);
-      render(allRows);
-    }});
+    Papa.parse('9M2PJU.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true, // Handle empty lines in CSV
+      complete: r => {
+        allRows = r.data.filter(x => x.Name || x.Frequency);
+        render(allRows);
+      }
+    });
   </script>
 
 </body>
+
 </html>
