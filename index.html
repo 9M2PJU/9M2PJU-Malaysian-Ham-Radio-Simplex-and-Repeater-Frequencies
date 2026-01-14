@@ -345,7 +345,14 @@
           },
           (error) => {
             console.error("Error getting location:", error);
-            btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-red-400"></i> Error';
+            let msg = "Error";
+            if (error.code === 1) msg = "Permission Denied";
+            else if (error.code === 2) msg = "Position Unavailable";
+            // 3 is Timeout
+
+            alert("Geolocation Error: " + msg + "\\nPlease enable location services for this website in your browser settings.");
+
+            btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-red-400"></i> ' + msg;
             setTimeout(() => {
               btn.innerHTML = '<i class="fa-solid fa-location-crosshairs group-hover:text-blue-400"></i> <span class="hidden sm:inline">Near Me</span>';
             }, 3000);
@@ -363,7 +370,7 @@
       let distHtml = '';
       if (userLat && userLon && r.Latitude && r.Longitude) {
         const dist = calculateDistance(userLat, userLon, parseFloat(r.Latitude), parseFloat(r.Longitude));
-        if (dist !== null) {
+        if (dist !== null && !isNaN(dist)) {
           distHtml = `<div class="absolute top-4 right-14 text-xs font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
                     ${dist.toFixed(1)} km
                 </div>`;
@@ -445,6 +452,9 @@
         filtered.sort((a, b) => {
           const distA = (a.Latitude && a.Longitude) ? calculateDistance(userLat, userLon, parseFloat(a.Latitude), parseFloat(a.Longitude)) : 99999;
           const distB = (b.Latitude && b.Longitude) ? calculateDistance(userLat, userLon, parseFloat(b.Latitude), parseFloat(b.Longitude)) : 99999;
+          // Handle NaN results just in case
+          if (isNaN(distA)) return 1;
+          if (isNaN(distB)) return -1;
           return distA - distB;
         });
       }
@@ -496,7 +506,8 @@
       render(allRows.filter(r => Object.values(r).join(' ').toLowerCase().includes(q)));
     };
 
-    Papa.parse('9M2PJU.csv', {
+    // Parse CSV with cache busting
+    Papa.parse('9M2PJU.csv?v=' + new Date().getTime(), {
       download: true,
       header: true,
       skipEmptyLines: true,
