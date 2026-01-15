@@ -133,7 +133,7 @@
           <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
             <i class="fa-solid fa-tower-broadcast"></i>
           </div>
-          <span class="text-xl font-bold tracking-tight">MY<span class="text-blue-400">Ham</span>Freq</span>
+          <span class="text-xl font-bold tracking-tight">MY-<span class="text-blue-400">Ham</span>Freq</span>
         </div>
         <div class="flex items-center gap-4">
         </div>
@@ -546,8 +546,33 @@
       complete: r => {
         allRows = r.data.filter(x => x.Name || x.Frequency);
         render(allRows);
+        // Auto-request geolocation after data loads
+        autoRequestLocation();
       }
     });
+
+    // Quietly request location on page load
+    function autoRequestLocation() {
+      if (navigator.geolocation) {
+        const btn = document.getElementById('geo-btn');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-blue-400"></i> <span class="hidden sm:inline">Detecting...</span>';
+
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            userLat = position.coords.latitude;
+            userLon = position.coords.longitude;
+            btn.innerHTML = '<i class="fa-solid fa-location-dot text-green-400"></i> <span class="hidden sm:inline">Sorted by Distance</span>';
+            btn.classList.add('text-green-300');
+            render(allRows);
+          },
+          (error) => {
+            // Silently fail - just reset button
+            btn.innerHTML = '<i class="fa-solid fa-location-crosshairs group-hover:text-blue-400"></i> <span class="hidden sm:inline">Near Me</span>';
+          },
+          { timeout: 10000, maximumAge: 300000 } // 10s timeout, cache for 5 min
+        );
+      }
+    }
   </script>
 
 </body>
