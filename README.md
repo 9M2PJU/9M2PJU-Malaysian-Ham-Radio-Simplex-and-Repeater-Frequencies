@@ -1,24 +1,28 @@
-# 📡 Malaysian Ham Radio Frequencies Collection  
-### *A comprehensive frequency database for Malaysian amateur radio operators and PMR users*
+# 📡 Malaysian Amateur Radio Frequency Database
+### *The #1 curated frequency database for Malaysian amateur radio operators and PMR users*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Ham%20Radio-9M2PJU-red?style=for-the-badge&logo=radio&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Malaysia-🇲🇾-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/CHIRP-Compatible-green?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Ham%20Radio-9M2PJU-00f3ff?style=for-the-badge&logo=radio&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Malaysia-🇲🇾-bc13fe?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Release-v2.0.0-0aff68?style=for-the-badge&logo=github&logoColor=black"/>
 </p>
 
 ---
 
 ## 🎯 Project Overview
 
-A meticulously curated collection of Malaysian amateur radio frequencies—covering simplex, repeaters, and PMR—for seamless programming via CHIRP.
+A meticulously curated collection of Malaysian amateur radio frequencies—covering simplex, repeaters, and PMR—optimized for modern viewing and seamless programming via CHIRP.
 
 ---
 
 ## 🌐 Live Web Viewer
 
-📡 **Now Available Online!**  
-Browse the live web interface at: **[https://frequency.hamradio.my](https://frequency.hamradio.my)**
+📡 **Experience the New Futuristic Interface!**  
+Browse the live database at: **[https://frequency.hamradio.my](https://frequency.hamradio.my)**
+
+- **Cyberpunk Theme**: Neon visuals for night-mode operation.
+- **Location Sorting**: Find repeaters near you instantly.
+- **Mobile Ready**: Optimized for field use.
 
 ---
 
