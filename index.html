@@ -9,7 +9,8 @@
   <meta name="keywords"
     content="frekuensi, walkie talkie, pengulang, radio amatur, Malaysia, radio ham, radio amateur, Malaysia ham radio, repeater frequency, simplex, PMR446, CHIRP, amateur radio, VHF, UHF, 9M2PJU" />
   <meta name="author" content="9M2PJU" />
-  <title>🇲🇾 Malaysian Ham Radio Frequencies</title>
+  <title>Malaysian Ham Radio Frequencies</title>
+  <link rel="icon" href="my_flag_round.svg" type="image/svg+xml">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,6 +121,11 @@
       margin: 0 auto;
       margin-top: 1rem;
     }
+
+    .optimize-visibility {
+      content-visibility: auto;
+      contain-intrinsic-size: 1000px;
+    }
   </style>
 </head>
 
@@ -130,9 +136,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-          <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
-            <i class="fa-solid fa-tower-broadcast"></i>
-          </div>
+          <img src="my_flag_round.svg" alt="Malaysia Flag" class="w-8 h-8 rounded-full">
           <span class="text-xl font-bold tracking-tight">MY-<span class="text-blue-400">Ham</span>Freq</span>
         </div>
         <div class="flex items-center gap-4">
@@ -357,6 +361,18 @@
       return deg * (Math.PI / 180)
     }
 
+    function updateDistances(lat, lon) {
+      if (!lat || !lon) return;
+      allRows.forEach(r => {
+        if (r.Latitude && r.Longitude) {
+          const dist = calculateDistance(lat, lon, parseFloat(r.Latitude), parseFloat(r.Longitude));
+          r.distance = (dist !== null && !isNaN(dist)) ? dist : Infinity;
+        } else {
+          r.distance = Infinity;
+        }
+      });
+    }
+
     function getUserLocation() {
       const btn = document.getElementById('geo-btn');
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Locating...';
@@ -366,6 +382,9 @@
           (position) => {
             userLat = position.coords.latitude;
             userLon = position.coords.longitude;
+
+            updateDistances(userLat, userLon);
+
             btn.innerHTML = '<i class="fa-solid fa-location-dot text-blue-400"></i> Location Set';
             btn.classList.add('text-blue-300');
             // Re-render with sorting
@@ -396,7 +415,12 @@
       const freq = parseFloat(r.Frequency).toFixed(3);
 
       let distHtml = '';
-      if (userLat && userLon && r.Latitude && r.Longitude) {
+      if (typeof r.distance === 'number' && r.distance !== Infinity) {
+        distHtml = `<div class="text-xs font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 whitespace-nowrap">
+                    <i class="fa-solid fa-location-arrow mr-1"></i>${r.distance.toFixed(1)} km
+                </div>`;
+      } else if (userLat && userLon && r.Latitude && r.Longitude) {
+        // Fallback or initial concurrent case
         const dist = calculateDistance(userLat, userLon, parseFloat(r.Latitude), parseFloat(r.Longitude));
         if (dist !== null && !isNaN(dist)) {
           distHtml = `<div class="text-xs font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 whitespace-nowrap">
@@ -449,7 +473,7 @@
       if (rows.length === 0) return '';
       const grid = rows.map(r => createCard(r)).join('');
       return `
-            <section class="animate-in fade-in slide-in-from-bottom-4 duration-500 mb-8">
+            <section class="animate-in fade-in slide-in-from-bottom-4 duration-500 mb-8 optimize-visibility">
                 <div class="flex items-center gap-3 mb-6">
                     <h2 class="text-2xl font-bold text-white">${title}</h2>
                     <span class="px-2 py-0.5 rounded-full bg-white/10 text-xs text-gray-400 font-mono">${rows.length}</span>
@@ -482,11 +506,8 @@
       // Sorting Logic (if location available)
       if (userLat && userLon) {
         filtered.sort((a, b) => {
-          const distA = (a.Latitude && a.Longitude) ? calculateDistance(userLat, userLon, parseFloat(a.Latitude), parseFloat(a.Longitude)) : 99999;
-          const distB = (b.Latitude && b.Longitude) ? calculateDistance(userLat, userLon, parseFloat(b.Latitude), parseFloat(b.Longitude)) : 99999;
-          // Handle NaN results just in case
-          if (isNaN(distA)) return 1;
-          if (isNaN(distB)) return -1;
+          const distA = (typeof a.distance === 'number') ? a.distance : Infinity;
+          const distB = (typeof b.distance === 'number') ? b.distance : Infinity;
           return distA - distB;
         });
       }
@@ -533,10 +554,18 @@
       };
     });
 
-    searchInput.oninput = () => {
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+
+    searchInput.oninput = debounce(() => {
       const q = searchInput.value.toLowerCase();
       render(allRows.filter(r => Object.values(r).join(' ').toLowerCase().includes(q)));
-    };
+    }, 300);
 
     // Parse CSV with cache busting
     Papa.parse('9M2PJU.csv?v=' + new Date().getTime(), {
@@ -561,6 +590,9 @@
           (position) => {
             userLat = position.coords.latitude;
             userLon = position.coords.longitude;
+
+            updateDistances(userLat, userLon);
+
             btn.innerHTML = '<i class="fa-solid fa-location-dot text-green-400"></i> <span class="hidden sm:inline">Sorted by Distance</span>';
             btn.classList.add('text-green-300');
             render(allRows);
