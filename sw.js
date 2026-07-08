@@ -1,11 +1,13 @@
-const CACHE_NAME = 'my-hamfreq-v3';
+const CACHE_NAME = 'my-hamfreq-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './my_flag_round.svg',
   './icon-192x192.png',
-  './icon-512x512.png'
+  './icon-512x512.png',
+  './assets/styles.css',
+  './assets/papaparse.min.js'
 ];
 
 // Install: cache static shell
