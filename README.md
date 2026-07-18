@@ -68,44 +68,6 @@ The database includes repeaters from every Malaysian state:
 
 ---
 
-## Quick Start
-
-### Option 1: Use the Website
-
-Visit [frequency.hamradio.my](https://frequency.hamradio.my) to search and browse frequencies online.
-
-### Option 2: Program Your Radio with CHIRP
-
-1. **Download** the `9M2PJU.csv` file from the website
-2. **Install** [CHIRP](https://chirp.danplanet.com) on your computer
-3. **Connect** your radio via USB programming cable
-4. **Import** the CSV into CHIRP (File > Import)
-5. **Upload** to your radio (Radio > Upload To Radio)
-
-See the detailed [CHIRP Programming Guide](https://frequency.hamradio.my/chirp-guide.html).
-
-### Option 3: Clone the Repository
-
-```bash
-git clone https://github.com/9M2PJU/9M2PJU-Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies.git
-```
-
----
-
-## Supported Radios
-
-The 9M2PJU CSV file works with any CHIRP-supported radio, including:
-
-- **Baofeng:** UV-5R, UV-82, BF-F8HP, UV-K5
-- **Yaesu:** FT-60R, FT-65R, FT-70DR, VX-6R
-- **Icom:** IC-V80, IC-T70, ID-51
-- **Kenwood:** TH-F6A, TH-G71
-- **Wouxun:** KG-UV8D, KG-UV9D
-
-See the [CHIRP Supported Radios list](https://chirp.danplanet.com/projects/chirp/wiki/Supported_Radios) for the complete list.
-
----
-
 ## Features
 
 - **206 curated frequencies** — verified simplex, repeater, APRS, and PMR446 channels
@@ -115,59 +77,13 @@ See the [CHIRP Supported Radios list](https://chirp.danplanet.com/projects/chirp
 - **MARTS & ASTRA linking** — network information for linked repeaters
 - **DMR support** — digital repeaters connected to Brandmeister Network
 - **PWA** — installable, works offline, mobile-optimized
-- **Open source** — GPL-3.0 licensed, community-driven
-
----
-
-## Building from Source
-
-The site uses [Tailwind CSS](https://tailwindcss.com) and a custom build script for SEO pre-rendering.
-
-```bash
-# Install dependencies
-npm install
-
-# Build CSS + pre-render SEO content from CSV
-npm run build
-
-# Watch CSS changes during development
-npm run watch
-```
-
-The `build.js` script reads `9M2PJU.csv` and injects pre-rendered HTML tables and JSON-LD structured data into `index.html` for search engine optimization.
+- **Open source** — GPL-3.0 licensed
 
 ---
 
 ## Automated Repeater Updates
 
-Repeater frequencies and locations are automatically synced from [RepeaterBook](https://www.repeaterbook.com) on the 1st of each month via a GitHub Actions workflow (`.github/workflows/update-repeaterbook.yml`). The workflow can also be triggered manually from the **Actions** tab.
-
-### Setup
-
-Add a repository secret named **`REPEATERBOOK_EUID`** with your RepeaterBook numeric user ID:
-
-1. Go to **Settings → Secrets and variables → Actions → New repository secret**
-2. Name: `REPEATERBOOK_EUID`
-3. Value: your euid (the number in your RepeaterBook download URL, e.g. `104805`)
-
-The workflow downloads the CSV from:
-
-```
-https://www.repeaterbook.com/repeaters/downloads/csv/index2.php?euid=<EUID>&func=route
-```
-
-merges it into `9M2PJU.csv` via `scripts/merge_repeaterbook.js`, regenerates `index.html`, and commits any changes directly to `main`.
-
-### Manual merge
-
-You can also run the merge locally against a downloaded RepeaterBook CSV:
-
-```bash
-node scripts/merge_repeaterbook.js ~/Downloads/RB_*.csv
-node build.js   # regenerate SEO HTML
-```
-
-The merge script is idempotent — running it twice on the same data produces no changes.
+Repeater frequencies and locations are automatically synced from [RepeaterBook](https://www.repeaterbook.com) on the 1st of each month via a GitHub Actions workflow. The workflow downloads the latest CSV, merges it into `9M2PJU.csv` via `scripts/merge_repeaterbook.js`, regenerates `index.html`, and commits any changes directly to `main`.
 
 ---
 
