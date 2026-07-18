@@ -1,0 +1,96 @@
+name: Update Repeater Data
+
+# Automatically scrapes Malaysian repeater frequencies from RepeaterBook,
+# merges them into 9M2PJU.csv, regenerates the static SEO HTML, and commits
+# any changes to main.
+#
+# Required repository secret:
+#   REPEATERBOOK_EUID — your RepeaterBook numeric user ID (e.g. 104805).
+#     Find it in your RepeaterBook download URL:
+#     https://www.repeaterbook.com/repeaters/downloads/csv/index2.php?euid=<EUID>&func=route
+#
+# Add it via: repo Settings → Secrets and variables → Actions → New repository secret
+
+on:
+  schedule:
+    # 1st of each month at 03:30 UTC (avoid GH Actions queue congestion)
+    - cron: '30 3 1 * *'
+  workflow_dispatch: # Allow manual runs from the Actions tab
+
+permissions:
+  contents: write # Needed to push commits to main
+
+concurrency:
+  group: update-repeaterbook
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download RepeaterBook CSV
+        env:
+          REPEATERBOOK_EUID: ${{ secrets.REPEATERBOOK_EUID }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${REPEATERBOOK_EUID}" ]; then
+            echo "::error::REPEATERBOOK_EUID secret is not set. Add it in repo Settings → Secrets → Actions."
+            exit 1
+          fi
+
+          URL="https://www.repeaterbook.com/repeaters/downloads/csv/index2.php?euid=${REPEATERBOOK_EUID}&func=route"
+          echo "Downloading from RepeaterBook..."
+          curl --fail --location --retry 3 --retry-delay 5 \
+            --user-agent "Mozilla/5.0 (compatible; 9M2PJU-FrequencyBot/1.0; +https://frequency.hamradio.my)" \
+            --connect-timeout 30 \
+            --max-time 120 \
+            -o repeaterbook.csv \
+            "$URL"
+
+          # Validate the download looks like a CSV, not an HTML error page
+          if ! head -1 repeaterbook.csv | grep -q "Output Freq"; then
+            echo "::error::Downloaded file does not look like a RepeaterBook CSV."
+            echo "::error::First line was:"
+            head -1 repeaterbook.csv | head -c 500
+            exit 1
+          fi
+
+          ROWS=$(($(wc -l < repeaterbook.csv) - 1))
+          echo "Downloaded ${ROWS} repeater entries."
+
+      - name: Merge into 9M2PJU.csv
+        run: node scripts/merge_repeaterbook.js repeaterbook.csv
+
+      - name: Rebuild static SEO HTML
+        run: node build.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected — repeater data is already up to date."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected:"
+            git diff --cached --stat
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: Update repeater data from RepeaterBook" \
+                    -m "Scraped and merged repeater frequencies/locations from RepeaterBook into 9M2PJU.csv and regenerated static SEO HTML."
+          git push

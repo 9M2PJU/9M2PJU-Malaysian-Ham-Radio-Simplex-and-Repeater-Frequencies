@@ -1,0 +1,10 @@
+# GitHub Sponsors / "Sponsor this project" button configuration.
+# See: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+buy_me_a_coffee: 9m2pju
+
+custom:
+  # Wise — send money internationally with low fees
+  - https://wise.com/pay/me/faizulz13
+  # DuitNow QR (Malaysia) — scan with any local banking app or TNG eWallet
+  - https://callsign.hamradio.my/qr.png

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malaysian Amateur Radio Bands Guide — VHF, UHF, HF | 9M2PJU</title>
+  <meta name="description"
+    content="Complete guide to amateur radio bands in Malaysia. VHF (144-148 MHz), UHF (430-440 MHz), HF allocations, repeater offsets, CTCSS tones, and band plans for Malaysian ham radio operators." />
+  <meta name="keywords"
+    content="Malaysia amateur radio bands, VHF Malaysia, UHF Malaysia, ham radio band plan Malaysia, 144 MHz, 430 MHz, repeater offset, amateur radio frequencies Malaysia, Malaysian band plan" />
+  <meta name="author" content="9M2PJU" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://frequency.hamradio.my/bands-guide.html" />
+  <link rel="icon" href="my_flag_round.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192x192.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://frequency.hamradio.my/bands-guide.html" />
+  <meta property="og:title" content="Malaysian Amateur Radio Bands Guide — VHF, UHF, HF" />
+  <meta property="og:description"
+    content="Complete guide to amateur radio bands in Malaysia. VHF, UHF, HF allocations, repeater offsets, and band plans." />
+  <meta property="og:image" content="https://frequency.hamradio.my/my_flag_round.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Malaysian Amateur Radio Bands Guide — VHF, UHF, HF" />
+  <meta name="twitter:description"
+    content="Complete guide to amateur radio bands in Malaysia. VHF, UHF, HF allocations, repeater offsets, and band plans." />
+
+  <meta name="geo.region" content="MY" />
+  <meta name="geo.placename" content="Malaysia" />
+  <meta name="geo.position" content="3.1390;101.6869" />
+  <meta name="ICBM" content="3.1390, 101.6869" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      background-color: #020617;
+      background-image:
+        radial-gradient(ellipse at top, rgba(37, 99, 235, 0.12), transparent 55%),
+        radial-gradient(ellipse at bottom right, rgba(99, 102, 241, 0.08), transparent 50%);
+      background-attachment: fixed;
+    }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    *:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .prose-content h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose-content h3 { color: #93c5fd; font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .prose-content p { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-content ul { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+    .prose-content li { margin-bottom: 0.5rem; }
+    .prose-content a { color: #60a5fa; text-decoration: underline; }
+    .prose-content a:hover { color: #93c5fd; }
+    .prose-content strong { color: #e2e8f0; }
+    .prose-content code { font-family: 'JetBrains Mono', monospace; background: rgba(37,99,235,0.15); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; color: #93c5fd; }
+    .prose-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    .prose-content th { background: rgba(15,23,42,0.8); color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .prose-content td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; }
+    .prose-content td:first-child { font-family: 'JetBrains Mono', monospace; color: #93c5fd; }
+    .breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.875rem; color: #64748b; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: #60a5fa; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .breadcrumb span.sep { color: #334155; }
+    .band-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; background: rgba(15,23,42,0.6); }
+    .band-card h3 { margin-top: 0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Malaysian Amateur Radio Bands Guide — VHF, UHF, HF",
+    "description": "Complete guide to amateur radio bands in Malaysia including VHF, UHF, HF allocations, repeater offsets, and band plans.",
+    "url": "https://frequency.hamradio.my/bands-guide.html",
+    "author": { "@type": "Person", "name": "9M2PJU", "url": "https://hamradio.my" },
+    "publisher": { "@type": "Organization", "name": "Malaysian Amateur Radio Frequency Database", "url": "https://frequency.hamradio.my/" },
+    "datePublished": "2024-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": "https://frequency.hamradio.my/bands-guide.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frequency.hamradio.my/" },
+      { "@type": "ListItem", "position": 2, "name": "Bands Guide", "item": "https://frequency.hamradio.my/bands-guide.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-sans antialiased text-slate-100 min-h-screen flex flex-col">
+
+  <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="index.html" class="flex items-center gap-3 min-w-0">
+          <img src="my_flag_round.svg" alt="Malaysia Flag" class="w-9 h-9 rounded-full shadow-lg shrink-0" />
+          <div class="hidden sm:block min-w-0">
+            <div class="font-bold text-white truncate tracking-tight">MY-HamFreq</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider truncate">Amateur Radio Database</div>
+          </div>
+        </a>
+        <nav class="flex items-center gap-1 sm:gap-2 text-sm">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">Frequencies</a>
+          <a href="faq.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+          <a href="chirp-guide.html" class="hidden sm:block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">CHIRP Guide</a>
+          <a href="about.html" class="hidden sm:block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Bands Guide</span>
+    </nav>
+
+    <article class="prose-content">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        Malaysian Amateur Radio Bands Guide
+      </h1>
+      <p class="text-slate-400 text-lg mb-8">
+        Complete guide to amateur radio frequency bands available in Malaysia.
+        Covers VHF, UHF, and HF allocations, repeater offsets, band plans, and
+        operating conventions.
+      </p>
+
+      <h2>Overview of Malaysian Amateur Radio Bands</h2>
+      <p>
+        Malaysian amateur radio operators, licensed by the
+        <strong>Malaysian Communications and Multimedia Commission (MCMC)</strong>,
+        have access to several frequency bands across the HF, VHF, and UHF spectrum.
+        The most commonly used bands for local communication are the
+        <strong>2-meter VHF band (144–148 MHz)</strong> and the
+        <strong>70-centimeter UHF band (430–440 MHz)</strong>. These bands support
+        simplex operation, repeater operation, digital modes like DMR, and packet
+        radio including APRS.
+      </p>
+
+      <div class="band-card">
+        <h3>VHF Band — 2 Meters (144–148 MHz)</h3>
+        <p>
+          The <strong>2-meter band</strong> is the most popular amateur radio band in
+          Malaysia for local and regional voice communication. It supports simplex
+          (direct radio-to-radio) and repeater operation.
+        </p>
+        <table>
+          <thead>
+            <tr><th>Segment</th><th>Frequency Range</th><th>Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>144.000–144.100</td><td>144.000–144.100 MHz</td><td>CW (Morse Code)</td></tr>
+            <tr><td>144.100–144.400</td><td>144.100–144.400 MHz</td><td>SSB / Digital modes</td></tr>
+            <tr><td>144.390</td><td>144.390 MHz</td><td>APRS (Automatic Packet Reporting System)</td></tr>
+            <tr><td>144.400–145.800</td><td>144.400–145.800 MHz</td><td>FM simplex & repeater inputs</td></tr>
+            <tr><td>145.000</td><td>145.000 MHz</td><td>National simplex calling frequency</td></tr>
+            <tr><td>145.200–145.800</td><td>145.200–145.800 MHz</td><td>Repeater outputs (with -0.6 MHz offset)</td></tr>
+            <tr><td>145.800–146.000</td><td>145.800–146.000 MHz</td><td>Satellite / Space communications</td></tr>
+            <tr><td>146.000–147.000</td><td>146.000–147.000 MHz</td><td>FM simplex channels</td></tr>
+            <tr><td>147.000–148.000</td><td>147.000–148.000 MHz</td><td>Repeater outputs & simplex</td></tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Repeater offset:</strong> ±0.6 MHz (600 kHz). Most Malaysian VHF
+          repeaters use a negative offset. For example, a repeater output on 147.980 MHz
+          has an input on 147.380 MHz.
+        </p>
+      </div>
+
+      <div class="band-card">
+        <h3>UHF Band — 70 Centimeters (430–440 MHz)</h3>
+        <p>
+          The <strong>70cm band</strong> is the second most popular band in Malaysia,
+          offering good penetration through buildings and supporting both FM and
+          digital modes like <strong>DMR (Digital Mobile Radio)</strong>.
+        </p>
+        <table>
+          <thead>
+            <tr><th>Segment</th><th>Frequency Range</th><th>Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>430.000–433.000</td><td>430.000–433.000 MHz</td><td>Repeater inputs & digital modes</td></tr>
+            <tr><td>433.000–434.000</td><td>433.000–434.000 MHz</td><td>ATV (Amateur Television) / Digital</td></tr>
+            <tr><td>434.000–438.000</td><td>434.000–438.000 MHz</td><td>Repeater inputs (with -5 MHz offset)</td></tr>
+            <tr><td>438.000–440.000</td><td>438.000–440.000 MHz</td><td>Repeater outputs & simplex</td></tr>
+            <tr><td>439.600</td><td>439.600 MHz</td><td>9M2RKL repeater (Kuala Lumpur)</td></tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Repeater offset:</strong> -5.0 MHz (5 MHz). For example, a repeater
+          output on 439.600 MHz has an input on 434.600 MHz. Several Malaysian UHF
+          repeaters also support <strong>DMR</strong> mode, connected to networks
+          like <strong>Brandmeister</strong>.
+        </p>
+      </div>
+
+      <div class="band-card">
+        <h3>PMR446 (446.000–446.200 MHz) — License-Free</h3>
+        <p>
+          While not technically an amateur radio band, <strong>PMR446</strong> is
+          included in our database because many Malaysian ham radio operators also use
+          PMR446 for license-free personal communication. PMR446 has 16 channels from
+          446.00625 to 446.19375 MHz with 0.5W maximum power. See our
+          <a href="pmr446-guide.html">PMR446 guide</a> for full details.
+        </p>
+      </div>
+
+      <div class="band-card">
+        <h3>HF Bands (Shortwave)</h3>
+        <p>
+          Malaysian amateur radio operators with full licenses also have access to
+          HF (High Frequency) bands for long-distance (DX) communication. HF signals
+          bounce off the ionosphere, enabling worldwide communication.
+        </p>
+        <table>
+          <thead>
+            <tr><th>Band</th><th>Frequency Range</th><th>Common Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>80 meters</td><td>3.500–3.900 MHz</td><td>Nighttime regional NVIS</td></tr>
+            <tr><td>40 meters</td><td>7.000–7.200 MHz</td><td>Day/night medium distance</td></tr>
+            <tr><td>20 meters</td><td>14.000–14.350 MHz</td><td>Daytime DX (most popular HF band)</td></tr>
+            <tr><td>15 meters</td><td>21.000–21.450 MHz</td><td>Daytime DX during high sunspot</td></tr>
+            <tr><td>10 meters</td><td>28.000–29.700 MHz</td><td>Daytime DX, FM repeaters</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Repeater Operation in Malaysia</h2>
+      <p>
+        <strong>Repeaters</strong> are automated relay stations that receive on one
+        frequency and retransmit on another, extending the communication range of
+        mobile and handheld radios. Malaysia has an extensive network of repeaters
+        covering all states, typically located on mountain tops and high buildings.
+      </p>
+
+      <h3>How to Use a Repeater</h3>
+      <ul>
+        <li>Program the repeater's <strong>output frequency</strong> into your radio</li>
+        <li>Set the correct <strong>offset</strong> (0.6 MHz for VHF, 5.0 MHz for UHF)</li>
+        <li>Set the correct <strong>CTCSS tone</strong> (e.g., 88.5 Hz, 203.5 Hz)</li>
+        <li>Press PTT to transmit — your radio shifts to the input frequency automatically</li>
+        <li>Listen for the repeater's beep (courtesy tone) before responding</li>
+        <li>Pause between transmissions to allow others to break in</li>
+      </ul>
+
+      <h3>Major Malaysian Repeater Sites</h3>
+      <table>
+        <thead>
+          <tr><th>Site</th><th>State</th><th>Notable Repeaters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bukit Lanjan</td><td>Selangor / KL</td><td>9M2RKL, 9M2RKK, 9M2RKL-DMR</td></tr>
+          <tr><td>Gunung Ulu Kali</td><td>Pahang</td><td>9M2RUK, 9M4RLG, 9M4RBC, 9M4RES</td></tr>
+          <tr><td>Bukit Brinchang</td><td>Pahang</td><td>9M4RCH, 9M4RCA, 9M4RGB</td></tr>
+          <tr><td>Bukit Bendera</td><td>Penang</td><td>9M2RBB, 9M4RBB, 9M4RPH</td></tr>
+          <tr><td>Gunung Ledang</td><td>Johor / Melaka</td><td>9M4RLM, 9M2RGL, 9M4RGL</td></tr>
+          <tr><td>Gunung Jerai</td><td>Kedah</td><td>9M4RJR, 9M4RLJ, 9M4RGJ</td></tr>
+          <tr><td>Gunung Kinabalu</td><td>Sabah</td><td>9M4RLB, 9M4RSB</td></tr>
+          <tr><td>Bukit Larut</td><td>Perak</td><td>9M4RLT, 9M4RBL</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Digital Modes in Malaysia</h2>
+      <h3>DMR (Digital Mobile Radio)</h3>
+      <p>
+        Several Malaysian repeaters support <strong>DMR</strong> digital mode, including
+        9M2RKL-DMR (Kuala Lumpur), 9M4RXC-DMR (Penang), and 9M2RBB-DMR (Penang). These
+        repeaters are connected to the <strong>Brandmeister Network</strong>, enabling
+        worldwide digital voice communication through Talk Groups.
+      </p>
+
+      <h3>APRS (Automatic Packet Reporting System)</h3>
+      <p>
+        <strong>APRS</strong> operates on <strong>144.390 MHz</strong> in Malaysia.
+        It's used for real-time position reporting, weather station data, and short
+        text messages. APRS digipeaters and iGates relay packets across the network.
+      </p>
+
+      <h3>ASTRA Transnasional Linking</h3>
+      <p>
+        Several Malaysian repeaters are part of the <strong>ASTRA Transnasional</strong>
+        linking network, which connects repeaters across different states via the
+        internet or RF links, allowing operators to communicate over very long
+        distances through the linked system.
+      </p>
+
+      <h2>CTCSS and DCS Tones</h2>
+      <p>
+        Malaysian repeaters use <strong>CTCSS (Continuous Tone-Coded Squelch System)</strong>
+        or <strong>DCS (Digital-Coded Squelch)</strong> tones to control access. You
+        must program the correct tone to activate a repeater. Common CTCSS tones used
+        in Malaysia:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Tone (Hz)</th><th>Common Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>67.0</td><td>9M4RGT (Tumpat, Kelantan)</td></tr>
+          <tr><td>85.4</td><td>9M4RBD, 9M4RAC, 9M4RUB</td></tr>
+          <tr><td>88.5</td><td>Simplex channels, many repeaters</td></tr>
+          <tr><td>103.5</td><td>9M4RGH, 9M4RPS, many Perak repeaters</td></tr>
+          <tr><td>118.8</td><td>9M4RCA, 9M4RCZ, 9M4RCD (Pahang)</td></tr>
+          <tr><td>127.3</td><td>9M4RML, 9M4RPL, 9M4RJM (Melaka/Johor)</td></tr>
+          <tr><td>203.5</td><td>9M2RKL, 9M2RKK, many repeaters</td></tr>
+          <tr><td>233.6</td><td>9M4RZS, 9M4RNS</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Licensing in Malaysia</h2>
+      <p>
+        To transmit on amateur radio bands in Malaysia, you need:
+      </p>
+      <ul>
+        <li><strong>Radio Amateurs Examination (RAE)</strong> — pass the written exam</li>
+        <li><strong>Amateur Radio Operating Certificate (AROC)</strong> — issued by MCMC</li>
+        <li><strong>Station License</strong> — annual fee, issued by MCMC</li>
+        <li><strong>Callsign</strong> — 9M2 (full) or 9W2 (intermediate) prefix</li>
+      </ul>
+      <p>
+        For more details, see our <a href="faq.html">FAQ page</a> or visit the
+        <strong>MARTS</strong> (Malaysian Amateur Radio Transmitters' Society) website.
+        For license-free communication, see our <a href="pmr446-guide.html">PMR446 guide</a>.
+      </p>
+
+      <div class="mt-12 p-6 glass rounded-xl border border-white/10 text-center">
+        <h2>Explore the Database</h2>
+        <div class="flex flex-wrap gap-3 justify-center mt-4">
+          <a href="index.html" class="px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors">Browse All Frequencies</a>
+          <a href="chirp-guide.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">CHIRP Guide</a>
+          <a href="pmr446-guide.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">PMR446 Guide</a>
+          <a href="faq.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">FAQ</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950/50 py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-slate-500">
+      <p>&copy; <span id="year"></span> Malaysian Amateur Radio Frequency Database.</p>
+      <p class="mt-1">
+        Made for Malaysia by
+        <a href="https://hamradio.my" class="text-primary-400 hover:text-primary-300 transition-colors">9M2PJU</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

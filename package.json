@@ -3,7 +3,9 @@
   "version": "2.1.0",
   "description": "Malaysian Amateur Radio Frequency Database - a searchable PWA of simplex, repeater, and PMR frequencies.",
   "scripts": {
-    "build": "tailwindcss -i ./assets/input.css -o ./assets/styles.css --minify",
+    "build": "node build.js && tailwindcss -i ./assets/input.css -o ./assets/styles.css --minify",
+    "build:css": "tailwindcss -i ./assets/input.css -o ./assets/styles.css --minify",
+    "build:seo": "node build.js",
     "watch": "tailwindcss -i ./assets/input.css -o ./assets/styles.css --watch"
   },
   "repository": {

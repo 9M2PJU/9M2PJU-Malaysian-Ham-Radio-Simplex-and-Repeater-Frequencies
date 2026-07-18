@@ -9,32 +9,32 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 8,9M2RUK,146.9875,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M2RUK near GUNUNG ULU KALI, None OPEN",,,,,3.424,101.787
 9,9M4RLG,147.9,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLG near GUNUNG ULU KALI, None OPEN MARTS Linking",,,,,3.424,101.787
 10,9M4RBC,147.75,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBC near GUNUNG ULU KALI, None OPEN ASTRA Local",,,,,3.424,101.787
-11,9M4RES,147.775,-,0.6,Tone,123,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RES near GUNUNG ULU KALI, None OPEN",,,,,3.424,101.787
+11,9M4RES,147.775,-,0.6,Tone,123.0,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RES near GUNUNG ULU KALI, None OPEN",,,,,3.424,101.787
 12,9M4RGH,145.675,+,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGH near GENTING HIGHLAND, None OPEN ASTRA Transnasional",,,,,3.424,101.795
 13,PHG,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,,,
 14,9M4RCH,146.9875,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RCH near BUKIT BRINCHANG, None OPEN",,,,,4.517,101.383
 15,9M4RLS,146.9,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLS near BUKIT SULAI, None OPEN MARTS Linking",,,,,3.550,102.783
 16,9M4RHS,145.6375,-,0.6,Tone,206.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RHS near GUNUNG ULU KALI, None OPEN",,,,,3.424,101.787
 17,9M4RCA,147,+,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCA near BUKIT BRINCHANG, None OPEN",,,,,4.517,101.383
-18,9M4RCZ,146.85,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCZ near BUKIT BIUS, None OPEN",,,,,4.200,101.850
-19,9M4RCD,147.7,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCD near BUKIT PELINDUNG, None OPEN",,,,,3.827,103.340
+18,9M4RCZ,146.85,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCZ near BUKIT BIUS - KUALA LIPIS, None OPEN",,,,,4.200,101.850
+19,9M4RCD,146.7,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCD near KUANTAN - BUKIT PELINDUNG, None OPEN",,,,,3.827,103.340
 20,9M4RBI,147.8,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBI near BUKIT IBAM, None OPEN",,,,,3.178,102.949
 21,9M4RCC,145.6,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCC near BUKIT FRASER, None OPEN",,,,,3.713,101.736
 22,9M4RCE,146.1,+,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RCE near BUKIT SULAI, None OPEN",,,,,3.550,102.783
 23,9M4RCY,145.7125,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RCY near TEMERLOH, None OPEN",,,,,3.450,102.417
 24,9M4RGB,147.925,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGB near GUNUNG BERINCANG, None OPEN",,,,,4.517,101.383
-25,9M4RPS,434.875,+,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPS near Bentong, None OPEN",,,,,3.522,101.913
-26,9M4RAA,147.6375,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RAA near Bukit Telemung, Karak, Pahang, None Open",,,,,3.450,101.850
+25,9M4RPS,434.875,+,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPS near Bentong - Kayangan Hill, None OPEN",,,,,3.522,101.913
+26,9M4RAA,147.6375,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RAA near Bukit Telemung, Karak, Pahang, None OPEN",,,,,3.450,101.850
 27,N9,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,,,
 28,9M4RTB,146.675,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RTB near GUNUNG TELAPAK BURUK, None OPEN",,,,,2.839,102.071
 29,9M4RNS,145.375,-,0.6,Tone,233.6,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RNS near GUNUNG TELAPAK BURUK, None OPEN",,,,,2.839,102.071
 30,PENANG,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,5.424,100.269,
-31,9M4RXC,439.475,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXC near Bandar Baharu, None OPEN",,,,,5.141,100.480
+31,9M4RXC,439.475,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RXC near Bandar Baharu - Bukit Panchor, None OPEN",,,,,5.141,100.480
 32,9M4RXC-DMR,439.475,-,5,,88.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RXC near Bandar Baharu, None OPEN",,,,,5.141,100.480
 33,9M2RBB,147.95,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RBB near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
 34,9M2RBB-DMR,147.95,-,0.6,,203.5,203.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M2RBB near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
-35,9M4RBB,145.7375,-,0.65,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBB near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
-36,9M4RPH,147.825,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPH near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
+35,9M4RBB,145.7375,-,0.65,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBB near Penang Hill, None OPEN",,,,,5.424,100.269
+36,9M4RPH,147.825,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPH near Penang Hill, None OPEN",,,,,5.424,100.269
 37,9M4RMM,439.5,-,5,TSQL,203.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,,,,,,5.424,100.269
 38,9M4RMM-DMR,439.5,-,5,,203.5,203.5,23,NN,23,Tone->Tone,DMR,5,,50W,,,,,,5.424,100.269
 39,9M4RPP,439.525,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPP near BUKIT BENDERA, None OPEN",,,,,5.424,100.269
@@ -42,8 +42,8 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 41,9M4RML,439.44,-,5,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RML near BUKIT BERUANG, None OPEN",,,,,2.248,102.276
 42,9M4RLM,147.6,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLM near GUNUNG LEDANG, None OPEN",,,,,2.373,102.608
 43,9M2RGL,145.6,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RGL near GUNUNG LEDANG, None OPEN",,,,,2.373,102.608
-44,9M4RHE,146.8,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RHE near MELAKA, None OPEN",,,,,2.200,102.250
-45,9M4RMU,439.825,-,5,TSQL,88.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RMU near MELAKA, None OPEN",,,,,2.200,102.250
+44,9M4RHE,146.8,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RHE near MELAKA - EQUATORIAL HOTEL, None OPEN",,,,,2.200,102.250
+45,9M4RMU,439.825,-,5,TSQL,203.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RMU near MELAKA - EQUATORIAL HOTEL, None OPEN",,,,,2.200,102.250
 46,9M4RGL,147.9875,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RGL near GUNUNG LEDANG, None OPEN ASTRA Transnasional",,,,,2.373,102.608
 47,JHR,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,1.493,103.741,
 48,9M4RMR,146.925,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RMR near MUAR, None OPEN",,,,,2.044,102.569
@@ -55,27 +55,27 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 54,9M4RJN,145.7,-,0.6,Tone,127.3,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJN near GUNUNG BANANG, None OPEN",,,,,1.833,103.000
 55,9M4RAM,147.8625,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RAM near BUKIT SELANTAI, None OPEN ASTRA Transnasional",,,,,2.100,103.200
 56,KDH,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,6.120,100.370,
-57,9M4RXA,439.675,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXA near Sedim, None OPEN",,,,,5.467,100.517
+57,9M4RXA,439.675,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXA near Sedim - Gunung Bintang, None OPEN",,,,,5.467,100.517
 58,9M4RJR-C4FM,147.7,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RJR-C4FM near GUNUNG JERAI, None OPEN",,,,,5.797,100.435
-59,9M4RKG,147.8625,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RKG near GUNUNG KERIANG, None OPEN",,,,,6.150,100.383
+59,9M4RKG,145.525,-,0.6,Tone,100.0,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RKG near GUNUNG KERIANG, None OPEN",,,,,6.150,100.383
 60,9M4RBD,146.625,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBD near BUKIT DEDAP, None OPEN",,,,,5.700,100.400
 61,9M4RLJ,147.6125,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RLJ near GUNUNG JERAI, None OPEN",,,,,5.797,100.435
 62,9M4RGJ,147.675,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGJ near GUNUNG JERAI, None OPEN",,,,,5.797,100.435
 63,9M4RGR,145.6125,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RGR near GUNUNG RAYA, None OPEN ASTRA Transnasional",,,,,6.383,99.817
 64,9M4RJR,145.6625,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RJR near GUNUNG JERAI, None OPEN",,,,,5.797,100.435
 65,PRK,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,4.597,101.090,
-66,9M4RAG,147.8,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,,,,,,4.597,101.090
-67,9M4RXB,439.575,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXB near Taiping, None OPEN",,,,,4.862,100.793
+66,9M4RAG,147.8,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RAG near Grik, Perak, None OPEN",,,,,4.597,101.090
+67,9M4RXB,439.575,-,5,TSQL,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RXB near Taiping - Bukit Larut, None OPEN",,,,,4.862,100.793
 68,9M4RVB,146.8125,-,0.5,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RVB near LEBUHRAYA TIMUR BARAT, None OPEN",,,,,4.300,101.200
 69,9M4RSP,146.8125,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RSP near LENGGONG, None OPEN",,,,,5.100,100.967
 70,9M4RTH,147.8625,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RTH near TAPAH, None OPEN",,,,,4.198,101.262
 71,9M4RBK,147.6125,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBK near BUKIT KLEDANG, None OPEN",,,,,4.568,101.026
 72,9M4RUB,144.725,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RUB near SETIAWAN, None OPEN",,,,,4.217,100.717
-73,9M4RLT,146.6125,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RLT near BUKIT LARUT, None OPEN",,,,,4.862,100.793
-74,9M4RLT-L,146.85,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLT-L near BUKIT LARUT, None OPEN",,,,,4.862,100.793
+73,9M4RLT,146.6125,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RLT near BUKIT LARUT - BUKIT LARUT, None OPEN",,,,,4.862,100.793
+74,9M4RLT-L,146.85,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLT-L near BUKIT LARUT - BUKIT LARUT, None OPEN",,,,,4.862,100.793
 75,9M4RSK,146.9875,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RSK near SUNGAI KEJAR, ROYAL BELUM, PERAK, None OPEN",,,,,5.533,101.333
 76,9M4RRB,147.9125,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RRB near PANDANGAN INDAH, None OPEN",,,,,4.400,101.100
-77,9M4RTS,146.9375,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RTS near BUKIT SULAI, None OPEN",,,,,3.550,102.783
+77,9M4RTS,146.825,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RTS near BUKIT SULAI, None OPEN",,,,,3.550,102.783
 78,9M4RPI,147.9875,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RPI near PANDANGAN INDAH, None OPEN ASTRA Transnasional",,,,,4.400,101.100
 79,9M4RBL,147.925,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBL near BUKIT LARUT, None OPEN ASTRA Transnasional",,,,,4.862,100.793
 80,9M2RGP-L,145.725,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RGP-L near GUNUNG PULAI, None OPEN",,,,,1.595,103.541
@@ -85,16 +85,16 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 84,9M4RIC,439.7875,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RIC near BUKIT KLEDANG, None OPEN",,,,,4.568,101.026
 85,PRS,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,6.443,100.199,
 86,9M2RMK,147.98,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M2RMK near KANGAR, None OPEN",,,,,6.443,100.199
-87,9M4RHP,147.8,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,,,,,,6.500,100.183
+87,9M4RHP,147.8,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RHP near Bukit Tunjung, Beseri, Perlis, None OPEN",,,,,6.500,100.183
 88,TGN,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,5.312,103.132,
-89,9M4RBJ,147.8,-,0.6,Tone,123,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBJ near Marang, None OPEN",,,,,5.209,103.206
+89,9M4RBJ,147.8,-,0.6,Tone,123.0,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBJ near Marang, None OPEN",,,,,5.209,103.206
 90,9M4RAC,146.675,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RAC near Besut, None OPEN",,,,,5.833,102.550
-91,9M4RBF,145.7875,-,0.6,Tone,123,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBF near Kijal, None OPEN",,,,,4.467,103.433
+91,9M4RBF,145.7875,-,0.6,Tone,123.0,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBF near Kijal - Bukit Kemuning, None OPEN",,,,,4.467,103.433
 92,9M4RST,147.7375,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RST near GUNUNG TEBU, None OPEN ASTRA Transnasional",,,,,5.567,102.567
 93,9M4RAS,145.925,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RAS near BUKIT GELIGA, None OPEN ASTRA Transnasional",,,,,5.200,103.100
 94,KLT,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,6.133,102.238,
 95,9M4RVA,145.675,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RVA near Kota Bharu, None OPEN",,,,,6.133,102.238
-96,9M4RGT,147.65,-,0.6,Tone,67,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGT near Tumpat, None OPEN",,,,,6.200,102.150
+96,9M4RGT,147.65,-,0.6,Tone,67.0,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGT near Tumpat, None OPEN",,,,,6.200,102.150
 97,9M4RDD,146.6375,-,0.6,Tone,186.2,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RDD near Pasir Mas, None OPEN",,,,,6.050,102.133
 98,9M4RBP,146.7,-,0.6,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBP near Tanah Merah, None OPEN",,,,,5.808,102.150
 99,9M4RTM,146.85,-,0.6,Tone,167.9,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RTM near Tanah Merah, None OPEN",,,,,5.808,102.150
@@ -103,88 +103,105 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 102,9M4RDF,146.8125,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RDF near GUA MUSANG, None OPEN ASTRA Transnasional",,,,,4.883,101.967
 103,SBH,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,5.980,116.075,
 104,9M4RBZ,145.0875,+,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBZ near Sipitang, Sabah, None OPEN",,,,,5.083,115.567
-105,9M4CTR,147.65,-,0.6,Tone,67,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4CTR near TUARAN, None OPEN",,,,,6.183,116.233
+105,9M4CTR,147.65,-,0.6,Tone,67.0,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4CTR near TUARAN, None OPEN",,,,,6.183,116.233
 106,9M4RSW,145.7125,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RSW near KOTA KINABALU, None OPEN",,,,,5.980,116.075
 107,9M4RLX,144.225,+,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLX near KOTA MARUDU, None OPEN",,,,,6.483,116.767
 108,9M4RBW,146.3125,+,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RBW near BUKIT ANDRASY, None OPEN",,,,,5.850,118.067
 109,9M4RTY,147.2375,+,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RTY near TRIG HILL, SANDAKAN, None OPEN",,,,,5.840,118.117
 110,9M4RLB,147.75,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RLB near GUNUNG KINABALU, None OPEN",,,,,6.095,116.559
-111,9M4RSB,439.15,-,5,TSQL,88.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RSB near Kota Kinabalu, None OPEN MARTS Repeater Linking Network",,,,,5.980,116.075
+111,9M4RSB,439.15,-,5,TSQL,203.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RSB near Kota Kinabalu - Bukit Lawa Mandau, None OPEN MARTS Repeater Linking Network",,,,,5.980,116.075
 112,9M4BHR,147.85,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4BHR near BORNEO HIGHLANDS, None OPEN",,,,,1.367,110.133
-113,9M4RGK,439.85,-,5,TSQL,88.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGK near Ranau, None OPEN MARTS Repeater Linking Network",,,,,5.983,116.667
+113,9M4RGK,439.85,-,5,TSQL,203.5,203.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGK near Ranau - Gunung Kinabalu, None OPEN MARTS Repeater Linking Network",,,,,5.983,116.667
 114,SRK,145,,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,10,,50W,,,,,1.553,110.359,
 115,9M4RHW,147.1,+,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RHW near THE GRAND OLD LADY, MIRI, None OPEN",,,,,4.400,113.983
 116,9M4RTL,147.95,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RTL near TG LOBANG, MIRI, None OPEN",,,,,4.383,113.967
 117,9M4RGA,147.8,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RGA near GUNUNG AMPUNGAN, SERIAN, None OPEN",,,,,1.167,110.567
-118,9M4REW,439.85,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4REW near KUCHING, None OPEN",,,,,1.553,110.359
-119,V CHANNEL,145.5,,,,,,,,,,FM,5,,50W,,,,,,,
-120,V16,145.2,,,,,,,,,,FM,5,,50W,,,,,,,
-121,V17,145.2125,,,,,,,,,,FM,5,,50W,,,,,,,
-122,V18,145.225,,,,,,,,,,FM,5,,50W,,,,,,,
-123,V19,145.2375,,,,,,,,,,FM,5,,50W,,,,,,,
-124,V20,145.25,,,,,,,,,,FM,5,,50W,,,,,,,
-125,V21,145.2625,,,,,,,,,,FM,5,,50W,,,,,,,
-126,V22,145.275,,,,,,,,,,FM,5,,50W,,,,,,,
-127,V23,145.2875,,,,,,,,,,FM,5,,50W,,,,,,,
-128,V24,145.3,,,,,,,,,,FM,5,,50W,,,,,,,
-129,V25,145.3125,,,,,,,,,,FM,5,,50W,,,,,,,
-130,V26,145.325,,,,,,,,,,FM,5,,50W,,,,,,,
-131,V27,145.3375,,,,,,,,,,FM,5,,50W,,,,,,,
-132,V28,145.35,,,,,,,,,,FM,5,,50W,,,,,,,
-133,V29,145.3625,,,,,,,,,,FM,5,,50W,,,,,,,
-134,V30,145.375,,,,,,,,,,FM,5,,50W,,,,,,,
-135,V31,145.3875,,,,,,,,,,FM,5,,50W,,,,,,,
-136,V32,145.4,,,,,,,,,,FM,5,,50W,,,,,,,
-137,V33,145.4125,,,,,,,,,,FM,5,,50W,,,,,,,
-138,V34,145.425,,,,,,,,,,FM,5,,50W,,,,,,,
-139,V35,145.4375,,,,,,,,,,FM,5,,50W,,,,,,,
-140,V36,145.45,,,,,,,,,,FM,5,,50W,,,,,,,
-141,V37,145.4625,,,,,,,,,,FM,5,,50W,,,,,,,
-142,V38,145.475,,,,,,,,,,FM,5,,50W,,,,,,,
-143,V39,145.4875,,,,,,,,,,FM,5,,50W,,,,,,,
-144,V40,145.5,,,,,,,,,,FM,5,,50W,,,,,,,
-145,V41,145.5125,,,,,,,,,,FM,5,,50W,,,,,,,
-146,V42,145.525,,,,,,,,,,FM,5,,50W,,,,,,,
-147,V43,145.5375,,,,,,,,,,FM,5,,50W,,,,,,,
-148,V44,145.55,,,,,,,,,,FM,5,,50W,,,,,,,
-149,V45,145.5625,,,,,,,,,,FM,5,,50W,,,,,,,
-150,V46,145.575,,,,,,,,,,FM,5,,50W,,,,,,,
-151,V47,145.5875,,,,,,,,,,FM,5,,50W,,,,,,,
-152,V48,146.4,,,,,,,,,,FM,5,,50W,,,,,,,
-153,V49,146.4125,,,,,,,,,,FM,5,,50W,,,,,,,
-154,V50,146.425,,,,,,,,,,FM,5,,50W,,,,,,,
-155,V51,146.4375,,,,,,,,,,FM,5,,50W,,,,,,,
-156,V52,146.45,,,,,,,,,,FM,5,,50W,,,,,,,
-157,V53,146.4625,,,,,,,,,,FM,5,,50W,,,,,,,
-158,V54,146.475,,,,,,,,,,FM,5,,50W,,,,,,,
-159,V55,146.4875,,,,,,,,,,FM,5,,50W,,,,,,,
-160,V56,146.5,,,,,,,,,,FM,5,,50W,,,,,,,
-161,V57,146.5125,,,,,,,,,,FM,5,,50W,,,,,,,
-162,V58,146.525,,,,,,,,,,FM,5,,50W,,,,,,,
-163,V59,146.5375,,,,,,,,,,FM,5,,50W,,,,,,,
-164,V60,146.55,,,,,,,,,,FM,5,,50W,,,,,,,
-165,V61,146.5625,,,,,,,,,,FM,5,,50W,,,,,,,
-166,V62,146.575,,,,,,,,,,FM,5,,50W,,,,,,,
-167,V63,146.5875,,,,,,,,,,FM,5,,50W,,,,,,,
-168,V64,147.435,,,,,,,,,,FM,5,,50W,,,,,,,
-169,V65,147.465,,,,,,,,,,FM,5,,50W,,,,,,,
-170,V66,147.495,,,,,,,,,,FM,5,,50W,,,,,,,
-171,V67,147.525,,,,,,,,,,FM,5,,50W,,,,,,,
-172,V68,147.555,,,,,,,,,,FM,5,,50W,,,,,,,
-173,V69,147.585,,,,,,,,,,FM,5,,50W,,,,,,,
-174,PMR CH1,446.00625,,,,,,,,,,FM,5,,5.0W,,,,,,,
-175,PMR CH2,446.01875,,,,,,,,,,FM,5,,5.0W,,,,,,,
-176,PMR CH3,446.03125,,,,,,,,,,FM,5,,5.0W,,,,,,,
-177,PMR CH4,446.04375,,,,,,,,,,FM,5,,5.0W,,,,,,,
-178,PMR CH5,446.05625,,,,,,,,,,FM,5,,5.0W,,,,,,,
-179,PMR CH6,446.06875,,,,,,,,,,FM,5,,5.0W,,,,,,,
-180,PMR CH7,446.08125,,,,,,,,,,FM,5,,5.0W,,,,,,,
-181,PMR CH8,446.09375,,,,,,,,,,FM,5,,5.0W,,,,,,,
-182,PMR CH9,446.10625,,,,,,,,,,FM,5,,5.0W,,,,,,,
-183,PMR CH10,446.11875,,,,,,,,,,FM,5,,5.0W,,,,,,,
-184,PMR CH11,446.13125,,,,,,,,,,FM,5,,5.0W,,,,,,,
-185,PMR CH12,446.14375,,,,,,,,,,FM,5,,5.0W,,,,,,,
-186,PMR CH13,446.15625,,,,,,,,,,FM,5,,5.0W,,,,,,,
-187,PMR CH14,446.16875,,,,,,,,,,FM,5,,5.0W,,,,,,,
-188,PMR CH15,446.18125,,,,,,,,,,FM,5,,5.0W,,,,,,,
-189,PMR CH16,446.19375,,,,,,,,,,FM,5,,5.0W,,,,,,,
+118,9M4REW,439.85,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4REW near KUCHING - GRAND MARGHERITA HOTEL, None OPEN",,,,,1.553,110.359
+119,9M4RPG,145.775,-,0.6,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPG near PENAMPANG, None OPEN",,,,,,
+120,9M4RKR,146.025,+,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RKR near Kuala rompin, None OPEN",,,,,,
+121,9M4RKR-L,146.625,-,0.6,Tone,118.8,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RKR-L near Kuala rompin, None OPEN",,,,,,
+122,9M4RCP,146.6625,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RCP near PAPAR, None OPEN",,,,,,
+123,9M4RKT,146.7125,-,0.6,Tone,88.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RKT near Tawau - Kolej Vokasional Tawau, Sabah, None OPEN",,,,,,
+124,9M4RTD,146.75,-,0.6,Tone,100.0,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RTD near MARANG, None OPEN",,,,,,
+125,9M4RBH,146.875,-,1.85,Tone,85.4,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RBH near Bkt Palong, Baling, Kedah, None OPEN",,,,,,
+126,9M4RKK,146.975,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RKK near TUARAN, None OPEN",,,,,,
+127,9M4RCF,147.6125,-,0.6,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4RCF near Bukit Fraser, Pahang, None OPEN",,,,,,
+128,9M4LBP,147.7375,-,0.7,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,12.5,,50W,"9M4LBP near Bkt Tebuan, B Bharu, Kedah, None OPEN",,,,,,
+129,9M4RPH-DMR,147.95,-,0.6,Tone,203.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RPH-DMR near Penang Hill, None OPEN",,,,,,
+130,9M4RWR,434.925,+,5,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RWR near Raub - Benom Mountain, None OPEN",,,,,,
+131,9M4RDM,434.975,+,5,,88.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RDM near Kuantan - Teruntum Complex, None OPEN",,,,,,
+132,9M4RZA,439.275,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RZA near Gunung Jerai, None OPEN",,,,,,
+133,9M4RSE,439.725,-,5,Tone,203.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RSE near Segamat - Bandar Segamat, None OPEN",,,,,,
+134,9M4RPJ,439.75,-,5,Tone,103.5,88.5,23,NN,23,Tone->Tone,FM,5,,50W,"9M4RPJ near Shah Alam - MBSA, None OPEN",,,,,,
+135,9M4RPJ-DMR,439.75,-,5,,88.5,88.5,23,NN,23,Tone->Tone,DMR,5,,50W,"9M4RPJ-DMR near Shah Alam, None OPEN",,,,,,
+136,V CHANNEL,145.5,,,,,,,,,,FM,5,,50W,,,,,,,
+137,V16,145.2,,,,,,,,,,FM,5,,50W,,,,,,,
+138,V17,145.2125,,,,,,,,,,FM,5,,50W,,,,,,,
+139,V18,145.225,,,,,,,,,,FM,5,,50W,,,,,,,
+140,V19,145.2375,,,,,,,,,,FM,5,,50W,,,,,,,
+141,V20,145.25,,,,,,,,,,FM,5,,50W,,,,,,,
+142,V21,145.2625,,,,,,,,,,FM,5,,50W,,,,,,,
+143,V22,145.275,,,,,,,,,,FM,5,,50W,,,,,,,
+144,V23,145.2875,,,,,,,,,,FM,5,,50W,,,,,,,
+145,V24,145.3,,,,,,,,,,FM,5,,50W,,,,,,,
+146,V25,145.3125,,,,,,,,,,FM,5,,50W,,,,,,,
+147,V26,145.325,,,,,,,,,,FM,5,,50W,,,,,,,
+148,V27,145.3375,,,,,,,,,,FM,5,,50W,,,,,,,
+149,V28,145.35,,,,,,,,,,FM,5,,50W,,,,,,,
+150,V29,145.3625,,,,,,,,,,FM,5,,50W,,,,,,,
+151,V30,145.375,,,,,,,,,,FM,5,,50W,,,,,,,
+152,V31,145.3875,,,,,,,,,,FM,5,,50W,,,,,,,
+153,V32,145.4,,,,,,,,,,FM,5,,50W,,,,,,,
+154,V33,145.4125,,,,,,,,,,FM,5,,50W,,,,,,,
+155,V34,145.425,,,,,,,,,,FM,5,,50W,,,,,,,
+156,V35,145.4375,,,,,,,,,,FM,5,,50W,,,,,,,
+157,V36,145.45,,,,,,,,,,FM,5,,50W,,,,,,,
+158,V37,145.4625,,,,,,,,,,FM,5,,50W,,,,,,,
+159,V38,145.475,,,,,,,,,,FM,5,,50W,,,,,,,
+160,V39,145.4875,,,,,,,,,,FM,5,,50W,,,,,,,
+161,V40,145.5,,,,,,,,,,FM,5,,50W,,,,,,,
+162,V41,145.5125,,,,,,,,,,FM,5,,50W,,,,,,,
+163,V42,145.525,,,,,,,,,,FM,5,,50W,,,,,,,
+164,V43,145.5375,,,,,,,,,,FM,5,,50W,,,,,,,
+165,V44,145.55,,,,,,,,,,FM,5,,50W,,,,,,,
+166,V45,145.5625,,,,,,,,,,FM,5,,50W,,,,,,,
+167,V46,145.575,,,,,,,,,,FM,5,,50W,,,,,,,
+168,V47,145.5875,,,,,,,,,,FM,5,,50W,,,,,,,
+169,V48,146.4,,,,,,,,,,FM,5,,50W,,,,,,,
+170,V49,146.4125,,,,,,,,,,FM,5,,50W,,,,,,,
+171,V50,146.425,,,,,,,,,,FM,5,,50W,,,,,,,
+172,V51,146.4375,,,,,,,,,,FM,5,,50W,,,,,,,
+173,V52,146.45,,,,,,,,,,FM,5,,50W,,,,,,,
+174,V53,146.4625,,,,,,,,,,FM,5,,50W,,,,,,,
+175,V54,146.475,,,,,,,,,,FM,5,,50W,,,,,,,
+176,V55,146.4875,,,,,,,,,,FM,5,,50W,,,,,,,
+177,V56,146.5,,,,,,,,,,FM,5,,50W,,,,,,,
+178,V57,146.5125,,,,,,,,,,FM,5,,50W,,,,,,,
+179,V58,146.525,,,,,,,,,,FM,5,,50W,,,,,,,
+180,V59,146.5375,,,,,,,,,,FM,5,,50W,,,,,,,
+181,V60,146.55,,,,,,,,,,FM,5,,50W,,,,,,,
+182,V61,146.5625,,,,,,,,,,FM,5,,50W,,,,,,,
+183,V62,146.575,,,,,,,,,,FM,5,,50W,,,,,,,
+184,V63,146.5875,,,,,,,,,,FM,5,,50W,,,,,,,
+185,V64,147.435,,,,,,,,,,FM,5,,50W,,,,,,,
+186,V65,147.465,,,,,,,,,,FM,5,,50W,,,,,,,
+187,V66,147.495,,,,,,,,,,FM,5,,50W,,,,,,,
+188,V67,147.525,,,,,,,,,,FM,5,,50W,,,,,,,
+189,V68,147.555,,,,,,,,,,FM,5,,50W,,,,,,,
+190,V69,147.585,,,,,,,,,,FM,5,,50W,,,,,,,
+191,PMR CH1,446.00625,,,,,,,,,,FM,5,,5.0W,,,,,,,
+192,PMR CH2,446.01875,,,,,,,,,,FM,5,,5.0W,,,,,,,
+193,PMR CH3,446.03125,,,,,,,,,,FM,5,,5.0W,,,,,,,
+194,PMR CH4,446.04375,,,,,,,,,,FM,5,,5.0W,,,,,,,
+195,PMR CH5,446.05625,,,,,,,,,,FM,5,,5.0W,,,,,,,
+196,PMR CH6,446.06875,,,,,,,,,,FM,5,,5.0W,,,,,,,
+197,PMR CH7,446.08125,,,,,,,,,,FM,5,,5.0W,,,,,,,
+198,PMR CH8,446.09375,,,,,,,,,,FM,5,,5.0W,,,,,,,
+199,PMR CH9,446.10625,,,,,,,,,,FM,5,,5.0W,,,,,,,
+200,PMR CH10,446.11875,,,,,,,,,,FM,5,,5.0W,,,,,,,
+201,PMR CH11,446.13125,,,,,,,,,,FM,5,,5.0W,,,,,,,
+202,PMR CH12,446.14375,,,,,,,,,,FM,5,,5.0W,,,,,,,
+203,PMR CH13,446.15625,,,,,,,,,,FM,5,,5.0W,,,,,,,
+204,PMR CH14,446.16875,,,,,,,,,,FM,5,,5.0W,,,,,,,
+205,PMR CH15,446.18125,,,,,,,,,,FM,5,,5.0W,,,,,,,
+206,PMR CH16,446.19375,,,,,,,,,,FM,5,,5.0W,,,,,,,

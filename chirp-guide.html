@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CHIRP Programming Guide for Malaysian Ham Radio | 9M2PJU</title>
+  <meta name="description"
+    content="Step-by-step guide to programming Malaysian ham radio frequencies into your walkie-talkie using CHIRP software. Covers Baofeng UV-5R, Yaesu, Icom, Kenwood, and Wouxun radios with the 9M2PJU CSV file." />
+  <meta name="keywords"
+    content="CHIRP programming Malaysia, Baofeng UV-5R programming, CHIRP CSV import, program walkie talkie Malaysia, Malaysian ham radio frequencies CHIRP, Baofeng Malaysia, radio programming guide" />
+  <meta name="author" content="9M2PJU" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://frequency.hamradio.my/chirp-guide.html" />
+  <link rel="icon" href="my_flag_round.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192x192.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://frequency.hamradio.my/chirp-guide.html" />
+  <meta property="og:title" content="CHIRP Programming Guide for Malaysian Ham Radio" />
+  <meta property="og:description"
+    content="Step-by-step guide to programming Malaysian ham radio frequencies into your walkie-talkie using CHIRP software." />
+  <meta property="og:image" content="https://frequency.hamradio.my/my_flag_round.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CHIRP Programming Guide for Malaysian Ham Radio" />
+  <meta name="twitter:description"
+    content="Step-by-step guide to programming Malaysian ham radio frequencies into your walkie-talkie using CHIRP software." />
+
+  <meta name="geo.region" content="MY" />
+  <meta name="geo.placename" content="Malaysia" />
+  <meta name="geo.position" content="3.1390;101.6869" />
+  <meta name="ICBM" content="3.1390, 101.6869" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      background-color: #020617;
+      background-image:
+        radial-gradient(ellipse at top, rgba(37, 99, 235, 0.12), transparent 55%),
+        radial-gradient(ellipse at bottom right, rgba(99, 102, 241, 0.08), transparent 50%);
+      background-attachment: fixed;
+    }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    *:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .prose-content h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose-content h3 { color: #93c5fd; font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .prose-content p { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-content ol { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.5rem; list-style: decimal; }
+    .prose-content ul { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+    .prose-content li { margin-bottom: 0.5rem; }
+    .prose-content a { color: #60a5fa; text-decoration: underline; }
+    .prose-content a:hover { color: #93c5fd; }
+    .prose-content strong { color: #e2e8f0; }
+    .prose-content code { font-family: 'JetBrains Mono', monospace; background: rgba(37,99,235,0.15); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; color: #93c5fd; }
+    .prose-content pre { background: rgba(2,6,23,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; overflow-x: auto; margin-bottom: 1rem; }
+    .prose-content pre code { background: none; padding: 0; }
+    .step-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; background: rgba(15,23,42,0.6); }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: rgba(37,99,235,0.2); color: #60a5fa; font-weight: 700; margin-right: 0.75rem; }
+    .breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.875rem; color: #64748b; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: #60a5fa; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .breadcrumb span.sep { color: #334155; }
+    .toc { border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; background: rgba(15,23,42,0.4); }
+    .toc h2 { margin-top: 0; font-size: 1.1rem; }
+    .toc ol { padding-left: 1.5rem; }
+    .toc a { color: #60a5fa; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Program Malaysian Ham Radio Frequencies Using CHIRP",
+    "description": "Step-by-step guide to programming Malaysian amateur radio frequencies into your walkie-talkie using CHIRP software and the 9M2PJU CSV file.",
+    "url": "https://frequency.hamradio.my/chirp-guide.html",
+    "totalTime": "PT15M",
+    "supply": [
+      { "@type": "HowToSupply", "name": "9M2PJU.csv frequency file" },
+      { "@type": "HowToSupply", "name": "CHIRP software" },
+      { "@type": "HowToSupply", "name": "USB programming cable" }
+    ],
+    "tool": [
+      { "@type": "HowToTool", "name": "Computer running Windows, macOS, or Linux" },
+      { "@type": "HowToTool", "name": "Amateur radio or walkie-talkie (Baofeng, Yaesu, Icom, Kenwood, or Wouxun)" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Download CHIRP", "text": "Download CHIRP from chirp.danplanet.com and install it on your computer." },
+      { "@type": "HowToStep", "position": 2, "name": "Download the 9M2PJU CSV file", "text": "Download the 9M2PJU.csv file from frequency.hamradio.my — this contains all Malaysian amateur radio frequencies." },
+      { "@type": "HowToStep", "position": 3, "name": "Connect your radio", "text": "Connect your radio to your computer using a USB programming cable. Power on the radio." },
+      { "@type": "HowToStep", "position": 4, "name": "Open CHIRP and select your radio", "text": "Open CHIRP, go to Radio > Download From Radio, select your cable port and radio model." },
+      { "@type": "HowToStep", "position": 5, "name": "Import the CSV file", "text": "Go to File > Import, select the 9M2PJU.csv file, and choose which channels to import." },
+      { "@type": "HowToStep", "position": 6, "name": "Upload to your radio", "text": "Go to Radio > Upload To Radio to write the frequencies to your device." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frequency.hamradio.my/" },
+      { "@type": "ListItem", "position": 2, "name": "CHIRP Guide", "item": "https://frequency.hamradio.my/chirp-guide.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-sans antialiased text-slate-100 min-h-screen flex flex-col">
+
+  <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="index.html" class="flex items-center gap-3 min-w-0">
+          <img src="my_flag_round.svg" alt="Malaysia Flag" class="w-9 h-9 rounded-full shadow-lg shrink-0" />
+          <div class="hidden sm:block min-w-0">
+            <div class="font-bold text-white truncate tracking-tight">MY-HamFreq</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider truncate">Amateur Radio Database</div>
+          </div>
+        </a>
+        <nav class="flex items-center gap-1 sm:gap-2 text-sm">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">Frequencies</a>
+          <a href="faq.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+          <a href="chirp-guide.html" class="px-3 py-2 rounded-lg text-primary-400 bg-primary-600/10 transition-colors">CHIRP Guide</a>
+          <a href="about.html" class="hidden sm:block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>CHIRP Programming Guide</span>
+    </nav>
+
+    <article class="prose-content">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        CHIRP Programming Guide for Malaysian Ham Radio
+      </h1>
+      <p class="text-slate-400 text-lg mb-8">
+        Learn how to program all Malaysian amateur radio frequencies into your
+        walkie-talkie or mobile radio using CHIRP software and the 9M2PJU CSV file.
+        Works with Baofeng, Yaesu, Icom, Kenwood, and Wouxun radios.
+      </p>
+
+      <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#what-is-chirp">What is CHIRP?</a></li>
+          <li><a href="#prerequisites">Prerequisites</a></li>
+          <li><a href="#step-1">Step 1: Download and Install CHIRP</a></li>
+          <li><a href="#step-2">Step 2: Download the 9M2PJU CSV File</a></li>
+          <li><a href="#step-3">Step 3: Connect Your Radio</a></li>
+          <li><a href="#step-4">Step 4: Read From Your Radio</a></li>
+          <li><a href="#step-5">Step 5: Import the CSV File</a></li>
+          <li><a href="#step-6">Step 6: Upload to Your Radio</a></li>
+          <li><a href="#troubleshooting">Troubleshooting Common Issues</a></li>
+          <li><a href="#supported-radios">Supported Radios</a></li>
+        </ol>
+      </div>
+
+      <h2 id="what-is-chirp">What is CHIRP?</h2>
+      <p>
+        <strong>CHIRP</strong> is a free, open-source radio programming tool that supports
+        over 100 different amateur radio models from manufacturers like Baofeng, Yaesu,
+        Icom, Kenwood, and Wouxun. Instead of manually entering frequencies one by one
+        using your radio's keypad, CHIRP lets you program all channels at once via a
+        spreadsheet-like interface. It's the standard tool used by amateur radio
+        operators worldwide.
+      </p>
+      <p>
+        The <strong>9M2PJU CSV file</strong> is pre-formatted to be directly compatible
+        with CHIRP, containing all the fields CHIRP expects: frequency, offset, duplex
+        direction, CTCSS/DCS tones, mode, power, and location comments.
+      </p>
+
+      <h2 id="prerequisites">Prerequisites</h2>
+      <ul>
+        <li>A computer running <strong>Windows, macOS, or Linux</strong></li>
+        <li>A <strong>USB programming cable</strong> compatible with your radio (e.g., Kenwood KPG-22 cable for Baofeng)</li>
+        <li>Your <strong>amateur radio or walkie-talkie</strong> (Baofeng UV-5R, Yaesu, Icom, etc.)</li>
+        <li>A valid <strong>AROC license</strong> if you plan to transmit on amateur radio bands</li>
+      </ul>
+
+      <div class="step-card" id="step-1">
+        <h3><span class="step-number">1</span>Download and Install CHIRP</h3>
+        <ol>
+          <li>Go to <a href="https://chirp.danplanet.com" rel="noopener">chirp.danplanet.com</a></li>
+          <li>Click <strong>Download</strong> and choose the version for your operating system</li>
+          <li>For Windows: download the installer and run it</li>
+          <li>For macOS: download the .dmg file and drag CHIRP to your Applications folder</li>
+          <li>For Linux: install via your distribution's package manager or download the tarball</li>
+        </ol>
+        <p><strong>Note for Windows users:</strong> You may need to install the Prolific or
+        FTDI USB-to-serial driver for your programming cable. Many Baofeng cables use
+        counterfeit Prolific chips — you may need to use an older driver version.</p>
+      </div>
+
+      <div class="step-card" id="step-2">
+        <h3><span class="step-number">2</span>Download the 9M2PJU CSV File</h3>
+        <ol>
+          <li>Go to <a href="index.html">frequency.hamradio.my</a></li>
+          <li>Click the <strong>CSV</strong> download button in the toolbar</li>
+          <li>Or download directly from <code>https://frequency.hamradio.my/9M2PJU.csv</code></li>
+          <li>Save the file to a location you can easily find (e.g., your Desktop)</li>
+        </ol>
+        <p>The CSV file contains all <strong>189 frequency entries</strong> including
+        repeaters, simplex channels, APRS, and PMR446 channels, all pre-formatted for CHIRP.</p>
+      </div>
+
+      <div class="step-card" id="step-3">
+        <h3><span class="step-number">3</span>Connect Your Radio</h3>
+        <ol>
+          <li>Power <strong>OFF</strong> your radio</li>
+          <li>Connect the programming cable to your radio's <strong>Kenwood-style jack</strong> (SPK/MIC ports)</li>
+          <li>Connect the USB end to your computer</li>
+          <li>Power <strong>ON</strong> your radio</li>
+          <li>Ensure the radio volume is turned up (some radios won't program if volume is at zero)</li>
+        </ol>
+      </div>
+
+      <div class="step-card" id="step-4">
+        <h3><span class="step-number">4</span>Read From Your Radio</h3>
+        <ol>
+          <li>Open CHIRP</li>
+          <li>Go to <strong>Radio &gt; Download From Radio</strong></li>
+          <li>Select the correct <strong>Port</strong> (COM3 on Windows, /dev/ttyUSB0 on Linux, etc.)</li>
+          <li>Select your <strong>radio manufacturer</strong> and <strong>model</strong></li>
+          <li>Click <strong>OK</strong> and wait for the download to complete</li>
+        </ol>
+        <p>This reads the current channel data from your radio so CHIRP knows the layout.
+        If this is a new radio, it will show default/empty channels.</p>
+      </div>
+
+      <div class="step-card" id="step-5">
+        <h3><span class="step-number">5</span>Import the CSV File</h3>
+        <ol>
+          <li>Go to <strong>File &gt; Import</strong></li>
+          <li>Browse to and select the <code>9M2PJU.csv</code> file you downloaded</li>
+          <li>CHIRP will show a preview of the channels to import</li>
+          <li>Select <strong>All</strong> or choose specific channels you want to import</li>
+          <li>Click <strong>OK</strong> to import</li>
+          <li>The frequencies will appear in the CHIRP spreadsheet view</li>
+        </ol>
+        <p>You can review and edit any channel before uploading. For example, you might
+        want to adjust the power level or skip certain channels if your radio has
+        limited memory slots.</p>
+      </div>
+
+      <div class="step-card" id="step-6">
+        <h3><span class="step-number">6</span>Upload to Your Radio</h3>
+        <ol>
+          <li>Go to <strong>Radio &gt; Upload To Radio</strong></li>
+          <li>Confirm the port and radio model</li>
+          <li>Click <strong>OK</strong> to begin the upload</li>
+          <li><strong>Do not disconnect</strong> the cable or power off the radio during upload</li>
+          <li>Wait for the progress bar to complete</li>
+          <li>Power off the radio, disconnect the cable, and power back on</li>
+        </ol>
+        <p>Your radio is now programmed with all Malaysian amateur radio frequencies!
+        Test by tuning to the simplex calling frequency <strong>145.000 MHz</strong> or
+        your nearest repeater.</p>
+      </div>
+
+      <h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+
+      <h3>"Radio did not respond" error</h3>
+      <ul>
+        <li>Make sure the radio is powered <strong>ON</strong> and volume is up</li>
+        <li>Try a different USB port (use USB 2.0 if available)</li>
+        <li>Check that you selected the correct <strong>COM port</strong></li>
+        <li>For Baofeng cables with Prolific chips, install the <strong>Prolific 3.2.0.0 driver</strong> (older version that works with counterfeit chips)</li>
+        <li>Try removing and reinserting the cable while CHIRP is running</li>
+      </ul>
+
+      <h3>Wrong radio model selected</h3>
+      <p>If you have a Baofeng UV-5R variant (UV-5RA, UV-5RE, UV-5R V2+, etc.), try
+      selecting <strong>Baofeng UV-5R</strong> as the model. Most variants are compatible
+      with the base UV-5R selection.</p>
+
+      <h3>Cable not detected</h3>
+      <ul>
+        <li>On Windows, check <strong>Device Manager &gt; Ports (COM &amp; LPT)</strong> for the cable</li>
+        <li>On Linux, run <code>dmesg | grep tty</code> to find the device</li>
+        <li>On macOS, check <code>/dev/cu.*</code> or <code>/dev/tty.*</code></li>
+        <li>Install FTDI or Prolific drivers if the cable doesn't appear</li>
+      </ul>
+
+      <h2 id="supported-radios">Supported Radios</h2>
+      <p>The 9M2PJU CSV file works with any radio supported by CHIRP. Popular models
+      used by Malaysian amateur radio operators include:</p>
+      <ul>
+        <li><strong>Baofeng:</strong> UV-5R, UV-5RA, UV-5RE, UV-82, BF-F8HP, UV-K5</li>
+        <li><strong>Yaesu:</strong> FT-60R, FT-65R, FT-25R, FT-70DR, VX-6R, VX-7R</li>
+        <li><strong>Icom:</strong> IC-V80, IC-T70, IC-W32A, ID-51</li>
+        <li><strong>Kenwood:</strong> TH-F6A, TH-G71, TK-270G</li>
+        <li><strong>Wouxun:</strong> KG-UV8D, KG-UV9D, KG-UV3D</li>
+        <li><strong>AnyTone:</strong> AT-D878, AT-D868</li>
+      </ul>
+      <p>For the complete list, see the
+      <a href="https://chirp.danplanet.com/projects/chirp/wiki/Supported_Radios" rel="noopener">CHIRP Supported Radios page</a>.</p>
+
+      <div class="mt-12 p-6 glass rounded-xl border border-white/10 text-center">
+        <h2>Ready to Program Your Radio?</h2>
+        <div class="flex flex-wrap gap-3 justify-center mt-4">
+          <a href="9M2PJU.csv" download class="px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors">Download CSV</a>
+          <a href="index.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">Browse Frequencies</a>
+          <a href="faq.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">FAQ</a>
+          <a href="pmr446-guide.html" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium transition-colors border border-white/10">PMR446 Guide</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950/50 py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-slate-500">
+      <p>&copy; <span id="year"></span> Malaysian Amateur Radio Frequency Database.</p>
+      <p class="mt-1">
+        Made for Malaysia by
+        <a href="https://hamradio.my" class="text-primary-400 hover:text-primary-300 transition-colors">9M2PJU</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

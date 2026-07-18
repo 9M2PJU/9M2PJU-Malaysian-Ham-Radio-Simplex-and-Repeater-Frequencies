@@ -23,6 +23,11 @@
   <meta name="twitter:description"
     content="Curated simplex, repeater, and PMR frequencies for Malaysian amateur radio operators." />
   <meta name="twitter:image" content="https://frequency.hamradio.my/my_flag_round.svg" />
+  <meta name="geo.region" content="MY" />
+  <meta name="geo.placename" content="Malaysia" />
+  <meta name="geo.position" content="3.1390;101.6869" />
+  <meta name="ICBM" content="3.1390, 101.6869" />
+
 
   <title>Malaysian Amateur Radio Frequency Database</title>
   <link rel="canonical" href="https://frequency.hamradio.my/" />
@@ -189,6 +194,13 @@
         </a>
 
         <div class="flex items-center gap-2 sm:gap-3">
+          <nav class="hidden md:flex items-center gap-1 text-sm" aria-label="Main navigation">
+            <a href="faq.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+            <a href="chirp-guide.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">CHIRP Guide</a>
+            <a href="bands-guide.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">Bands</a>
+            <a href="about.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          </nav>
+
           <button id="installBtn" class="hidden items-center gap-2 px-3 py-2 rounded-lg bg-primary-600/10 border border-primary-600/30 text-primary-400 hover:bg-primary-600/20 hover:text-primary-300 transition-colors text-sm font-medium" aria-label="Install app">
             <i class="fa-solid fa-download"></i>
             <span class="hidden sm:inline">Install</span>
@@ -299,10 +311,53 @@
         <p class="mt-4">Loading frequency database...</p>
       </div>
     </div>
+
+    <!-- Guides & Resources (SEO: internal linking + keyword-rich content) -->
+    <section class="mt-12 animate-fade-in-up" style="animation-delay: 0.25s" aria-label="Guides and resources">
+      <h2 class="text-xl font-bold text-white mb-6 text-center">Guides &amp; Resources</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="chirp-guide.html" class="group glass rounded-xl p-5 border border-white/10 hover:border-primary-500/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-code text-primary-400"></i>
+          </div>
+          <h3 class="font-bold text-white text-sm mb-1 group-hover:text-primary-300 transition-colors">CHIRP Programming Guide</h3>
+          <p class="text-xs text-slate-500">Step-by-step guide to program Malaysian frequencies into your radio using CHIRP software.</p>
+        </a>
+        <a href="pmr446-guide.html" class="group glass rounded-xl p-5 border border-white/10 hover:border-amber-500/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-walkie-talkie text-amber-400"></i>
+          </div>
+          <h3 class="font-bold text-white text-sm mb-1 group-hover:text-amber-300 transition-colors">PMR446 Guide</h3>
+          <p class="text-xs text-slate-500">All 16 license-free PMR446 channels, power limits, and regulations for Malaysia.</p>
+        </a>
+        <a href="bands-guide.html" class="group glass rounded-xl p-5 border border-white/10 hover:border-emerald-500/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-tower-broadcast text-emerald-400"></i>
+          </div>
+          <h3 class="font-bold text-white text-sm mb-1 group-hover:text-emerald-300 transition-colors">Bands Guide</h3>
+          <p class="text-xs text-slate-500">Complete guide to VHF, UHF, and HF amateur radio bands in Malaysia.</p>
+        </a>
+        <a href="faq.html" class="group glass rounded-xl p-5 border border-white/10 hover:border-rose-500/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-circle-question text-rose-400"></i>
+          </div>
+          <h3 class="font-bold text-white text-sm mb-1 group-hover:text-rose-300 transition-colors">FAQ</h3>
+          <p class="text-xs text-slate-500">Frequently asked questions about Malaysian ham radio, repeaters, and licensing.</p>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="border-t border-white/10 bg-slate-950/50 py-8">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-500">
+      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4" aria-label="Footer navigation">
+        <a href="index.html" class="hover:text-primary-400 transition-colors">Frequencies</a>
+        <a href="faq.html" class="hover:text-primary-400 transition-colors">FAQ</a>
+        <a href="chirp-guide.html" class="hover:text-primary-400 transition-colors">CHIRP Guide</a>
+        <a href="pmr446-guide.html" class="hover:text-primary-400 transition-colors">PMR446 Guide</a>
+        <a href="bands-guide.html" class="hover:text-primary-400 transition-colors">Bands Guide</a>
+        <a href="about.html" class="hover:text-primary-400 transition-colors">About</a>
+      </nav>
       <p>&copy; <span id="year"></span> Malaysian Amateur Radio Frequency Database.</p>
       <p class="mt-1">
         Made for Malaysia by
@@ -337,6 +392,2357 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+  <!-- SEO: Pre-rendered frequency data for search engine crawlers -->
+  <!-- The interactive JS app replaces #output; this content ensures crawlers
+       and no-JS users can see all frequency data. -->
+  <section id="seo-content" class="sr-only" aria-label="Complete Malaysian amateur radio frequency listing">
+    <h2>Complete Malaysian Amateur Radio Frequency List</h2>
+    <p>
+      The Malaysian Amateur Radio Frequency Database by 9M2PJU is a curated,
+      searchable collection of 206 frequencies for amateur radio
+      operators in Malaysia. It covers VHF (144–148 MHz), UHF (430–440 MHz),
+      and PMR446 (446 MHz) bands, including repeater channels with CTCSS/DCS
+      tones, simplex calling channels, APRS (144.390 MHz), and all 16 PMR446
+      license-free channels. The database is CHIRP-compatible and can be
+      downloaded as a CSV file for direct programming of Baofeng, Yaesu, Icom,
+      Kenwood, and Wouxun radios.
+    </p>
+    <p>
+      Malaysian repeaters listed include stations in Kuala Lumpur, Selangor,
+      Pahang, Penang, Melaka, Johor, Kedah, Perak, Perlis, Terengganu,
+      Kelantan, Sabah, and Sarawak. Major repeater sites include Bukit Lanjan,
+      Gunung Ulu Kali, Bukit Brinchang, Gunung Ledang, Bukit Bendera (Penang
+      Hill), Gunung Jerai, Gunung Kinabalu, and Borneo Highlands. Repeaters
+      are linked via MARTS (Malaysian Amateur Radio Transmitters' Society) and
+      ASTRA Transnasional linking networks.
+    </p>
+    <section>
+      <h2>Malaysian Amateur Radio Repeaters</h2>
+      <p>134 repeater entries for Malaysian amateur radio operators.</p>
+      <table>
+        <thead>
+          <tr><th>Name / Callsign</th><th>Frequency</th><th>Band</th><th>Offset</th><th>Tone (CTCSS)</th><th>Mode</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>KL</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.139,101.687" target="_blank" rel="noopener">KL</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKL</td>
+          <td>439.6 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.171,101.608" target="_blank" rel="noopener">BUKIT LANJAN</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKL-L1</td>
+          <td>439.85 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.171,101.608" target="_blank" rel="noopener">BUKIT LANJAN</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKL-DMR</td>
+          <td>439.15 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>-</td>
+          <td>DMR</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.171,101.608" target="_blank" rel="noopener">BUKIT LANJAN</a></td>
+        </tr>
+        <tr>
+          <td>9M4RZS</td>
+          <td>147.65 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 233.6</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.095,101.755" target="_blank" rel="noopener">BUKIT PERMAI</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKK</td>
+          <td>147.98 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.171,101.608" target="_blank" rel="noopener">BUKIT LANJAN</a></td>
+        </tr>
+        <tr>
+          <td>9M2RUK</td>
+          <td>146.9875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.787" target="_blank" rel="noopener">GUNUNG ULU KALI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLG</td>
+          <td>147.9 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.787" target="_blank" rel="noopener">GUNUNG ULU KALI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBC</td>
+          <td>147.75 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.787" target="_blank" rel="noopener">GUNUNG ULU KALI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RES</td>
+          <td>147.775 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 123.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.787" target="_blank" rel="noopener">GUNUNG ULU KALI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGH</td>
+          <td>145.675 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.795" target="_blank" rel="noopener">GENTING HIGHLAND</a></td>
+        </tr>
+        <tr>
+          <td>PHG</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PHG</td>
+        </tr>
+        <tr>
+          <td>9M4RCH</td>
+          <td>146.9875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.517,101.383" target="_blank" rel="noopener">BUKIT BRINCHANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLS</td>
+          <td>146.9 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.550,102.783" target="_blank" rel="noopener">BUKIT SULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RHS</td>
+          <td>145.6375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 206.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.424,101.787" target="_blank" rel="noopener">GUNUNG ULU KALI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCA</td>
+          <td>147 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.517,101.383" target="_blank" rel="noopener">BUKIT BRINCHANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCZ</td>
+          <td>146.85 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.200,101.850" target="_blank" rel="noopener">BUKIT BIUS - KUALA LIPIS</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCD</td>
+          <td>146.7 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.827,103.340" target="_blank" rel="noopener">KUANTAN - BUKIT PELINDUNG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBI</td>
+          <td>147.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.178,102.949" target="_blank" rel="noopener">BUKIT IBAM</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCC</td>
+          <td>145.6 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.713,101.736" target="_blank" rel="noopener">BUKIT FRASER</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCE</td>
+          <td>146.1 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.550,102.783" target="_blank" rel="noopener">BUKIT SULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RCY</td>
+          <td>145.7125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.450,102.417" target="_blank" rel="noopener">TEMERLOH</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGB</td>
+          <td>147.925 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.517,101.383" target="_blank" rel="noopener">GUNUNG BERINCANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPS</td>
+          <td>434.875 MHz</td>
+          <td>UHF</td>
+          <td>+5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.522,101.913" target="_blank" rel="noopener">Bentong - Kayangan Hill</a></td>
+        </tr>
+        <tr>
+          <td>9M4RAA</td>
+          <td>147.6375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.450,101.850" target="_blank" rel="noopener">Bukit Telemung, Karak, Pahang</a></td>
+        </tr>
+        <tr>
+          <td>N9</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>N9</td>
+        </tr>
+        <tr>
+          <td>9M4RTB</td>
+          <td>146.675 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.839,102.071" target="_blank" rel="noopener">GUNUNG TELAPAK BURUK</a></td>
+        </tr>
+        <tr>
+          <td>9M4RNS</td>
+          <td>145.375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 233.6</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.839,102.071" target="_blank" rel="noopener">GUNUNG TELAPAK BURUK</a></td>
+        </tr>
+        <tr>
+          <td>PENANG</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PENANG</td>
+        </tr>
+        <tr>
+          <td>9M4RXC</td>
+          <td>439.475 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 88.5</td>
+          <td>DMR</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.141,100.480" target="_blank" rel="noopener">Bandar Baharu - Bukit Panchor</a></td>
+        </tr>
+        <tr>
+          <td>9M4RXC-DMR</td>
+          <td>439.475 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>-</td>
+          <td>DMR</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.141,100.480" target="_blank" rel="noopener">Bandar Baharu</a></td>
+        </tr>
+        <tr>
+          <td>9M2RBB</td>
+          <td>147.95 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">BUKIT BENDERA</a></td>
+        </tr>
+        <tr>
+          <td>9M2RBB-DMR</td>
+          <td>147.95 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>DMR</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">BUKIT BENDERA</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBB</td>
+          <td>145.7375 MHz</td>
+          <td>VHF</td>
+          <td>-0.65 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">Penang Hill</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPH</td>
+          <td>147.825 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">Penang Hill</a></td>
+        </tr>
+        <tr>
+          <td>9M4RMM</td>
+          <td>439.5 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">9M4RMM</a></td>
+        </tr>
+        <tr>
+          <td>9M4RMM-DMR</td>
+          <td>439.5 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>-</td>
+          <td>DMR</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">9M4RMM-DMR</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPP</td>
+          <td>439.525 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.424,100.269" target="_blank" rel="noopener">BUKIT BENDERA</a></td>
+        </tr>
+        <tr>
+          <td>MLK</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>MLK</td>
+        </tr>
+        <tr>
+          <td>9M4RML</td>
+          <td>439.44 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.248,102.276" target="_blank" rel="noopener">BUKIT BERUANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLM</td>
+          <td>147.6 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.373,102.608" target="_blank" rel="noopener">GUNUNG LEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M2RGL</td>
+          <td>145.6 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.373,102.608" target="_blank" rel="noopener">GUNUNG LEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RHE</td>
+          <td>146.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.200,102.250" target="_blank" rel="noopener">MELAKA - EQUATORIAL HOTEL</a></td>
+        </tr>
+        <tr>
+          <td>9M4RMU</td>
+          <td>439.825 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.200,102.250" target="_blank" rel="noopener">MELAKA - EQUATORIAL HOTEL</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGL</td>
+          <td>147.9875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.373,102.608" target="_blank" rel="noopener">GUNUNG LEDANG</a></td>
+        </tr>
+        <tr>
+          <td>JHR</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>JHR</td>
+        </tr>
+        <tr>
+          <td>9M4RMR</td>
+          <td>146.925 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.044,102.569" target="_blank" rel="noopener">MUAR</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPL</td>
+          <td>146.65 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.595,103.541" target="_blank" rel="noopener">GUNUNG PULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RJM</td>
+          <td>146.9 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.700,103.600" target="_blank" rel="noopener">GUNUNG TIONG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLD</td>
+          <td>147.7 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.373,102.608" target="_blank" rel="noopener">GUNUNG LEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RJB</td>
+          <td>145.775 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.493,103.741" target="_blank" rel="noopener">JOHOR BAHRU</a></td>
+        </tr>
+        <tr>
+          <td>9M2RGP</td>
+          <td>147.825 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.595,103.541" target="_blank" rel="noopener">GUNUNG PULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RJN</td>
+          <td>145.7 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 127.3</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.833,103.000" target="_blank" rel="noopener">GUNUNG BANANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RAM</td>
+          <td>147.8625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=2.100,103.200" target="_blank" rel="noopener">BUKIT SELANTAI</a></td>
+        </tr>
+        <tr>
+          <td>KDH</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>KDH</td>
+        </tr>
+        <tr>
+          <td>9M4RXA</td>
+          <td>439.675 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 88.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.467,100.517" target="_blank" rel="noopener">Sedim - Gunung Bintang</a></td>
+        </tr>
+        <tr>
+          <td>9M4RJR-C4FM</td>
+          <td>147.7 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.797,100.435" target="_blank" rel="noopener">GUNUNG JERAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RKG</td>
+          <td>145.525 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 100.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.150,100.383" target="_blank" rel="noopener">GUNUNG KERIANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBD</td>
+          <td>146.625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.700,100.400" target="_blank" rel="noopener">BUKIT DEDAP</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLJ</td>
+          <td>147.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.797,100.435" target="_blank" rel="noopener">GUNUNG JERAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGJ</td>
+          <td>147.675 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.797,100.435" target="_blank" rel="noopener">GUNUNG JERAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGR</td>
+          <td>145.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.383,99.817" target="_blank" rel="noopener">GUNUNG RAYA</a></td>
+        </tr>
+        <tr>
+          <td>9M4RJR</td>
+          <td>145.6625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.797,100.435" target="_blank" rel="noopener">GUNUNG JERAI</a></td>
+        </tr>
+        <tr>
+          <td>PRK</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PRK</td>
+        </tr>
+        <tr>
+          <td>9M4RAG</td>
+          <td>147.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.597,101.090" target="_blank" rel="noopener">Grik, Perak</a></td>
+        </tr>
+        <tr>
+          <td>9M4RXB</td>
+          <td>439.575 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 88.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.862,100.793" target="_blank" rel="noopener">Taiping - Bukit Larut</a></td>
+        </tr>
+        <tr>
+          <td>9M4RVB</td>
+          <td>146.8125 MHz</td>
+          <td>VHF</td>
+          <td>-0.5 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.300,101.200" target="_blank" rel="noopener">LEBUHRAYA TIMUR BARAT</a></td>
+        </tr>
+        <tr>
+          <td>9M4RSP</td>
+          <td>146.8125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.100,100.967" target="_blank" rel="noopener">LENGGONG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RTH</td>
+          <td>147.8625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.198,101.262" target="_blank" rel="noopener">TAPAH</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBK</td>
+          <td>147.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.568,101.026" target="_blank" rel="noopener">BUKIT KLEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RUB</td>
+          <td>144.725 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.217,100.717" target="_blank" rel="noopener">SETIAWAN</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLT</td>
+          <td>146.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.862,100.793" target="_blank" rel="noopener">BUKIT LARUT - BUKIT LARUT</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLT-L</td>
+          <td>146.85 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.862,100.793" target="_blank" rel="noopener">BUKIT LARUT - BUKIT LARUT</a></td>
+        </tr>
+        <tr>
+          <td>9M4RSK</td>
+          <td>146.9875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.533,101.333" target="_blank" rel="noopener">SUNGAI KEJAR, ROYAL BELUM, PERAK</a></td>
+        </tr>
+        <tr>
+          <td>9M4RRB</td>
+          <td>147.9125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.400,101.100" target="_blank" rel="noopener">PANDANGAN INDAH</a></td>
+        </tr>
+        <tr>
+          <td>9M4RTS</td>
+          <td>146.825 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=3.550,102.783" target="_blank" rel="noopener">BUKIT SULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPI</td>
+          <td>147.9875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.400,101.100" target="_blank" rel="noopener">PANDANGAN INDAH</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBL</td>
+          <td>147.925 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.862,100.793" target="_blank" rel="noopener">BUKIT LARUT</a></td>
+        </tr>
+        <tr>
+          <td>9M2RGP-L</td>
+          <td>145.725 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.595,103.541" target="_blank" rel="noopener">GUNUNG PULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGP</td>
+          <td>145.7375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.595,103.541" target="_blank" rel="noopener">GUNUNG PULAI</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKV</td>
+          <td>145.7875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.568,101.026" target="_blank" rel="noopener">BUKIT KLEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M2RKV-L</td>
+          <td>146.925 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.568,101.026" target="_blank" rel="noopener">BUKIT KLEDANG</a></td>
+        </tr>
+        <tr>
+          <td>9M4RIC</td>
+          <td>439.7875 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.568,101.026" target="_blank" rel="noopener">BUKIT KLEDANG</a></td>
+        </tr>
+        <tr>
+          <td>PRS</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PRS</td>
+        </tr>
+        <tr>
+          <td>9M2RMK</td>
+          <td>147.98 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.443,100.199" target="_blank" rel="noopener">KANGAR</a></td>
+        </tr>
+        <tr>
+          <td>9M4RHP</td>
+          <td>147.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.500,100.183" target="_blank" rel="noopener">Bukit Tunjung, Beseri, Perlis</a></td>
+        </tr>
+        <tr>
+          <td>TGN</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>TGN</td>
+        </tr>
+        <tr>
+          <td>9M4RBJ</td>
+          <td>147.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 123.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.209,103.206" target="_blank" rel="noopener">Marang</a></td>
+        </tr>
+        <tr>
+          <td>9M4RAC</td>
+          <td>146.675 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.833,102.550" target="_blank" rel="noopener">Besut</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBF</td>
+          <td>145.7875 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 123.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.467,103.433" target="_blank" rel="noopener">Kijal - Bukit Kemuning</a></td>
+        </tr>
+        <tr>
+          <td>9M4RST</td>
+          <td>147.7375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.567,102.567" target="_blank" rel="noopener">GUNUNG TEBU</a></td>
+        </tr>
+        <tr>
+          <td>9M4RAS</td>
+          <td>145.925 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.200,103.100" target="_blank" rel="noopener">BUKIT GELIGA</a></td>
+        </tr>
+        <tr>
+          <td>KLT</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>KLT</td>
+        </tr>
+        <tr>
+          <td>9M4RVA</td>
+          <td>145.675 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.133,102.238" target="_blank" rel="noopener">Kota Bharu</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGT</td>
+          <td>147.65 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 67.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.200,102.150" target="_blank" rel="noopener">Tumpat</a></td>
+        </tr>
+        <tr>
+          <td>9M4RDD</td>
+          <td>146.6375 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 186.2</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.050,102.133" target="_blank" rel="noopener">Pasir Mas</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBP</td>
+          <td>146.7 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.808,102.150" target="_blank" rel="noopener">Tanah Merah</a></td>
+        </tr>
+        <tr>
+          <td>9M4RTM</td>
+          <td>146.85 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 167.9</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.808,102.150" target="_blank" rel="noopener">Tanah Merah</a></td>
+        </tr>
+        <tr>
+          <td>9M4RAB</td>
+          <td>147.7125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 233.6</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.067,102.400" target="_blank" rel="noopener">Bachok</a></td>
+        </tr>
+        <tr>
+          <td>9M4RKH</td>
+          <td>146.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.100,102.300" target="_blank" rel="noopener">BUKIT BAKAR</a></td>
+        </tr>
+        <tr>
+          <td>9M4RDF</td>
+          <td>146.8125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.883,101.967" target="_blank" rel="noopener">GUA MUSANG</a></td>
+        </tr>
+        <tr>
+          <td>SBH</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>SBH</td>
+        </tr>
+        <tr>
+          <td>9M4RBZ</td>
+          <td>145.0875 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.083,115.567" target="_blank" rel="noopener">Sipitang, Sabah</a></td>
+        </tr>
+        <tr>
+          <td>9M4CTR</td>
+          <td>147.65 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 67.0</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.183,116.233" target="_blank" rel="noopener">TUARAN</a></td>
+        </tr>
+        <tr>
+          <td>9M4RSW</td>
+          <td>145.7125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.980,116.075" target="_blank" rel="noopener">KOTA KINABALU</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLX</td>
+          <td>144.225 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.483,116.767" target="_blank" rel="noopener">KOTA MARUDU</a></td>
+        </tr>
+        <tr>
+          <td>9M4RBW</td>
+          <td>146.3125 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.850,118.067" target="_blank" rel="noopener">BUKIT ANDRASY</a></td>
+        </tr>
+        <tr>
+          <td>9M4RTY</td>
+          <td>147.2375 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.840,118.117" target="_blank" rel="noopener">TRIG HILL, SANDAKAN</a></td>
+        </tr>
+        <tr>
+          <td>9M4RLB</td>
+          <td>147.75 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=6.095,116.559" target="_blank" rel="noopener">GUNUNG KINABALU</a></td>
+        </tr>
+        <tr>
+          <td>9M4RSB</td>
+          <td>439.15 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.980,116.075" target="_blank" rel="noopener">Kota Kinabalu - Bukit Lawa Mandau</a></td>
+        </tr>
+        <tr>
+          <td>9M4BHR</td>
+          <td>147.85 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.367,110.133" target="_blank" rel="noopener">BORNEO HIGHLANDS</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGK</td>
+          <td>439.85 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>TSQL 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=5.983,116.667" target="_blank" rel="noopener">Ranau - Gunung Kinabalu</a></td>
+        </tr>
+        <tr>
+          <td>SRK</td>
+          <td>145 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>SRK</td>
+        </tr>
+        <tr>
+          <td>9M4RHW</td>
+          <td>147.1 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.400,113.983" target="_blank" rel="noopener">THE GRAND OLD LADY, MIRI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RTL</td>
+          <td>147.95 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=4.383,113.967" target="_blank" rel="noopener">TG LOBANG, MIRI</a></td>
+        </tr>
+        <tr>
+          <td>9M4RGA</td>
+          <td>147.8 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.167,110.567" target="_blank" rel="noopener">GUNUNG AMPUNGAN, SERIAN</a></td>
+        </tr>
+        <tr>
+          <td>9M4REW</td>
+          <td>439.85 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td><a href="https://www.google.com/maps/search/?api=1&query=1.553,110.359" target="_blank" rel="noopener">KUCHING - GRAND MARGHERITA HOTEL</a></td>
+        </tr>
+        <tr>
+          <td>9M4RPG</td>
+          <td>145.775 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PENAMPANG</td>
+        </tr>
+        <tr>
+          <td>9M4RKR</td>
+          <td>146.025 MHz</td>
+          <td>VHF</td>
+          <td>+0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td>Kuala rompin</td>
+        </tr>
+        <tr>
+          <td>9M4RKR-L</td>
+          <td>146.625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 118.8</td>
+          <td>FM</td>
+          <td>Kuala rompin</td>
+        </tr>
+        <tr>
+          <td>9M4RCP</td>
+          <td>146.6625 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td>PAPAR</td>
+        </tr>
+        <tr>
+          <td>9M4RKT</td>
+          <td>146.7125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 88.5</td>
+          <td>FM</td>
+          <td>Tawau - Kolej Vokasional Tawau, Sabah</td>
+        </tr>
+        <tr>
+          <td>9M4RTD</td>
+          <td>146.75 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 100.0</td>
+          <td>FM</td>
+          <td>MARANG</td>
+        </tr>
+        <tr>
+          <td>9M4RBH</td>
+          <td>146.875 MHz</td>
+          <td>VHF</td>
+          <td>-1.85 MHz</td>
+          <td>Tone 85.4</td>
+          <td>FM</td>
+          <td>Bkt Palong, Baling, Kedah</td>
+        </tr>
+        <tr>
+          <td>9M4RKK</td>
+          <td>146.975 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td>TUARAN</td>
+        </tr>
+        <tr>
+          <td>9M4RCF</td>
+          <td>147.6125 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td>Bukit Fraser, Pahang</td>
+        </tr>
+        <tr>
+          <td>9M4LBP</td>
+          <td>147.7375 MHz</td>
+          <td>VHF</td>
+          <td>-0.7 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td>Bkt Tebuan, B Bharu, Kedah</td>
+        </tr>
+        <tr>
+          <td>9M4RPH-DMR</td>
+          <td>147.95 MHz</td>
+          <td>VHF</td>
+          <td>-0.6 MHz</td>
+          <td>Tone 203.5</td>
+          <td>DMR</td>
+          <td>Penang Hill</td>
+        </tr>
+        <tr>
+          <td>9M4RWR</td>
+          <td>434.925 MHz</td>
+          <td>UHF</td>
+          <td>+5 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>Raub - Benom Mountain</td>
+        </tr>
+        <tr>
+          <td>9M4RDM</td>
+          <td>434.975 MHz</td>
+          <td>UHF</td>
+          <td>+5 MHz</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>Kuantan - Teruntum Complex</td>
+        </tr>
+        <tr>
+          <td>9M4RZA</td>
+          <td>439.275 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>FM</td>
+          <td>Gunung Jerai</td>
+        </tr>
+        <tr>
+          <td>9M4RSE</td>
+          <td>439.725 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 203.5</td>
+          <td>DMR</td>
+          <td>Segamat - Bandar Segamat</td>
+        </tr>
+        <tr>
+          <td>9M4RPJ</td>
+          <td>439.75 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>Tone 103.5</td>
+          <td>FM</td>
+          <td>Shah Alam - MBSA</td>
+        </tr>
+        <tr>
+          <td>9M4RPJ-DMR</td>
+          <td>439.75 MHz</td>
+          <td>UHF</td>
+          <td>-5 MHz</td>
+          <td>-</td>
+          <td>DMR</td>
+          <td>Shah Alam</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Simplex Frequencies Malaysia</h2>
+      <p>56 simplex channels for Malaysian amateur radio operators.</p>
+      <table>
+        <thead>
+          <tr><th>Name / Callsign</th><th>Frequency</th><th>Band</th><th>Offset</th><th>Tone (CTCSS)</th><th>Mode</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>APRS</td>
+          <td>144.39 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>APRS</td>
+        </tr>
+        <tr>
+          <td>V CHANNEL</td>
+          <td>145.5 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V CHANNEL</td>
+        </tr>
+        <tr>
+          <td>V16</td>
+          <td>145.2 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V16</td>
+        </tr>
+        <tr>
+          <td>V17</td>
+          <td>145.2125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V17</td>
+        </tr>
+        <tr>
+          <td>V18</td>
+          <td>145.225 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V18</td>
+        </tr>
+        <tr>
+          <td>V19</td>
+          <td>145.2375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V19</td>
+        </tr>
+        <tr>
+          <td>V20</td>
+          <td>145.25 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V20</td>
+        </tr>
+        <tr>
+          <td>V21</td>
+          <td>145.2625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V21</td>
+        </tr>
+        <tr>
+          <td>V22</td>
+          <td>145.275 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V22</td>
+        </tr>
+        <tr>
+          <td>V23</td>
+          <td>145.2875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V23</td>
+        </tr>
+        <tr>
+          <td>V24</td>
+          <td>145.3 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V24</td>
+        </tr>
+        <tr>
+          <td>V25</td>
+          <td>145.3125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V25</td>
+        </tr>
+        <tr>
+          <td>V26</td>
+          <td>145.325 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V26</td>
+        </tr>
+        <tr>
+          <td>V27</td>
+          <td>145.3375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V27</td>
+        </tr>
+        <tr>
+          <td>V28</td>
+          <td>145.35 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V28</td>
+        </tr>
+        <tr>
+          <td>V29</td>
+          <td>145.3625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V29</td>
+        </tr>
+        <tr>
+          <td>V30</td>
+          <td>145.375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V30</td>
+        </tr>
+        <tr>
+          <td>V31</td>
+          <td>145.3875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V31</td>
+        </tr>
+        <tr>
+          <td>V32</td>
+          <td>145.4 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V32</td>
+        </tr>
+        <tr>
+          <td>V33</td>
+          <td>145.4125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V33</td>
+        </tr>
+        <tr>
+          <td>V34</td>
+          <td>145.425 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V34</td>
+        </tr>
+        <tr>
+          <td>V35</td>
+          <td>145.4375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V35</td>
+        </tr>
+        <tr>
+          <td>V36</td>
+          <td>145.45 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V36</td>
+        </tr>
+        <tr>
+          <td>V37</td>
+          <td>145.4625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V37</td>
+        </tr>
+        <tr>
+          <td>V38</td>
+          <td>145.475 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V38</td>
+        </tr>
+        <tr>
+          <td>V39</td>
+          <td>145.4875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V39</td>
+        </tr>
+        <tr>
+          <td>V40</td>
+          <td>145.5 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V40</td>
+        </tr>
+        <tr>
+          <td>V41</td>
+          <td>145.5125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V41</td>
+        </tr>
+        <tr>
+          <td>V42</td>
+          <td>145.525 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V42</td>
+        </tr>
+        <tr>
+          <td>V43</td>
+          <td>145.5375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V43</td>
+        </tr>
+        <tr>
+          <td>V44</td>
+          <td>145.55 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V44</td>
+        </tr>
+        <tr>
+          <td>V45</td>
+          <td>145.5625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V45</td>
+        </tr>
+        <tr>
+          <td>V46</td>
+          <td>145.575 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V46</td>
+        </tr>
+        <tr>
+          <td>V47</td>
+          <td>145.5875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V47</td>
+        </tr>
+        <tr>
+          <td>V48</td>
+          <td>146.4 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V48</td>
+        </tr>
+        <tr>
+          <td>V49</td>
+          <td>146.4125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V49</td>
+        </tr>
+        <tr>
+          <td>V50</td>
+          <td>146.425 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V50</td>
+        </tr>
+        <tr>
+          <td>V51</td>
+          <td>146.4375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V51</td>
+        </tr>
+        <tr>
+          <td>V52</td>
+          <td>146.45 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V52</td>
+        </tr>
+        <tr>
+          <td>V53</td>
+          <td>146.4625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V53</td>
+        </tr>
+        <tr>
+          <td>V54</td>
+          <td>146.475 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V54</td>
+        </tr>
+        <tr>
+          <td>V55</td>
+          <td>146.4875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V55</td>
+        </tr>
+        <tr>
+          <td>V56</td>
+          <td>146.5 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V56</td>
+        </tr>
+        <tr>
+          <td>V57</td>
+          <td>146.5125 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V57</td>
+        </tr>
+        <tr>
+          <td>V58</td>
+          <td>146.525 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V58</td>
+        </tr>
+        <tr>
+          <td>V59</td>
+          <td>146.5375 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V59</td>
+        </tr>
+        <tr>
+          <td>V60</td>
+          <td>146.55 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V60</td>
+        </tr>
+        <tr>
+          <td>V61</td>
+          <td>146.5625 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V61</td>
+        </tr>
+        <tr>
+          <td>V62</td>
+          <td>146.575 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V62</td>
+        </tr>
+        <tr>
+          <td>V63</td>
+          <td>146.5875 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V63</td>
+        </tr>
+        <tr>
+          <td>V64</td>
+          <td>147.435 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V64</td>
+        </tr>
+        <tr>
+          <td>V65</td>
+          <td>147.465 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V65</td>
+        </tr>
+        <tr>
+          <td>V66</td>
+          <td>147.495 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V66</td>
+        </tr>
+        <tr>
+          <td>V67</td>
+          <td>147.525 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V67</td>
+        </tr>
+        <tr>
+          <td>V68</td>
+          <td>147.555 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V68</td>
+        </tr>
+        <tr>
+          <td>V69</td>
+          <td>147.585 MHz</td>
+          <td>VHF</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>V69</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>PMR446 Frequencies Malaysia (446 MHz)</h2>
+      <p>16 PMR446 channels for Malaysian amateur radio operators.</p>
+      <table>
+        <thead>
+          <tr><th>Name / Callsign</th><th>Frequency</th><th>Band</th><th>Offset</th><th>Tone (CTCSS)</th><th>Mode</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>PMR CH1</td>
+          <td>446.00625 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH1</td>
+        </tr>
+        <tr>
+          <td>PMR CH2</td>
+          <td>446.01875 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH2</td>
+        </tr>
+        <tr>
+          <td>PMR CH3</td>
+          <td>446.03125 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH3</td>
+        </tr>
+        <tr>
+          <td>PMR CH4</td>
+          <td>446.04375 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH4</td>
+        </tr>
+        <tr>
+          <td>PMR CH5</td>
+          <td>446.05625 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH5</td>
+        </tr>
+        <tr>
+          <td>PMR CH6</td>
+          <td>446.06875 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH6</td>
+        </tr>
+        <tr>
+          <td>PMR CH7</td>
+          <td>446.08125 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH7</td>
+        </tr>
+        <tr>
+          <td>PMR CH8</td>
+          <td>446.09375 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH8</td>
+        </tr>
+        <tr>
+          <td>PMR CH9</td>
+          <td>446.10625 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH9</td>
+        </tr>
+        <tr>
+          <td>PMR CH10</td>
+          <td>446.11875 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH10</td>
+        </tr>
+        <tr>
+          <td>PMR CH11</td>
+          <td>446.13125 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH11</td>
+        </tr>
+        <tr>
+          <td>PMR CH12</td>
+          <td>446.14375 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH12</td>
+        </tr>
+        <tr>
+          <td>PMR CH13</td>
+          <td>446.15625 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH13</td>
+        </tr>
+        <tr>
+          <td>PMR CH14</td>
+          <td>446.16875 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH14</td>
+        </tr>
+        <tr>
+          <td>PMR CH15</td>
+          <td>446.18125 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH15</td>
+        </tr>
+        <tr>
+          <td>PMR CH16</td>
+          <td>446.19375 MHz</td>
+          <td>PMR</td>
+          <td>Simplex</td>
+          <td>-</td>
+          <td>FM</td>
+          <td>PMR CH16</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    <h2>How to Use This Database</h2>
+    <p>
+      Use the search box to find frequencies by callsign, location, or tone.
+      Filter by band (VHF, UHF) or type (Simplex, Repeaters). Click "Near Me"
+      to sort repeaters by distance from your location. Download the CSV file
+      and import it into <a href="https://chirp.danplanet.com" rel="noopener">CHIRP</a>
+      radio programming software to program your walkie-talkie or mobile radio.
+      See our <a href="chirp-guide.html">CHIRP programming guide</a> for
+      step-by-step instructions.
+    </p>
+    <p>
+      For license-free personal use, see our <a href="pmr446-guide.html">PMR446
+      guide</a>. For information on amateur radio bands in Malaysia, see our
+      <a href="bands-guide.html">Malaysian ham radio bands guide</a>. For
+      frequently asked questions, visit our <a href="faq.html">FAQ page</a>.
+      To learn more about this project, visit the <a href="about.html">about
+      page</a>.
+    </p>
+  </section>
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Malaysian Amateur Radio Frequency Database",
+  "url": "https://frequency.hamradio.my/",
+  "description": "Curated simplex, repeater, and PMR446 frequencies for Malaysian amateur radio operators.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://frequency.hamradio.my/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Malaysian Amateur Radio Frequency Database",
+  "url": "https://frequency.hamradio.my/",
+  "logo": "https://frequency.hamradio.my/icon-512x512.png",
+  "founder": {
+    "@type": "Person",
+    "name": "9M2PJU",
+    "url": "https://hamradio.my"
+  },
+  "areaServed": "Malaysia",
+  "sameAs": [
+    "https://github.com/9M2PJU/9M2PJU-Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Malaysian Amateur Radio Frequency Database",
+  "description": "A curated, searchable collection of simplex, repeater, and PMR446 frequencies for Malaysian amateur radio operators. CHIRP-compatible CSV download available.",
+  "url": "https://frequency.hamradio.my/",
+  "creator": {
+    "@type": "Person",
+    "name": "9M2PJU",
+    "url": "https://hamradio.my"
+  },
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "ham radio",
+    "amateur radio",
+    "Malaysia",
+    "repeater",
+    "simplex",
+    "PMR446",
+    "VHF",
+    "UHF",
+    "CHIRP",
+    "9M2PJU",
+    "frequency database"
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/csv",
+    "contentUrl": "https://frequency.hamradio.my/9M2PJU.csv"
+  },
+  "temporalCoverage": "2024/2026",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Malaysia",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 3.139,
+      "longitude": 101.6869
+    }
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What frequencies do Malaysian ham radio operators use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Malaysian amateur radio operators use VHF (144–148 MHz) and UHF (430–440 MHz) bands for simplex and repeater operation. This database contains over 180 curated frequencies including repeaters, simplex channels, APRS, and PMR446."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I program my walkie talkie with Malaysian frequencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Download the 9M2PJU.csv file from this site and import it into CHIRP radio programming software. CHIRP supports Baofeng, Yaesu, Icom, Kenwood, and Wouxun radios. Connect your radio via programming cable, open CHIRP, import the CSV, and upload to your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the APRS frequency in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The APRS (Automatic Packet Reporting System) frequency in Malaysia is 144.390 MHz, which is the same as the global APRS standard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are PMR446 frequencies in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PMR446 in Malaysia uses 16 channels from 446.00625 MHz to 446.19375 MHz with 12.5 kHz spacing. These are license-free channels for personal use with a maximum power of 0.5W."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a license to operate amateur radio in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you need an Amateur Radio Operating Certificate (AROC) issued by the Malaysian Communications and Multimedia Commission (MCMC). PMR446 channels are license-free for personal use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CTCSS tone do Malaysian repeaters use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Malaysian repeaters use various CTCSS tones. Common tones include 88.5 Hz, 203.5 Hz, 103.5 Hz, and 118.8 Hz. Each repeater in the database lists its specific required tone for access."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Malaysian Amateur Radio Repeaters",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "name": "KL",
+        "description": "KL — Malaysian amateur radio repeater at 145 MHz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Thing",
+        "name": "9M2RKL",
+        "description": "9M2RKL — Malaysian amateur radio repeater at 439.6 MHz. 9M2RKL near BUKIT LANJAN, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Thing",
+        "name": "9M2RKL-L1",
+        "description": "9M2RKL-L1 — Malaysian amateur radio repeater at 439.85 MHz. 9M2RKL-L1 near BUKIT LANJAN, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Thing",
+        "name": "9M2RKL-DMR",
+        "description": "9M2RKL-DMR — Malaysian amateur radio repeater at 439.15 MHz. 9M2RKL-DMR near BUKIT LANJAN, None OPEN Connected to Brandmiester Network for now."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RZS",
+        "description": "9M4RZS — Malaysian amateur radio repeater at 147.65 MHz. 9M4RZS near BUKIT PERMAI, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Thing",
+        "name": "9M2RKK",
+        "description": "9M2RKK — Malaysian amateur radio repeater at 147.98 MHz. 9M2RKK near BUKIT LANJAN, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Thing",
+        "name": "9M2RUK",
+        "description": "9M2RUK — Malaysian amateur radio repeater at 146.9875 MHz. 9M2RUK near GUNUNG ULU KALI, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RLG",
+        "description": "9M4RLG — Malaysian amateur radio repeater at 147.9 MHz. 9M4RLG near GUNUNG ULU KALI, None OPEN MARTS Linking"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RBC",
+        "description": "9M4RBC — Malaysian amateur radio repeater at 147.75 MHz. 9M4RBC near GUNUNG ULU KALI, None OPEN ASTRA Local"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RES",
+        "description": "9M4RES — Malaysian amateur radio repeater at 147.775 MHz. 9M4RES near GUNUNG ULU KALI, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RGH",
+        "description": "9M4RGH — Malaysian amateur radio repeater at 145.675 MHz. 9M4RGH near GENTING HIGHLAND, None OPEN ASTRA Transnasional"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "Thing",
+        "name": "PHG",
+        "description": "PHG — Malaysian amateur radio repeater at 145 MHz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCH",
+        "description": "9M4RCH — Malaysian amateur radio repeater at 146.9875 MHz. 9M4RCH near BUKIT BRINCHANG, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RLS",
+        "description": "9M4RLS — Malaysian amateur radio repeater at 146.9 MHz. 9M4RLS near BUKIT SULAI, None OPEN MARTS Linking"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RHS",
+        "description": "9M4RHS — Malaysian amateur radio repeater at 145.6375 MHz. 9M4RHS near GUNUNG ULU KALI, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCA",
+        "description": "9M4RCA — Malaysian amateur radio repeater at 147 MHz. 9M4RCA near BUKIT BRINCHANG, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCZ",
+        "description": "9M4RCZ — Malaysian amateur radio repeater at 146.85 MHz. 9M4RCZ near BUKIT BIUS - KUALA LIPIS, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCD",
+        "description": "9M4RCD — Malaysian amateur radio repeater at 146.7 MHz. 9M4RCD near KUANTAN - BUKIT PELINDUNG, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RBI",
+        "description": "9M4RBI — Malaysian amateur radio repeater at 147.8 MHz. 9M4RBI near BUKIT IBAM, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCC",
+        "description": "9M4RCC — Malaysian amateur radio repeater at 145.6 MHz. 9M4RCC near BUKIT FRASER, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCE",
+        "description": "9M4RCE — Malaysian amateur radio repeater at 146.1 MHz. 9M4RCE near BUKIT SULAI, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RCY",
+        "description": "9M4RCY — Malaysian amateur radio repeater at 145.7125 MHz. 9M4RCY near TEMERLOH, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RGB",
+        "description": "9M4RGB — Malaysian amateur radio repeater at 147.925 MHz. 9M4RGB near GUNUNG BERINCANG, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 24,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RPS",
+        "description": "9M4RPS — Malaysian amateur radio repeater at 434.875 MHz. 9M4RPS near Bentong - Kayangan Hill, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 25,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RAA",
+        "description": "9M4RAA — Malaysian amateur radio repeater at 147.6375 MHz. 9M4RAA near Bukit Telemung, Karak, Pahang, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 26,
+      "item": {
+        "@type": "Thing",
+        "name": "N9",
+        "description": "N9 — Malaysian amateur radio repeater at 145 MHz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 27,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RTB",
+        "description": "9M4RTB — Malaysian amateur radio repeater at 146.675 MHz. 9M4RTB near GUNUNG TELAPAK BURUK, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 28,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RNS",
+        "description": "9M4RNS — Malaysian amateur radio repeater at 145.375 MHz. 9M4RNS near GUNUNG TELAPAK BURUK, None OPEN"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 29,
+      "item": {
+        "@type": "Thing",
+        "name": "PENANG",
+        "description": "PENANG — Malaysian amateur radio repeater at 145 MHz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 30,
+      "item": {
+        "@type": "Thing",
+        "name": "9M4RXC",
+        "description": "9M4RXC — Malaysian amateur radio repeater at 439.475 MHz. 9M4RXC near Bandar Baharu - Bukit Panchor, None OPEN"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /SEO -->
 
   <!-- Toast Container -->
   <div id="toastContainer" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2" aria-live="polite" aria-atomic="true"></div>
