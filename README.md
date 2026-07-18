@@ -1,13 +1,21 @@
-# Malaysian Amateur Radio Frequency Database
+<p align="center">
+  <img src="icon-512x512.png" alt="MY-HamFreq Logo" width="120" height="120" />
+</p>
 
+<h1 align="center">Malaysian Amateur Radio Frequency Database</h1>
+
+<p align="center">
 ### The #1 curated frequency database for Malaysian amateur radio operators and PMR users
+</p>
 
 A meticulously curated, open-source collection of **206 Malaysian amateur radio frequencies** — covering simplex, repeaters, APRS, and PMR446 — optimized for modern viewing and seamless programming via CHIRP.
 
-[![Ham Radio](https://img.shields.io/badge/Ham%20Radio-9M2PJU-00f3ff?style=for-the-badge&logo=radio&logoColor=black)](https://hamradio.my)
-[![Malaysia](https://img.shields.io/badge/Malaysia-🇲🇾-bc13fe?style=for-the-badge)](https://frequency.hamradio.my)
-[![License](https://img.shields.io/badge/License-AGPL%203.0-0aff68?style=for-the-badge)](LICENSE)
-[![Live Site](https://img.shields.io/badge/Live-frequency.hamradio.my-blue?style=for-the-badge)](https://frequency.hamradio.my)
+<p align="center">
+  <a href="https://hamradio.my"><img src="https://img.shields.io/badge/Ham%20Radio-9M2PJU-00f3ff?style=for-the-badge&logo=radio&logoColor=black" alt="Ham Radio" /></a>
+  <img src="https://img.shields.io/badge/Malaysia-🇲🇾-bc13fe?style=for-the-badge" alt="Malaysia" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL%203.0-0aff68?style=for-the-badge" alt="License" /></a>
+  <a href="https://frequency.hamradio.my"><img src="https://img.shields.io/badge/Live-frequency.hamradio.my-blue?style=for-the-badge" alt="Live Site" /></a>
+</p>
 
 ---
 
