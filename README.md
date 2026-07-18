@@ -2,7 +2,7 @@
   <img src="icon-512x512.png" alt="MY-HamFreq Logo" width="120" height="120" />
 </p>
 
-<h1 align="center">Malaysian Amateur Radio Frequency Database</h1>
+<h1 align="center">MY-HamFreq</h1>
 
 <p align="center">
 ### The #1 curated frequency database for Malaysian amateur radio operators and PMR users

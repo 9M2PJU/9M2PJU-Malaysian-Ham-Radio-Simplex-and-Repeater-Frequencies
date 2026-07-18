@@ -1,7 +1,7 @@
 {
   "name": "my-hamfreq",
   "version": "2.1.0",
-  "description": "Malaysian Amateur Radio Frequency Database - a searchable PWA of simplex, repeater, and PMR frequencies.",
+  "description": "MY-HamFreq — Malaysian Amateur Radio Frequency Database - a searchable PWA of simplex, repeater, and PMR frequencies.",
   "scripts": {
     "build": "node build.js && tailwindcss -i ./assets/input.css -o ./assets/styles.css --minify",
     "build:css": "tailwindcss -i ./assets/input.css -o ./assets/styles.css --minify",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/9M2PJU/9M2PJU-Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies.git"
+    "url": "git+https://github.com/9M2PJU/9M2PJU-MY-HamFreq.git"
   },
   "keywords": ["ham-radio", "amateur-radio", "malaysia", "frequencies", "chirp", "pmr446"],
   "author": "9M2PJU",

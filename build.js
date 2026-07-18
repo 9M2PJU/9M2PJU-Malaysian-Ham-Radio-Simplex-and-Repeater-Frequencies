@@ -254,7 +254,7 @@ function generateJsonLd(rows) {
     },
     'areaServed': 'Malaysia',
     'sameAs': [
-      'https://github.com/9M2PJU/9M2PJU-Malaysian-Ham-Radio-Simplex-and-Repeater-Frequencies'
+      'https://github.com/9M2PJU/9M2PJU-MY-HamFreq'
     ]
   };
 
