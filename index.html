@@ -75,7 +75,7 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="preconnect" href="https://www.openstreetmap.org" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swapfamily=Space+Grotesk:wght@400;500;600;700https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swapfamily=JetBrains+Mono:wght@400;500;600https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swapdisplay=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -94,18 +94,35 @@
     }
 
     body {
-      background-color: #0a0e1a;
+      background-color: #050505;
       background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(79, 70, 229, 0.08), transparent 60%),
-        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(99, 102, 241, 0.05), transparent 60%);
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 255, 65, 0.04), transparent 60%);
       background-attachment: fixed;
-      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      font-family: "JetBrains Mono", monospace;
     }
 
-    /* Headings use Space Grotesk for a refined, technical character */
+    /* CRT scanline overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.15) 3px,
+        rgba(0, 0, 0, 0) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.3;
+    }
+
+    /* Phosphor glow on headings and primary text */
     h1, h2, h3, h4, h5, h6 {
-      font-family: "Space Grotesk", Inter, sans-serif;
+      font-family: "JetBrains Mono", monospace;
       letter-spacing: -0.02em;
+      text-shadow: 0 0 6px rgba(0, 255, 65, 0.3);
     }
 
     /* Smooth scrolling */
@@ -120,29 +137,29 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #0a0e1a;
+      background: #0a0a0a;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 5px;
-      border: 2px solid #0a0e1a;
+      background: #003311;
+      border-radius: 0;
+      border: 2px solid #0a0a0a;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #334155;
+      background: #00661c;
     }
 
     /* Focus visible ring */
     *:focus-visible {
-      outline: 2px solid #6366f1;
+      outline: 2px solid #00ff41;
       outline-offset: 2px;
     }
 
     .glass {
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(16px) saturate(140%);
-      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     /* Hide scrollbar for horizontal filter scroll on mobile */
@@ -165,7 +182,7 @@
 
     /* Card click affordance */
     .card-clickable:focus-visible {
-      outline: 2px solid #6366f1;
+      outline: 2px solid #00ff41;
       outline-offset: 2px;
     }
 
@@ -233,26 +250,26 @@
   </style>
 </head>
 
-<body class="font-sans antialiased text-slate-100 min-h-screen flex flex-col">
+<body class="font-sans antialiased text-primary-300 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/85 backdrop-blur-xl border-b border-white/[0.08]">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-black/90 backdrop-blur-sm border-b border-primary-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 gap-4">
         <a href="#" class="flex items-center gap-3 min-w-0" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
-          <img src="icon-192x192.png" alt="MY-HamFreq logo — Malaysian Amateur Radio Frequency Database" width="36" height="36" class="w-9 h-9 rounded-lg shadow-lg shrink-0" />
+          <img src="icon-192x192.png" alt="MY-HamFreq logo — Malaysian Amateur Radio Frequency Database" width="36" height="36" class="w-9 h-9 rounded shrink-0" />
           <div class="hidden sm:block min-w-0">
-            <div class="font-heading font-bold text-white truncate tracking-tight text-[15px] leading-tight">MY-HamFreq</div>
-            <div class="text-[10px] text-slate-500 uppercase tracking-[0.12em] truncate font-medium">Amateur Radio Database</div>
+            <div class="font-bold text-primary-400 truncate tracking-tight text-[15px] leading-tight" style="text-shadow: 0 0 8px rgba(0,255,65,0.4)">MY-HamFreq</div>
+            <div class="text-[10px] text-primary-700 uppercase tracking-[0.12em] truncate font-medium">// Amateur Radio Database</div>
           </div>
         </a>
 
         <div class="flex items-center gap-2 sm:gap-3">
           <nav class="hidden md:flex items-center gap-0.5 text-sm" aria-label="Main navigation">
-            <a href="faq.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors font-medium">FAQ</a>
-            <a href="chirp-guide.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors font-medium">CHIRP Guide</a>
-            <a href="bands-guide.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors font-medium">Bands</a>
-            <a href="about.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors font-medium">About</a>
+            <a href="faq.html" class="px-3 py-2 text-primary-600 hover:text-primary-400 transition-colors font-medium">FAQ</a>
+            <a href="chirp-guide.html" class="px-3 py-2 text-primary-600 hover:text-primary-400 transition-colors font-medium">CHIRP</a>
+            <a href="bands-guide.html" class="px-3 py-2 text-primary-600 hover:text-primary-400 transition-colors font-medium">Bands</a>
+            <a href="about.html" class="px-3 py-2 text-primary-600 hover:text-primary-400 transition-colors font-medium">About</a>
           </nav>
 
           <button id="installBtn" class="hidden items-center gap-2 px-3 py-2 rounded-lg bg-primary-600/10 border border-primary-600/30 text-primary-400 hover:bg-primary-600/20 hover:text-primary-300 transition-colors text-sm font-medium" aria-label="Install app">
@@ -272,31 +289,32 @@
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
     <!-- Hero -->
     <section class="text-center mb-10 animate-fade-in-up">
-      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tightest mb-4 leading-[1.1]">
-        Malaysian Amateur Radio <br class="hidden md:block" /> Frequency Database
+      <div class="text-primary-700 text-xs mb-3 font-mono">[ frequency.hamradio.my ]</div>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-400 tracking-tight mb-4 leading-[1.1]" style="text-shadow: 0 0 12px rgba(0,255,65,0.3)">
+        &gt; Malaysian Amateur Radio<br class="hidden md:block" /> Frequency Database
       </h1>
-      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+      <p class="text-primary-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
         A curated, searchable collection of simplex, repeater, and PMR446 frequencies for Malaysian operators. Ready for CHIRP and field use.
       </p>
 
       <!-- Social sharing -->
       <div class="flex items-center justify-center gap-2 mt-6" aria-label="Share this page">
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ffrequency.hamradio.my&text=Malaysian%20Amateur%20Radio%20Frequency%20Database%20by%20%409M2PJU" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-sky-500/30 hover:text-sky-400 text-slate-400 transition-colors flex items-center justify-center" title="Share on X / Twitter" aria-label="Share on X / Twitter">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ffrequency.hamradio.my&text=Malaysian%20Amateur%20Radio%20Frequency%20Database%20by%20%409M2PJU" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Share on X / Twitter" aria-label="Share on X / Twitter">
           <i class="fa-brands fa-x-twitter"></i>
         </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffrequency.hamradio.my" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-blue-500/30 hover:text-blue-400 text-slate-400 transition-colors flex items-center justify-center" title="Share on Facebook" aria-label="Share on Facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffrequency.hamradio.my" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/?text=Malaysian%20Amateur%20Radio%20Frequency%20Database%20https%3A%2F%2Ffrequency.hamradio.my" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-emerald-500/30 hover:text-emerald-400 text-slate-400 transition-colors flex items-center justify-center" title="Share on WhatsApp" aria-label="Share on WhatsApp">
+        <a href="https://wa.me/?text=Malaysian%20Amateur%20Radio%20Frequency%20Database%20https%3A%2F%2Ffrequency.hamradio.my" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Share on WhatsApp" aria-label="Share on WhatsApp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://t.me/share/url?url=https%3A%2F%2Ffrequency.hamradio.my&text=Malaysian%20Amateur%20Radio%20Frequency%20Database" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-sky-400/30 hover:text-sky-400 text-slate-400 transition-colors flex items-center justify-center" title="Share on Telegram" aria-label="Share on Telegram">
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffrequency.hamradio.my&text=Malaysian%20Amateur%20Radio%20Frequency%20Database" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Share on Telegram" aria-label="Share on Telegram">
           <i class="fa-brands fa-telegram"></i>
         </a>
-        <a href="https://www.reddit.com/submit?url=https%3A%2F%2Ffrequency.hamradio.my&title=Malaysian%20Amateur%20Radio%20Frequency%20Database" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-orange-500/30 hover:text-orange-400 text-slate-400 transition-colors flex items-center justify-center" title="Share on Reddit" aria-label="Share on Reddit">
+        <a href="https://www.reddit.com/submit?url=https%3A%2F%2Ffrequency.hamradio.my&title=Malaysian%20Amateur%20Radio%20Frequency%20Database" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Share on Reddit" aria-label="Share on Reddit">
           <i class="fa-brands fa-reddit-alien"></i>
         </a>
-        <button id="copyShareLink" class="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/10 hover:border-primary-500/30 hover:text-primary-400 text-slate-400 transition-colors flex items-center justify-center" title="Copy link" aria-label="Copy link to share">
+        <button id="copyShareLink" class="w-9 h-9 rounded-lg bg-black/40 border border-primary-500/10 hover:border-primary-500/30 hover:text-primary-400 text-primary-700 transition-colors flex items-center justify-center" title="Copy link" aria-label="Copy link to share">
           <i class="fa-solid fa-link"></i>
         </button>
       </div>
@@ -304,28 +322,28 @@
 
     <!-- Stats -->
     <section class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 animate-fade-in-up" style="animation-delay: 0.05s">
-      <div class="glass rounded-xl p-4 text-center border border-white/[0.06]">
-        <div class="font-heading text-2xl sm:text-3xl font-bold text-white" id="stat-total">-</div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-[0.12em] font-semibold mt-1.5">Total</div>
+      <div class="glass rounded-xl p-4 text-center border border-primary-500/10">
+        <div class="text-2xl sm:text-3xl font-bold text-primary-400" id="stat-total" style="text-shadow: 0 0 8px rgba(0,255,65,0.3)">-</div>
+        <div class="text-[10px] text-primary-700 uppercase tracking-[0.12em] font-semibold mt-1.5">Total</div>
       </div>
-      <div class="glass rounded-xl p-4 text-center border border-white/[0.06]">
-        <div class="font-heading text-2xl sm:text-3xl font-bold text-emerald-400" id="stat-simplex">-</div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-[0.12em] font-semibold mt-1.5">Simplex</div>
+      <div class="glass rounded-xl p-4 text-center border border-primary-500/10">
+        <div class="text-2xl sm:text-3xl font-bold text-primary-300" id="stat-simplex" style="text-shadow: 0 0 8px rgba(0,255,65,0.2)">-</div>
+        <div class="text-[10px] text-primary-700 uppercase tracking-[0.12em] font-semibold mt-1.5">Simplex</div>
       </div>
-      <div class="glass rounded-xl p-4 text-center border border-white/[0.06]">
-        <div class="font-heading text-2xl sm:text-3xl font-bold text-primary-400" id="stat-repeater">-</div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-[0.12em] font-semibold mt-1.5">Repeaters</div>
+      <div class="glass rounded-xl p-4 text-center border border-primary-500/10">
+        <div class="text-2xl sm:text-3xl font-bold text-primary-400" id="stat-repeater" style="text-shadow: 0 0 8px rgba(0,255,65,0.3)">-</div>
+        <div class="text-[10px] text-primary-700 uppercase tracking-[0.12em] font-semibold mt-1.5">Repeaters</div>
       </div>
-      <div class="glass rounded-xl p-4 text-center border border-white/[0.06]">
-        <div class="font-heading text-2xl sm:text-3xl font-bold text-amber-400" id="stat-pmr">-</div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-[0.12em] font-semibold mt-1.5">PMR446</div>
+      <div class="glass rounded-xl p-4 text-center border border-primary-500/10">
+        <div class="text-2xl sm:text-3xl font-bold text-amber-400" id="stat-pmr" style="text-shadow: 0 0 8px rgba(255,176,0,0.3)">-</div>
+        <div class="text-[10px] text-primary-700 uppercase tracking-[0.12em] font-semibold mt-1.5">PMR446</div>
       </div>
     </section>
 
     <!-- Visitor badge -->
     <section class="flex justify-center mb-8 animate-fade-in-up" style="animation-delay: 0.1s">
-      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/60 border border-white/10">
-        <i class="fa-solid fa-users text-slate-500 text-sm"></i>
+      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-black/40 border border-primary-500/10">
+        <i class="fa-solid fa-users text-primary-700 text-sm"></i>
         <img src="https://api.visitorbadge.io/api/visitors?path=pass.hamradio.my&label=visitors&countColor=%23334155&labelColor=%230f172a&style=flat"
           alt="Total visitors" class="h-5 w-auto opacity-90" loading="lazy" />
       </div>
@@ -333,13 +351,13 @@
 
     <!-- Controls -->
     <section id="controls" class="sticky top-20 z-30 mb-8 animate-fade-in-up" style="animation-delay: 0.15s">
-      <div class="glass rounded-2xl p-4 border border-white/10 bg-slate-900/80 backdrop-blur-xl shadow-2xl">
+      <div class="glass rounded-xl p-4 border border-primary-500/15 bg-black/60 shadow-glow-sm">
         <div class="flex flex-col lg:flex-row gap-4">
           <!-- Search -->
           <div class="relative flex-1 min-w-[240px]">
-            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
-            <input id="search" type="text" placeholder="Search callsign, frequency, location, or tone..."
-              class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-950 border border-white/10 focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50 text-slate-100 placeholder-slate-600 transition-all text-sm" />
+            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-primary-700"></i>
+            <input id="search" type="text" placeholder="grep callsign, frequency, location, or tone..."
+              class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-black/60 border border-primary-500/15 focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 text-primary-300 placeholder-primary-800 transition-all text-sm" />
           </div>
 
           <!-- Filters -->
@@ -352,21 +370,21 @@
           </div>
 
           <!-- Actions -->
-          <div class="flex items-center gap-2 border-t lg:border-t-0 lg:border-l border-white/10 pt-3 lg:pt-0 lg:pl-4">
-            <button id="geo-btn" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-400 hover:text-white hover:bg-white/5 transition-colors" title="Sort by distance" aria-label="Find frequencies near me">
+          <div class="flex items-center gap-2 border-t lg:border-t-0 lg:border-l border-primary-500/10 pt-3 lg:pt-0 lg:pl-4">
+            <button id="geo-btn" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-primary-700 hover:text-primary-400 hover:bg-primary-500/5 transition-colors" title="Sort by distance" aria-label="Find frequencies near me">
               <i class="fa-solid fa-location-crosshairs"></i>
               <span class="hidden sm:inline">Near Me</span>
             </button>
 
-            <div class="h-5 w-px bg-white/10"></div>
+            <div class="h-5 w-px bg-primary-500/10"></div>
 
-            <button id="viewToggle" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-400 hover:text-white hover:bg-white/5 transition-colors" title="Toggle view" aria-label="Toggle card or table view">
+            <button id="viewToggle" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-primary-700 hover:text-primary-400 hover:bg-primary-500/5 transition-colors" title="Toggle view" aria-label="Toggle card or table view">
               <i class="fa-solid fa-list"></i>
               <span class="hidden sm:inline">Table</span>
             </button>
 
             <a href="9M2PJU.csv" download
-              class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-400 hover:text-white hover:bg-white/5 transition-colors" title="Download CSV">
+              class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-primary-700 hover:text-primary-400 hover:bg-primary-500/5 transition-colors" title="Download CSV">
               <i class="fa-solid fa-cloud-arrow-down"></i>
               <span class="hidden sm:inline">CSV</span>
             </a>
@@ -374,7 +392,7 @@
         </div>
 
         <!-- Active filter summary -->
-        <div id="resultsSummary" class="mt-3 pt-3 border-t border-white/5 text-xs text-slate-500 flex items-center justify-between">
+        <div id="resultsSummary" class="mt-3 pt-3 border-t border-primary-500/5 text-xs text-primary-700 flex items-center justify-between">
           <span>Loading frequency database...</span>
         </div>
       </div>
@@ -382,50 +400,50 @@
 
     <!-- Output -->
     <div id="output" class="animate-fade-in-up" style="animation-delay: 0.2s">
-      <div class="flex flex-col items-center justify-center py-20 text-slate-500">
+      <div class="flex flex-col items-center justify-center py-20 text-primary-700">
         <div class="animate-spin rounded-full h-10 w-10 border-2 border-primary-500 border-t-transparent"></div>
-        <p class="mt-4">Loading frequency database...</p>
+        <p class="mt-4 font-mono text-sm">// Loading frequency database...</p>
       </div>
     </div>
 
     <!-- Guides & Resources (SEO: internal linking + keyword-rich content) -->
     <section class="mt-12 animate-fade-in-up" style="animation-delay: 0.25s" aria-label="Guides and resources">
-      <h2 class="font-heading text-xl font-bold text-white mb-6 text-center tracking-tight">Guides &amp; Resources</h2>
+      <h2 class="text-lg font-bold text-primary-400 mb-6 text-center tracking-tight" style="text-shadow: 0 0 6px rgba(0,255,65,0.3)">&gt; Guides &amp; Resources</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="chirp-guide.html" class="group glass rounded-xl p-5 border border-white/[0.06] hover:border-primary-500/20 transition-all hover:-translate-y-0.5">
+        <a href="chirp-guide.html" class="group glass rounded-lg p-5 border border-primary-500/10 hover:border-primary-500/30 transition-all hover:-translate-y-0.5">
           <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center mb-3">
             <i class="fa-solid fa-code text-primary-400"></i>
           </div>
-          <h3 class="font-heading font-bold text-white text-sm mb-1 group-hover:text-primary-300 transition-colors tracking-tight">CHIRP Programming Guide</h3>
-          <p class="text-xs text-slate-500 leading-relaxed">Step-by-step guide to program Malaysian frequencies into your radio using CHIRP software.</p>
+          <h3 class="font-bold text-primary-400 text-sm mb-1 group-hover:text-primary-300 transition-colors tracking-tight">CHIRP Programming Guide</h3>
+          <p class="text-xs text-primary-700 leading-relaxed">Step-by-step guide to program Malaysian frequencies into your radio using CHIRP software.</p>
         </a>
-        <a href="pmr446-guide.html" class="group glass rounded-xl p-5 border border-white/[0.06] hover:border-amber-500/20 transition-all hover:-translate-y-0.5">
-          <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+        <a href="pmr446-guide.html" class="group glass rounded-lg p-5 border border-primary-500/10 hover:border-amber-400/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mb-3">
             <i class="fa-solid fa-walkie-talkie text-amber-400"></i>
           </div>
-          <h3 class="font-heading font-bold text-white text-sm mb-1 group-hover:text-amber-300 transition-colors tracking-tight">PMR446 Guide</h3>
-          <p class="text-xs text-slate-500 leading-relaxed">All 16 license-free PMR446 channels, power limits, and regulations for Malaysia.</p>
+          <h3 class="font-bold text-primary-400 text-sm mb-1 group-hover:text-amber-400 transition-colors tracking-tight">PMR446 Guide</h3>
+          <p class="text-xs text-primary-700 leading-relaxed">All 16 license-free PMR446 channels, power limits, and regulations for Malaysia.</p>
         </a>
-        <a href="bands-guide.html" class="group glass rounded-xl p-5 border border-white/[0.06] hover:border-emerald-500/20 transition-all hover:-translate-y-0.5">
-          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3">
-            <i class="fa-solid fa-tower-broadcast text-emerald-400"></i>
+        <a href="bands-guide.html" class="group glass rounded-lg p-5 border border-primary-500/10 hover:border-primary-500/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-tower-broadcast text-primary-400"></i>
           </div>
-          <h3 class="font-heading font-bold text-white text-sm mb-1 group-hover:text-emerald-300 transition-colors tracking-tight">Bands Guide</h3>
-          <p class="text-xs text-slate-500 leading-relaxed">Complete guide to VHF, UHF, and HF amateur radio bands in Malaysia.</p>
+          <h3 class="font-bold text-primary-400 text-sm mb-1 group-hover:text-primary-300 transition-colors tracking-tight">Bands Guide</h3>
+          <p class="text-xs text-primary-700 leading-relaxed">Complete guide to VHF, UHF, and HF amateur radio bands in Malaysia.</p>
         </a>
-        <a href="faq.html" class="group glass rounded-xl p-5 border border-white/[0.06] hover:border-rose-500/20 transition-all hover:-translate-y-0.5">
-          <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-3">
-            <i class="fa-solid fa-circle-question text-rose-400"></i>
+        <a href="faq.html" class="group glass rounded-lg p-5 border border-primary-500/10 hover:border-amber-400/30 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-circle-question text-amber-400"></i>
           </div>
-          <h3 class="font-heading font-bold text-white text-sm mb-1 group-hover:text-rose-300 transition-colors tracking-tight">FAQ</h3>
-          <p class="text-xs text-slate-500 leading-relaxed">Frequently asked questions about Malaysian ham radio, repeaters, and licensing.</p>
+          <h3 class="font-bold text-primary-400 text-sm mb-1 group-hover:text-amber-400 transition-colors tracking-tight">FAQ</h3>
+          <p class="text-xs text-primary-700 leading-relaxed">Frequently asked questions about Malaysian ham radio, repeaters, and licensing.</p>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/[0.06] bg-slate-950/40 py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500">
+  <footer class="border-t border-primary-500/15 bg-black/40 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-primary-800">
       <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4" aria-label="Footer navigation">
         <a href="index.html" class="hover:text-primary-400 transition-colors">Frequencies</a>
         <a href="faq.html" class="hover:text-primary-400 transition-colors">FAQ</a>
@@ -434,10 +452,10 @@
         <a href="bands-guide.html" class="hover:text-primary-400 transition-colors">Bands Guide</a>
         <a href="about.html" class="hover:text-primary-400 transition-colors">About</a>
       </nav>
-      <p class="text-slate-600">&copy; <span id="year"></span> Malaysian Amateur Radio Frequency Database.</p>
-      <p class="mt-1 text-slate-600">
+      <p class="text-primary-900">&copy; <span id="year"></span> Malaysian Amateur Radio Frequency Database.</p>
+      <p class="mt-1 text-primary-900">
         Made for Malaysia by
-        <a href="https://hamradio.my" class="text-primary-400 hover:text-primary-300 transition-colors font-medium">9M2PJU</a>.
+        <a href="https://hamradio.my" class="text-primary-500 hover:text-primary-300 transition-colors font-medium">9M2PJU</a>.
       </p>
     </div>
   </footer>
@@ -445,8 +463,8 @@
   <!-- Donation Modal -->
   <div id="donationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm"
     role="dialog" aria-modal="true" aria-labelledby="donationTitle">
-    <div class="relative bg-slate-900 border border-white/10 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
-      <button id="donationCloseBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors" aria-label="Close donation dialog">
+    <div class="relative bg-black/90 border border-primary-500/20 rounded-xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+      <button id="donationCloseBtn" class="absolute top-4 right-4 text-primary-700 hover:text-primary-400 transition-colors" aria-label="Close donation dialog">
         <i class="fa-solid fa-xmark text-xl"></i>
       </button>
 
@@ -455,8 +473,8 @@
           <i class="fa-solid fa-heart text-2xl text-rose-500"></i>
         </div>
 
-        <h3 id="donationTitle" class="text-xl font-bold text-white mb-2">Support This Project</h3>
-        <p class="text-slate-400 mb-6 text-sm">
+        <h3 id="donationTitle" class="text-xl font-bold text-primary-400 mb-2">Support This Project</h3>
+        <p class="text-primary-600 mb-6 text-sm">
           Help keep the Malaysian Amateur Radio Frequency Database running and ad-free.
         </p>
 
@@ -464,7 +482,7 @@
           <img src="donate_qr.png" alt="DuitNow QR code for donations to 9M2PJU" width="192" height="192" class="w-full h-full object-contain" loading="lazy" />
         </div>
 
-        <p class="text-[10px] text-slate-500 font-mono">Scan with any banking app or TNG eWallet</p>
+        <p class="text-[10px] text-primary-700 font-mono">Scan with any banking app or TNG eWallet</p>
       </div>
     </div>
   </div>
@@ -472,29 +490,29 @@
   <!-- Map Modal -->
   <div id="mapModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm"
     role="dialog" aria-modal="true" aria-labelledby="mapTitle">
-    <div class="relative bg-slate-900 border border-white/10 rounded-2xl w-full max-w-2xl mx-2 sm:mx-4 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-      <button id="mapCloseBtn" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-lg bg-slate-950/80 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors flex items-center justify-center" aria-label="Close map">
+    <div class="relative bg-black/90 border border-primary-500/20 rounded-xl w-full max-w-2xl mx-2 sm:mx-4 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <button id="mapCloseBtn" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-lg bg-black/80 hover:bg-primary-500/10 text-primary-700 hover:text-primary-400 transition-colors flex items-center justify-center" aria-label="Close map">
         <i class="fa-solid fa-xmark text-lg"></i>
       </button>
 
-      <div class="p-4 sm:p-5 border-b border-white/10 shrink-0">
+      <div class="p-4 sm:p-5 border-b border-primary-500/10 shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center shrink-0">
             <i class="fa-solid fa-tower-broadcast text-primary-400"></i>
           </div>
           <div class="min-w-0 flex-1">
-            <h3 id="mapTitle" class="text-lg font-bold text-white truncate">Repeater Location</h3>
-            <p id="mapSubtitle" class="text-xs text-slate-400 truncate font-mono"></p>
+            <h3 id="mapTitle" class="text-lg font-bold text-primary-400 truncate">Repeater Location</h3>
+            <p id="mapSubtitle" class="text-xs text-primary-600 truncate font-mono"></p>
           </div>
         </div>
       </div>
 
-      <div class="bg-slate-950 h-[50vh] sm:h-[55vh] min-h-[280px] relative">
+      <div class="bg-black h-[50vh] sm:h-[55vh] min-h-[280px] relative">
         <iframe id="mapFrame" class="absolute inset-0 w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Repeater map"></iframe>
       </div>
 
-      <div class="p-3 sm:p-4 border-t border-white/10 shrink-0 flex flex-wrap items-center justify-between gap-2">
-        <div id="mapCoords" class="text-[11px] text-slate-500 font-mono"></div>
+      <div class="p-3 sm:p-4 border-t border-primary-500/10 shrink-0 flex flex-wrap items-center justify-between gap-2">
+        <div id="mapCoords" class="text-[11px] text-primary-700 font-mono"></div>
         <a id="mapGmapsLink" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary-600/10 border border-primary-600/30 text-primary-400 hover:bg-primary-600/20 text-xs font-medium transition-colors">
           <i class="fa-solid fa-up-right-from-square"></i>
           Open in Google Maps
@@ -502,6 +520,7 @@
       </div>
     </div>
   </div>
+
 
 
 
@@ -2897,7 +2916,7 @@
 
   <!-- Back to Top -->
   <button id="backToTop" type="button"
-    class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-500 transition-all opacity-0 translate-y-4 invisible flex items-center justify-center z-40"
+    class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-primary-600/20 text-primary-400 border border-primary-500/30 shadow-glow-sm hover:bg-primary-500 transition-all opacity-0 translate-y-4 invisible flex items-center justify-center z-40"
     aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
@@ -2958,9 +2977,9 @@
     function bandBadge(freq) {
       const band = getBand(freq);
       const styles = {
-        PMR: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-        VHF: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
-        UHF: 'bg-primary-500/10 text-primary-400 border-primary-500/30'
+        PMR: 'bg-amber-400/10 text-amber-400 border-amber-400/30',
+        VHF: 'bg-primary-500/10 text-primary-400 border-primary-500/30',
+        UHF: 'bg-primary-500/10 text-primary-300 border-primary-500/30'
       };
       return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border ${styles[band]}">${band}</span>`;
     }
@@ -3039,8 +3058,8 @@
           userLat = position.coords.latitude;
           userLon = position.coords.longitude;
           updateDistances(userLat, userLon);
-          geoBtn.innerHTML = '<i class="fa-solid fa-location-dot text-emerald-400"></i> <span class="hidden sm:inline">Sorted by Distance</span>';
-          geoBtn.classList.add('text-emerald-400');
+          geoBtn.innerHTML = '<i class="fa-solid fa-location-dot text-primary-400"></i> <span class="hidden sm:inline">Sorted by Distance</span>';
+          geoBtn.classList.add('text-primary-400');
           render(getFilteredRows());
           if (!silent) showToast('Location set. Results sorted by distance.', 'success');
         },
@@ -3063,7 +3082,7 @@
 
     function resetGeoBtn() {
       geoBtn.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> <span class="hidden sm:inline">Near Me</span>';
-      geoBtn.classList.remove('text-emerald-400');
+      geoBtn.classList.remove('text-primary-400');
     }
 
     // ===== Rendering =====
@@ -3074,7 +3093,7 @@
       const offsetText = offset !== 0 ? `${r.Duplex || '-'}${freq} / ${offset} MHz` : 'Simplex';
       const tone = r.Tone ? `${escapeHtml(r.Tone)} ${escapeHtml(r.rToneFreq || '')}`.trim() : '-';
       const distHtml = typeof r.distance === 'number' && r.distance !== Infinity
-        ? `<span class="inline-flex items-center gap-1 text-[10px] font-mono text-primary-300 bg-primary-500/10 px-2 py-0.5 rounded border border-primary-500/20"><i class="fa-solid fa-location-arrow"></i>${r.distance.toFixed(1)} km</span>`
+        ? `<span class="inline-flex items-center gap-1 text-[10px] font-mono text-primary-400 bg-primary-500/10 px-2 py-0.5 rounded border border-primary-500/20"><i class="fa-solid fa-location-arrow"></i>${r.distance.toFixed(1)} km</span>`
         : '';
       const locationText = escapeHtml(r.Comment || r.Location || 'No location info');
       const hasCoords = r.Latitude && r.Longitude && !isNaN(parseFloat(r.Latitude)) && !isNaN(parseFloat(r.Longitude));
@@ -3094,11 +3113,11 @@
         ? `data-lat="${escapeHtml(r.Latitude)}" data-lon="${escapeHtml(r.Longitude)}" data-name="${escapeHtml(r.Name || '')}" data-loc="${escapeHtml(r.Comment || r.Location || '')}" data-freq="${freq}"`
         : '';
       const cardClass = hasCoords
-        ? 'group rounded-xl border border-white/[0.06] bg-slate-900/40 hover:bg-slate-900/70 hover:border-primary-500/20 transition-all p-5 shadow-subtle hover:shadow-card hover:-translate-y-0.5 cursor-pointer card-clickable'
-        : 'group rounded-xl border border-white/[0.06] bg-slate-900/40 hover:bg-slate-900/70 transition-all p-5 shadow-subtle hover:shadow-card hover:-translate-y-0.5';
+        ? 'group rounded-lg border border-primary-500/10 bg-black/40 hover:bg-black/60 hover:border-primary-500/30 transition-all p-5 hover:shadow-glow-sm hover:-translate-y-0.5 cursor-pointer card-clickable'
+        : 'group rounded-lg border border-primary-500/10 bg-black/40 hover:bg-black/60 hover:border-primary-500/20 transition-all p-5 hover:-translate-y-0.5';
 
       const mapHint = hasCoords
-        ? `<div class="mt-3 pt-3 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-slate-500 group-hover:text-primary-400 transition-colors"><i class="fa-solid fa-map-location-dot"></i>Click card to view map</div>`
+        ? `<div class="mt-3 pt-3 border-t border-primary-500/5 flex items-center gap-1.5 text-[11px] text-primary-800 group-hover:text-primary-400 transition-colors"><i class="fa-solid fa-map-location-dot"></i>Click card to view map</div>`
         : '';
 
       return `
@@ -3106,44 +3125,44 @@
           <div class="flex items-start justify-between gap-3 mb-3">
             <div class="min-w-0 flex-1">
               <div class="flex flex-wrap items-center gap-2 mb-1">
-                <h3 class="font-heading font-bold text-white truncate text-lg tracking-tight">${escapeHtml(r.Name || 'Unknown')}</h3>
+                <h3 class="font-bold text-primary-400 truncate text-base tracking-tight" style="text-shadow: 0 0 6px rgba(0,255,65,0.2)">${escapeHtml(r.Name || 'Unknown')}</h3>
                 ${distHtml}
               </div>
-              <div class="text-xs text-slate-500 truncate font-mono">
+              <div class="text-xs text-primary-700 truncate font-mono">
                 ${mapsLink ? `<a href="${mapsLink}" target="_blank" rel="noopener" class="hover:text-primary-400 transition-colors" onclick="event.stopPropagation()"><i class="fa-solid fa-location-dot mr-1"></i>${locationText}</a>` : `<i class="fa-solid fa-location-dot mr-1"></i>${locationText}`}
               </div>
             </div>
             <div class="shrink-0">${bandBadge(r.Frequency)}</div>
           </div>
 
-          <div class="flex items-center gap-3 my-4 bg-slate-950/40 rounded-lg p-3 border border-white/[0.04]">
-            <div class="font-heading text-2xl font-mono font-bold text-white tracking-tight">${freq} <span class="text-sm font-sans font-normal text-slate-500">MHz</span></div>
+          <div class="flex items-center gap-3 my-4 bg-black/40 rounded-lg p-3 border border-primary-500/5">
+            <div class="text-2xl font-mono font-bold text-primary-300 tracking-tight" style="text-shadow: 0 0 8px rgba(0,255,65,0.25)">${freq} <span class="text-sm font-normal text-primary-700">MHz</span></div>
             <div class="ml-auto flex items-center gap-1">
-              <button onclick="copyToClipboard('${freq}', 'Frequency'); event.stopPropagation();" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-primary-500/20 text-slate-400 hover:text-primary-400 transition-colors flex items-center justify-center" title="Copy frequency" aria-label="Copy frequency">
+              <button onclick="copyToClipboard('${freq}', 'Frequency'); event.stopPropagation();" class="w-8 h-8 rounded-lg bg-primary-500/5 hover:bg-primary-500/20 text-primary-700 hover:text-primary-400 transition-colors flex items-center justify-center" title="Copy frequency" aria-label="Copy frequency">
                 <i class="fa-regular fa-copy"></i>
               </button>
-              <button onclick="copyToClipboard('${escapeHtml(details)}', 'Channel details'); event.stopPropagation();" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-primary-500/20 text-slate-400 hover:text-primary-400 transition-colors flex items-center justify-center" title="Copy channel details" aria-label="Copy channel details">
+              <button onclick="copyToClipboard('${escapeHtml(details)}', 'Channel details'); event.stopPropagation();" class="w-8 h-8 rounded-lg bg-primary-500/5 hover:bg-primary-500/20 text-primary-700 hover:text-primary-400 transition-colors flex items-center justify-center" title="Copy channel details" aria-label="Copy channel details">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-y-2 text-sm pt-3 border-t border-white/5">
+          <div class="grid grid-cols-2 gap-y-2 text-sm pt-3 border-t border-primary-500/5">
             <div class="flex items-center gap-2">
-              <span class="w-14 text-[10px] uppercase tracking-wider text-slate-500 font-mono">Tone</span>
-              <span class="text-slate-300 font-mono">${tone}</span>
+              <span class="w-14 text-[10px] uppercase tracking-wider text-primary-800 font-mono">Tone</span>
+              <span class="text-primary-400 font-mono">${tone}</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="w-14 text-[10px] uppercase tracking-wider text-slate-500 font-mono">Offset</span>
-              <span class="${offset !== 0 ? 'text-primary-300' : 'text-slate-600'} font-mono">${offsetText}</span>
+              <span class="w-14 text-[10px] uppercase tracking-wider text-primary-800 font-mono">Offset</span>
+              <span class="${offset !== 0 ? 'text-primary-300' : 'text-primary-800'} font-mono">${offsetText}</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="w-14 text-[10px] uppercase tracking-wider text-slate-500 font-mono">Mode</span>
-              <span class="font-mono text-slate-300">${escapeHtml(r.Mode || '-')}</span>
+              <span class="w-14 text-[10px] uppercase tracking-wider text-primary-800 font-mono">Mode</span>
+              <span class="font-mono text-primary-400">${escapeHtml(r.Mode || '-')}</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="w-14 text-[10px] uppercase tracking-wider text-slate-500 font-mono">Power</span>
-              <span class="font-mono text-slate-300">${escapeHtml(r.Power || '-')}</span>
+              <span class="w-14 text-[10px] uppercase tracking-wider text-primary-800 font-mono">Power</span>
+              <span class="font-mono text-primary-400">${escapeHtml(r.Power || '-')}</span>
             </div>
           </div>
           ${mapHint}
@@ -3163,23 +3182,23 @@
         const location = escapeHtml(r.Comment || r.Location || '-');
 
         return `
-          <tr class="border-b border-white/5 hover:bg-white/[0.03] transition-colors">
-            <td class="px-4 py-3 font-medium text-white">${escapeHtml(r.Name || '-')}</td>
-            <td class="px-4 py-3 font-mono text-slate-300">${freq}</td>
+          <tr class="border-b border-primary-500/5 hover:bg-primary-500/5 transition-colors">
+            <td class="px-4 py-3 font-medium text-primary-400">${escapeHtml(r.Name || '-')}</td>
+            <td class="px-4 py-3 font-mono text-primary-500">${freq}</td>
             <td class="px-4 py-3">${bandBadge(r.Frequency)}</td>
-            <td class="px-4 py-3 font-mono text-slate-300">${offsetText}</td>
-            <td class="px-4 py-3 font-mono text-slate-300">${escapeHtml(r.Tone || '-')} ${escapeHtml(r.rToneFreq || '')}</td>
-            <td class="px-4 py-3 font-mono text-slate-300">${escapeHtml(r.Mode || '-')}</td>
-            <td class="px-4 py-3 text-xs text-slate-400">${mapsLink ? `<a href="${mapsLink}" target="_blank" rel="noopener" class="hover:text-primary-400 transition-colors">${location}</a>` : location}</td>
+            <td class="px-4 py-3 font-mono text-primary-500">${offsetText}</td>
+            <td class="px-4 py-3 font-mono text-primary-500">${escapeHtml(r.Tone || '-')} ${escapeHtml(r.rToneFreq || '')}</td>
+            <td class="px-4 py-3 font-mono text-primary-500">${escapeHtml(r.Mode || '-')}</td>
+            <td class="px-4 py-3 text-xs text-primary-600">${mapsLink ? `<a href="${mapsLink}" target="_blank" rel="noopener" class="hover:text-primary-400 transition-colors">${location}</a>` : location}</td>
             <td class="px-4 py-3 font-mono text-xs text-primary-300">${dist}</td>
           </tr>
         `;
       }).join('');
 
       return `
-        <div class="overflow-x-auto rounded-xl border border-white/10 bg-slate-900/60">
+        <div class="overflow-x-auto rounded-xl border border-primary-500/10 bg-black/40">
           <table class="w-full text-sm text-left">
-            <thead class="bg-slate-950/60 text-xs uppercase text-slate-500 font-semibold">
+            <thead class="bg-black/60 text-xs uppercase text-primary-700 font-semibold">
               <tr>
                 <th class="px-4 py-3">Name</th>
                 <th class="px-4 py-3">Frequency</th>
@@ -3204,8 +3223,8 @@
         return `
           <section class="mb-10 animate-fade-in-up">
             <div class="flex items-center gap-3 mb-4">
-              <h2 class="text-xl font-bold text-white">${title}</h2>
-              <span class="px-2 py-0.5 rounded-md text-xs font-mono bg-slate-800 text-slate-400 border border-white/10">${rows.length}</span>
+              <h2 class="text-xl font-bold text-primary-400">${title}</h2>
+              <span class="px-2 py-0.5 rounded-md text-xs font-mono bg-black/60 text-primary-600 border border-primary-500/10">${rows.length}</span>
             </div>
             ${createTable(rows)}
           </section>
@@ -3215,9 +3234,9 @@
       return `
         <section class="mb-10 animate-fade-in-up">
           <div class="flex items-center gap-3 mb-4">
-            <h2 class="font-heading text-xl font-bold text-white tracking-tight">${title}</h2>
-            <span class="px-2 py-0.5 rounded-md text-xs font-mono bg-slate-800/80 text-slate-400 border border-white/[0.06]">${rows.length}</span>
-            <div class="h-px bg-white/[0.06] flex-grow"></div>
+            <h2 class="text-lg font-bold text-primary-400 tracking-tight" style="text-shadow: 0 0 6px rgba(0,255,65,0.3)">${title}</h2>
+            <span class="px-2 py-0.5 rounded-md text-xs font-mono bg-primary-500/5 text-primary-600 border border-primary-500/15">${rows.length}</span>
+            <div class="h-px bg-primary-500/10 flex-grow"></div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             ${rows.map(r => createCard(r)).join('')}
@@ -3246,8 +3265,8 @@
 
       const filteredCount = rows.length;
       resultsSummary.innerHTML = filteredCount === total
-        ? `<span>Showing all <strong class="text-slate-300">${total}</strong> frequencies</span>`
-        : `<span>Showing <strong class="text-slate-300">${filteredCount}</strong> of ${total} frequencies</span><button id="clearFilters" class="text-primary-400 hover:text-primary-300 text-xs font-medium">Clear filters</button>`;
+        ? `<span>Showing all <strong class="text-primary-500">${total}</strong> frequencies</span>`
+        : `<span>Showing <strong class="text-primary-500">${filteredCount}</strong> of ${total} frequencies</span><button id="clearFilters" class="text-primary-400 hover:text-primary-300 text-xs font-medium">Clear filters</button>`;
 
       const clearBtn = document.getElementById('clearFilters');
       if (clearBtn) {
@@ -3310,8 +3329,8 @@
 
       if (rows.length === 0 && allRows.length > 0) {
         html = `
-          <div class="text-center py-20 text-slate-500">
-            <i class="fa-solid fa-circle-question text-4xl mb-4 text-slate-600"></i>
+          <div class="text-center py-20 text-primary-700">
+            <i class="fa-solid fa-circle-question text-4xl mb-4 text-primary-800"></i>
             <p class="text-lg">No frequencies match your search or filter.</p>
             <button id="clearFiltersEmpty" class="mt-4 text-primary-400 hover:text-primary-300 font-medium">Clear filters</button>
           </div>
@@ -3404,11 +3423,11 @@
       document.querySelectorAll('.filter-chip').forEach(btn => {
         const isActive = btn.dataset.filter === filter;
         if (isActive) {
-          btn.classList.add('bg-primary-500/15', 'text-primary-300', 'border-primary-500/25');
-          btn.classList.remove('bg-slate-800/60', 'text-slate-400', 'border-white/[0.06]', 'hover:bg-slate-800', 'hover:text-slate-200');
+          btn.classList.add('bg-primary-500/15', 'text-primary-400', 'border-primary-500/40');
+          btn.classList.remove('bg-black/40', 'text-primary-700', 'border-primary-500/10', 'hover:bg-primary-500/5', 'hover:text-primary-500');
         } else {
-          btn.classList.remove('bg-primary-500/15', 'text-primary-300', 'border-primary-500/25');
-          btn.classList.add('bg-slate-800/60', 'text-slate-400', 'border-white/[0.06]', 'hover:bg-slate-800', 'hover:text-slate-200');
+          btn.classList.remove('bg-primary-500/15', 'text-primary-400', 'border-primary-500/40');
+          btn.classList.add('bg-black/40', 'text-primary-700', 'border-primary-500/10', 'hover:bg-primary-500/5', 'hover:text-primary-500');
         }
       });
       render(getFilteredRows());
@@ -3442,7 +3461,7 @@
       const container = document.getElementById('toastContainer');
       const toast = document.createElement('div');
       const colors = {
-        success: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
+        success: 'border-emerald-500/30 bg-emerald-500/10 text-primary-400',
         error: 'border-rose-500/30 bg-rose-500/10 text-rose-400',
         info: 'border-primary-500/30 bg-primary-500/10 text-primary-400'
       };
@@ -3535,7 +3554,7 @@
 
       const banner = document.createElement('div');
       banner.id = 'installBanner';
-      banner.className = 'fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-40 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-4 animate-fade-in-up';
+      banner.className = 'fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-40 bg-black/80/95 backdrop-blur-xl border border-primary-500/10 rounded-2xl shadow-2xl p-4 animate-fade-in-up';
 
       if (iosInstructions) {
         banner.innerHTML = `
@@ -3544,15 +3563,15 @@
               <i class="fa-solid fa-mobile-screen text-primary-400"></i>
             </div>
             <div class="min-w-0 flex-1">
-              <h4 class="font-heading font-bold text-white text-sm mb-1">Install MY-HamFreq</h4>
-              <p class="text-xs text-slate-400 leading-relaxed mb-2">Add this app to your home screen for quick offline access:</p>
-              <ol class="text-xs text-slate-300 space-y-1 mb-3">
+              <h4 class="font-heading font-bold text-primary-400 text-sm mb-1">Install MY-HamFreq</h4>
+              <p class="text-xs text-primary-600 leading-relaxed mb-2">Add this app to your home screen for quick offline access:</p>
+              <ol class="text-xs text-primary-500 space-y-1 mb-3">
                 <li>1. Tap the <span class="font-mono text-primary-300">Share</span> button <i class="fa-solid fa-arrow-up-from-bracket text-xs"></i> in Safari</li>
                 <li>2. Select <span class="font-mono text-primary-300">Add to Home Screen</span></li>
                 <li>3. Tap <span class="font-mono text-primary-300">Add</span></li>
               </ol>
             </div>
-            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-white/10 text-slate-500 hover:text-white transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
+            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-primary-500/10 text-primary-700 hover:text-primary-400 transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -3564,18 +3583,18 @@
               <i class="fa-solid fa-download text-primary-400"></i>
             </div>
             <div class="min-w-0 flex-1">
-              <h4 class="font-heading font-bold text-white text-sm mb-1">Install MY-HamFreq</h4>
-              <p class="text-xs text-slate-400 leading-relaxed mb-3">Install this app for offline access and a faster, native-like experience.</p>
+              <h4 class="font-heading font-bold text-primary-400 text-sm mb-1">Install MY-HamFreq</h4>
+              <p class="text-xs text-primary-600 leading-relaxed mb-3">Install this app for offline access and a faster, native-like experience.</p>
               <div class="flex items-center gap-2">
-                <button id="installBannerAccept" class="px-3 py-1.5 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-xs font-semibold transition-colors">
+                <button id="installBannerAccept" class="px-3 py-1.5 rounded-lg bg-primary-600/20 hover:bg-primary-500/30 text-primary-400 border border-primary-500/30 text-xs font-semibold transition-colors">
                   Install now
                 </button>
-                <button id="installBannerLater" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 text-xs font-medium transition-colors">
+                <button id="installBannerLater" class="px-3 py-1.5 rounded-lg bg-primary-500/5 hover:bg-primary-500/10 text-primary-700 text-xs font-medium transition-colors">
                   Maybe later
                 </button>
               </div>
             </div>
-            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-white/10 text-slate-500 hover:text-white transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
+            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-primary-500/10 text-primary-700 hover:text-primary-400 transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -3703,11 +3722,11 @@
       error: (error) => {
         console.error('CSV load failed:', error);
         output.innerHTML = `
-          <div class="text-center py-20 text-slate-500">
+          <div class="text-center py-20 text-primary-700">
             <i class="fa-solid fa-triangle-exclamation text-4xl mb-4 text-rose-500"></i>
             <p class="text-lg">Failed to load frequency database.</p>
-            <p class="text-sm mt-2 text-slate-600">${escapeHtml(error.message || 'Please check your connection and try again.')}</p>
-            <button onclick="location.reload()" class="mt-4 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors">Retry</button>
+            <p class="text-sm mt-2 text-primary-800">${escapeHtml(error.message || 'Please check your connection and try again.')}</p>
+            <button onclick="location.reload()" class="mt-4 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-primary-400 text-sm font-medium transition-colors">Retry</button>
           </div>
         `;
         resultsSummary.innerHTML = '<span class="text-rose-400">Failed to load data</span>';

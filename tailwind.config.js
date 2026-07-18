@@ -4,31 +4,33 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        sans: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        display: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
         primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
+          50: '#e6ffe6',
+          100: '#ccffcc',
+          200: '#99ff99',
+          300: '#66ff66',
+          400: '#33ff33',
+          500: '#00ff41',
+          600: '#00cc33',
+          700: '#009928',
+          800: '#00661c',
+          900: '#003311',
+          950: '#001a09',
+        },
+        amber: {
+          400: '#ffb000',
+          500: '#ff9500',
         }
       },
-      letterSpacing: {
-        tightest: '-0.04em',
-      },
       boxShadow: {
-        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.2)',
-        'card': '0 2px 8px -2px rgba(0, 0, 0, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.2)',
+        'glow': '0 0 8px rgba(0, 255, 65, 0.3), 0 0 16px rgba(0, 255, 65, 0.1)',
+        'glow-sm': '0 0 4px rgba(0, 255, 65, 0.2)',
+        'glow-amber': '0 0 8px rgba(255, 176, 0, 0.3)',
       },
     }
   },
