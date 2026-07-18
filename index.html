@@ -539,6 +539,7 @@
 
 
 
+
   <!-- SEO: Pre-rendered frequency data for search engine crawlers -->
   <!-- The interactive JS app replaces #output; this content ensures crawlers
        and no-JS users can see all frequency data. -->
@@ -2971,7 +2972,9 @@
       const f = parseNumber(row.Frequency);
       const o = parseNumber(row.Offset);
       if (f >= 446 && f <= 446.2) return 'PMR';
-      if (o === 0) return 'Simplex';
+      // A repeater requires a Duplex direction (+ or -). Empty Duplex = simplex,
+      // even if Offset has a value (CHIRP stores default step there).
+      if (!row.Duplex || o === 0) return 'Simplex';
       return 'Repeaters';
     }
 
