@@ -515,6 +515,7 @@
 
 
 
+
   <!-- SEO: Pre-rendered frequency data for search engine crawlers -->
   <!-- The interactive JS app replaces #output; this content ensures crawlers
        and no-JS users can see all frequency data. -->
@@ -3497,15 +3498,141 @@
     // ===== PWA Install =====
     const installBtn = document.getElementById('installBtn');
 
+    // Detect if app is already installed (running in standalone mode)
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true
+      || window.matchMedia('(display-mode: fullscreen)').matches
+      || window.matchMedia('(display-mode: minimal-ui)').matches;
+
+    // Use getInstalledRelatedApps API where available (Chrome Android)
+    let installedViaRelatedApps = false;
+    if (navigator.getInstalledRelatedApps) {
+      navigator.getInstalledRelatedApps().then(apps => {
+        if (apps.length > 0) {
+          installedViaRelatedApps = true;
+          installBtn.classList.add('hidden');
+          installBtn.classList.remove('flex');
+          dismissInstallBanner();
+        }
+      }).catch(() => {});
+    }
+
+    function dismissInstallBanner() {
+      const banner = document.getElementById('installBanner');
+      if (banner) banner.remove();
+    }
+
+    function showInstallBanner() {
+      if (isStandalone || installedViaRelatedApps) return;
+      if (localStorage.getItem('hamfreq_install_dismissed') === '1') return;
+      if (document.getElementById('installBanner')) return;
+
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const iosInstructions = isIOS && !('beforeinstallprompt' in window);
+
+      const banner = document.createElement('div');
+      banner.id = 'installBanner';
+      banner.className = 'fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-40 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-4 animate-fade-in-up';
+
+      if (iosInstructions) {
+        banner.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-mobile-screen text-primary-400"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="font-heading font-bold text-white text-sm mb-1">Install MY-HamFreq</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-2">Add this app to your home screen for quick offline access:</p>
+              <ol class="text-xs text-slate-300 space-y-1 mb-3">
+                <li>1. Tap the <span class="font-mono text-primary-300">Share</span> button <i class="fa-solid fa-arrow-up-from-bracket text-xs"></i> in Safari</li>
+                <li>2. Select <span class="font-mono text-primary-300">Add to Home Screen</span></li>
+                <li>3. Tap <span class="font-mono text-primary-300">Add</span></li>
+              </ol>
+            </div>
+            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-white/10 text-slate-500 hover:text-white transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        `;
+      } else {
+        banner.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-download text-primary-400"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="font-heading font-bold text-white text-sm mb-1">Install MY-HamFreq</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-3">Install this app for offline access and a faster, native-like experience.</p>
+              <div class="flex items-center gap-2">
+                <button id="installBannerAccept" class="px-3 py-1.5 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-xs font-semibold transition-colors">
+                  Install now
+                </button>
+                <button id="installBannerLater" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 text-xs font-medium transition-colors">
+                  Maybe later
+                </button>
+              </div>
+            </div>
+            <button id="installBannerClose" class="w-7 h-7 rounded-lg hover:bg-white/10 text-slate-500 hover:text-white transition-colors flex items-center justify-center shrink-0" aria-label="Dismiss">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        `;
+      }
+
+      document.body.appendChild(banner);
+
+      const closeBtn = document.getElementById('installBannerClose');
+      const laterBtn = document.getElementById('installBannerLater');
+      const acceptBtn = document.getElementById('installBannerAccept');
+
+      const dismiss = () => {
+        localStorage.setItem('hamfreq_install_dismissed', '1');
+        dismissInstallBanner();
+      };
+
+      closeBtn.addEventListener('click', dismiss);
+      if (laterBtn) laterBtn.addEventListener('click', dismiss);
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+          if (deferredInstallPrompt) {
+            deferredInstallPrompt.prompt();
+            deferredInstallPrompt.userChoice.then(({ outcome }) => {
+              if (outcome === 'accepted') {
+                showToast('App installed successfully', 'success');
+              }
+              deferredInstallPrompt = null;
+              installBtn.classList.add('hidden');
+              installBtn.classList.remove('flex');
+            });
+          }
+          dismiss();
+        });
+      }
+    }
+
+    // Show install banner after 3s delay (only if not installed and not dismissed)
+    setTimeout(() => {
+      if (!isStandalone && !installedViaRelatedApps) {
+        showInstallBanner();
+      }
+    }, 3000);
+
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredInstallPrompt = e;
-      installBtn.classList.remove('hidden');
-      installBtn.classList.add('flex');
+      // Only show header button if not already in standalone mode
+      if (!isStandalone && !installedViaRelatedApps) {
+        installBtn.classList.remove('hidden');
+        installBtn.classList.add('flex');
+      }
     });
 
     installBtn.addEventListener('click', async () => {
-      if (!deferredInstallPrompt) return;
+      if (!deferredInstallPrompt) {
+        // Fallback: show banner with instructions
+        showInstallBanner();
+        return;
+      }
       deferredInstallPrompt.prompt();
       const { outcome } = await deferredInstallPrompt.userChoice;
       if (outcome === 'accepted') {
@@ -3520,7 +3647,18 @@
       deferredInstallPrompt = null;
       installBtn.classList.add('hidden');
       installBtn.classList.remove('flex');
+      dismissInstallBanner();
+      localStorage.setItem('hamfreq_install_dismissed', '1');
       showToast('App installed', 'success');
+    });
+
+    // Listen for display-mode changes (e.g. user launches from home screen)
+    window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
+      if (e.matches) {
+        installBtn.classList.add('hidden');
+        installBtn.classList.remove('flex');
+        dismissInstallBanner();
+      }
     });
 
     // ===== Back to Top =====
