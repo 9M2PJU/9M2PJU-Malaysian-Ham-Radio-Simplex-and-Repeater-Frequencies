@@ -14,5 +14,5 @@ All Malaysian amateur radio operators who contribute frequency data
 Last update: 2026
 Standards: HTML5, CSS3, JavaScript (ES6+)
 Components: Tailwind CSS, PapaParse, Font Awesome
-License: GPL-3.0
+License: AGPL-3.0
 Language: English

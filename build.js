@@ -221,7 +221,7 @@ function generateJsonLd(rows) {
       'name': '9M2PJU',
       'url': 'https://hamradio.my'
     },
-    'license': 'https://www.gnu.org/licenses/gpl-3.0.html',
+    'license': 'https://www.gnu.org/licenses/agpl-3.0.html',
     'isAccessibleForFree': true,
     'keywords': ['ham radio', 'amateur radio', 'Malaysia', 'repeater', 'simplex', 'PMR446', 'VHF', 'UHF', 'CHIRP', '9M2PJU', 'frequency database'],
     'distribution': {

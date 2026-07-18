@@ -6,7 +6,7 @@ A meticulously curated, open-source collection of **206 Malaysian amateur radio 
 
 [![Ham Radio](https://img.shields.io/badge/Ham%20Radio-9M2PJU-00f3ff?style=for-the-badge&logo=radio&logoColor=black)](https://hamradio.my)
 [![Malaysia](https://img.shields.io/badge/Malaysia-🇲🇾-bc13fe?style=for-the-badge)](https://frequency.hamradio.my)
-[![License](https://img.shields.io/badge/License-GPL%203.0-0aff68?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-AGPL%203.0-0aff68?style=for-the-badge)](LICENSE)
 [![Live Site](https://img.shields.io/badge/Live-frequency.hamradio.my-blue?style=for-the-badge)](https://frequency.hamradio.my)
 
 ---
@@ -77,7 +77,7 @@ The database includes repeaters from every Malaysian state:
 - **MARTS & ASTRA linking** — network information for linked repeaters
 - **DMR support** — digital repeaters connected to Brandmeister Network
 - **PWA** — installable, works offline, mobile-optimized
-- **Open source** — GPL-3.0 licensed
+- **Open source** — AGPL-3.0 licensed
 
 ---
 
@@ -89,7 +89,7 @@ Repeater frequencies and locations are automatically synced from [RepeaterBook](
 
 ## License
 
-Licensed under the **GNU General Public License 3.0**. See [LICENSE](LICENSE) for details.
+Licensed under the **GNU Affero General Public License 3.0**. See [LICENSE](LICENSE) for details.
 
 Operate with awareness of local amateur radio regulations — this database is for educational and reference use. A valid AROC license is required to transmit on amateur radio bands in Malaysia.
 
